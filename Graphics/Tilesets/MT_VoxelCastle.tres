@@ -1,9 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://wid6b3my4ry"]
 
-[ext_resource type="Texture2D" uid="uid://sjur4kj47ls4" path="res://Graphics/Tilesets/moonsurface.png" id="1_dkqub"]
+[ext_resource type="Texture2D" uid="uid://cui0da6xm6qdp" path="res://Graphics/Tilesets/voxelcastle.png" id="1_cxulo"]
 
 [resource]
-albedo_texture = ExtResource("1_dkqub")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_cxulo")
 metallic_specular = 0.0
 roughness = 0.0
 texture_filter = 0

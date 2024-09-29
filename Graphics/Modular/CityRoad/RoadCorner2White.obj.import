@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cy0avq4lppc62"
+path="res://.godot/imported/RoadCorner2White.obj-7f8bb559a8b1594729b92160aabd91bc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/RoadCorner2White.obj-7f8bb559a8b1594729b92160aabd91bc.mesh"]
+
+source_file="res://Graphics/Modular/CityRoad/RoadCorner2White.obj"
+dest_files=["res://.godot/imported/RoadCorner2White.obj-7f8bb559a8b1594729b92160aabd91bc.mesh", "res://.godot/imported/RoadCorner2White.obj-7f8bb559a8b1594729b92160aabd91bc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

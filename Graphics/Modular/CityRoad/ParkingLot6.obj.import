@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cvv4vc6xgcnj4"
+path="res://.godot/imported/ParkingLot6.obj-11670097a33ff9288a7c18c7496b35a1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ParkingLot6.obj-11670097a33ff9288a7c18c7496b35a1.mesh"]
+
+source_file="res://Graphics/Modular/CityRoad/ParkingLot6.obj"
+dest_files=["res://.godot/imported/ParkingLot6.obj-11670097a33ff9288a7c18c7496b35a1.mesh", "res://.godot/imported/ParkingLot6.obj-11670097a33ff9288a7c18c7496b35a1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

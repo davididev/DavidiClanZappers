@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmwgfplribnff"
+path="res://.godot/imported/Sidewalk1.obj-17850c76327a46efd18558637b4cb254.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sidewalk1.obj-17850c76327a46efd18558637b4cb254.mesh"]
+
+source_file="res://Graphics/Modular/CityRoad/Sidewalk1.obj"
+dest_files=["res://.godot/imported/Sidewalk1.obj-17850c76327a46efd18558637b4cb254.mesh", "res://.godot/imported/Sidewalk1.obj-17850c76327a46efd18558637b4cb254.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

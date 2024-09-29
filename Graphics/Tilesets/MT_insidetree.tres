@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cfu2cdjyt13li" path="res://Graphics/Tilesets/insidetree.png" id="1_ttvsw"]
 
 [resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("1_ttvsw")
 metallic_specular = 0.0
 roughness = 0.0

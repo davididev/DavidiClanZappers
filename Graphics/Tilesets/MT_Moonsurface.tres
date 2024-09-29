@@ -1,9 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bqmap53fwq1r8"]
 
-[ext_resource type="Texture2D" uid="uid://ohlskgefgbcw" path="res://Graphics/Tilesets/megabros.png" id="1_md6sd"]
+[ext_resource type="Texture2D" uid="uid://sjur4kj47ls4" path="res://Graphics/Tilesets/moonsurface.png" id="1_xifle"]
 
 [resource]
-albedo_texture = ExtResource("1_md6sd")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_xifle")
 metallic_specular = 0.0
 roughness = 0.0
 texture_filter = 0

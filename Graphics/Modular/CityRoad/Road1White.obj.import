@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dud7ebd0n5a6e"
+path="res://.godot/imported/Road1White.obj-4fd18509f668fb64c1eec79581378255.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Road1White.obj-4fd18509f668fb64c1eec79581378255.mesh"]
+
+source_file="res://Graphics/Modular/CityRoad/Road1White.obj"
+dest_files=["res://.godot/imported/Road1White.obj-4fd18509f668fb64c1eec79581378255.mesh", "res://.godot/imported/Road1White.obj-4fd18509f668fb64c1eec79581378255.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

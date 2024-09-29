@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bwwryhix0qk2k" path="res://Graphics/Tilesets/crystalpalace.png" id="1_hexfv"]
 
 [resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("1_hexfv")
 metallic_specular = 0.0
 roughness = 0.0

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://djse7ur78mlf6"]
+
+[ext_resource type="Texture2D" uid="uid://bb1e5w1eoyjnc" path="res://Graphics/Tilesets/Building_Inner.png" id="1_8mmgx"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_8mmgx")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 0
