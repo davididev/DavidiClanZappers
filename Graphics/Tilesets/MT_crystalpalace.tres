@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bckw16atavbh6"]
+
+[ext_resource type="Texture2D" uid="uid://bwwryhix0qk2k" path="res://Graphics/Tilesets/crystalpalace.png" id="1_hexfv"]
+
+[resource]
+albedo_texture = ExtResource("1_hexfv")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 0

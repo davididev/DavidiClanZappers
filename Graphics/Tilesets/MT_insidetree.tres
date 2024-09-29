@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cjy1pb071f3jl"]
+
+[ext_resource type="Texture2D" uid="uid://cfu2cdjyt13li" path="res://Graphics/Tilesets/insidetree.png" id="1_ttvsw"]
+
+[resource]
+albedo_texture = ExtResource("1_ttvsw")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 0

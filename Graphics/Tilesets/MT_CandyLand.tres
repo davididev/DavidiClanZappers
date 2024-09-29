@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dlcqby8px0c60"]
+
+[ext_resource type="Texture2D" uid="uid://cfwfn6rngdr4v" path="res://Graphics/Tilesets/candyland.png" id="1_xtie5"]
+
+[resource]
+albedo_texture = ExtResource("1_xtie5")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 0
