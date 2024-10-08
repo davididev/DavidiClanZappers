@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://de561b4xif0ds"]
+
+[ext_resource type="Script" path="res://DialogueSystem/dialogue_editor.gd" id="1_08vol"]
+[ext_resource type="PackedScene" uid="uid://c84q1bhurmaje" path="res://DialogueSystem/DialogueNode.tscn" id="1_vmf3m"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_08vol")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="NodeEditor" type="CanvasLayer" parent="Camera2D"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/NodeEditor"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -300.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="DialogueNode" parent="." instance=ExtResource("1_vmf3m")]
