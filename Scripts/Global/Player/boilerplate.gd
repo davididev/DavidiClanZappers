@@ -101,3 +101,6 @@ func movement_animations():
 			lastAnimation = &"AvatarAnimationLib/JumpStart";
 			get_node(animationPlayer).play(lastAnimation);
 			attackAnimationTime = 0.3333;
+		else:
+			lastAnimation = &"AvatarAnimationLib/JumpIdle";
+			get_node(animationPlayer).play(lastAnimation);
