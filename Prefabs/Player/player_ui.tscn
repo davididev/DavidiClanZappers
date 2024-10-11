@@ -15,6 +15,7 @@ size_flags_vertical = 0
 script = ExtResource("1_0xfu1")
 
 [node name="InventoryMenu" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwaj5n7a4jmic"
-path.s3tc="res://.godot/imported/NateRiggedFinal_NatePalette.png-1192cdfbc28c4c2b0ae2628e7ea539b0.s3tc.ctex"
+uid="uid://cnq462vp6r7pc"
+path="res://.godot/imported/DesertPlanes03_terrain.png-e935ee0e2149f09945ab2aa6b2535548.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "b6c07b8c01b758353538ad520851a3e5"
 }
 
 [deps]
 
-source_file="res://Graphics/Characters/Nate/NateRiggedFinal_NatePalette.png"
-dest_files=["res://.godot/imported/NateRiggedFinal_NatePalette.png-1192cdfbc28c4c2b0ae2628e7ea539b0.s3tc.ctex"]
+source_file="res://Graphics/Modular/Terrain/DesertPlanes03_terrain.png"
+dest_files=["res://.godot/imported/DesertPlanes03_terrain.png-e935ee0e2149f09945ab2aa6b2535548.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -32,4 +34,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
