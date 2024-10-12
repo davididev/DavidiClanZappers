@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=8 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
+[ext_resource type="Texture2D" uid="uid://yhm38wd40bhw" path="res://Graphics/UI/BG_Buttons.png" id="3_qcu7h"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_k8smy"]
+[ext_resource type="Texture2D" uid="uid://y3lyon53xkis" path="res://Graphics/UI/ButtonOverlay.png" id="5_1ibi7"]
+[ext_resource type="Texture2D" uid="uid://c1ynx5r4n2rfp" path="res://Graphics/UI/ButtonPressed.png" id="6_672h6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uve4q"]
+font_size = 25
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -29,3 +36,84 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_xwljy")
+
+[node name="BGButtons1" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 320.0
+offset_bottom = 648.0
+texture = ExtResource("3_qcu7h")
+
+[node name="Virtual Joystick" parent="BGButtons1" instance=ExtResource("4_k8smy")]
+layout_mode = 1
+offset_top = -473.0
+offset_bottom = -173.0
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"
+
+[node name="BGButtons2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_bottom = 648.0
+grow_horizontal = 0
+texture = ExtResource("3_qcu7h")
+
+[node name="JumpButton" type="TouchScreenButton" parent="BGButtons2"]
+position = Vector2(80, 433)
+texture_normal = ExtResource("5_1ibi7")
+texture_pressed = ExtResource("6_672h6")
+action = "jump"
+
+[node name="Label" type="Label" parent="BGButtons2/JumpButton"]
+offset_right = 147.0
+offset_bottom = 147.0
+text = "Jump"
+label_settings = SubResource("LabelSettings_uve4q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseButton" type="TouchScreenButton" parent="BGButtons2"]
+position = Vector2(80, 129)
+texture_normal = ExtResource("5_1ibi7")
+texture_pressed = ExtResource("6_672h6")
+action = "pause"
+
+[node name="Label" type="Label" parent="BGButtons2/PauseButton"]
+offset_right = 147.0
+offset_bottom = 147.0
+text = "Pause"
+label_settings = SubResource("LabelSettings_uve4q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemButton" type="TouchScreenButton" parent="BGButtons2"]
+position = Vector2(8, 281)
+texture_normal = ExtResource("5_1ibi7")
+texture_pressed = ExtResource("6_672h6")
+action = "item"
+
+[node name="Label" type="Label" parent="BGButtons2/ItemButton"]
+offset_right = 147.0
+offset_bottom = 147.0
+text = "Item"
+label_settings = SubResource("LabelSettings_uve4q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpellButton" type="TouchScreenButton" parent="BGButtons2"]
+position = Vector2(160, 281)
+texture_normal = ExtResource("5_1ibi7")
+texture_pressed = ExtResource("6_672h6")
+action = "magic"
+
+[node name="Label" type="Label" parent="BGButtons2/SpellButton"]
+offset_right = 147.0
+offset_bottom = 147.0
+text = "Magic"
+label_settings = SubResource("LabelSettings_uve4q")
+horizontal_alignment = 1
+vertical_alignment = 1
