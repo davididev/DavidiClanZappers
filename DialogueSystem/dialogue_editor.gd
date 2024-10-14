@@ -4,8 +4,9 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#TODO: Take the first Dialogue node and duplicate it according to DialogueGrid.WIDTH / HEIGHT
-	var x = 0;
-	var y = -1;
+	get_node("DialogueNode").SetCoord(0, 0);
+	var x = -1;
+	var y = 0;
 	for i in DialogueGrid.HEIGHT:
 		x = 0;
 		for u in DialogueGrid.WIDTH:
@@ -15,8 +16,7 @@ func _ready() -> void:
 				var dup = get_node("DialogueNode").duplicate();
 				var vx : Vector2 = Vector2(324.0 * x, 162.0 * y)
 				dup.position = vx;
-				dup.x = x;
-				dup.y = y;
+				dup.SetCoord(x, y);
 				add_child(dup);
 			x += 1;
 		y += 1;
@@ -31,5 +31,8 @@ func _process(delta: float) -> void:
 		cam = get_node("Camera2D");
 	var moveX = Input.get_axis("ui_left", "ui_right");
 	var moveY = Input.get_axis("ui_up", "ui_down");
+	if Input.is_key_pressed(KEY_SHIFT):
+		moveX *= 2.0;
+		moveY *= 2.0;
 	var moveRel = Vector2(moveX * 324.0, moveY * 324.0) * delta;
 	cam.position = cam.position + moveRel;

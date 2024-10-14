@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var possibleImages : Array[NodePath];
-@export var x : int = 0;
-@export var y : int = 0;
+var x : int = 0;
+var y : int = 0;
 var hover_empty_node = false;
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +14,12 @@ func SetImage(id : int):
 	for np : NodePath in possibleImages:
 		get_node(np).set_visible(i == id);
 		i += 1;
+
+func SetCoord(x1 : int, y1 : int):
+	x = x1;
+	y = y1;
+	get_node("txt_Coord").text = str("(", x, ",", y, ")");
+	
 
 func InitNode(ref : DialogueEntry):
 	if ref == null:

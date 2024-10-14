@@ -32,8 +32,16 @@ offset_bottom = 40.0
 texture = ExtResource("4_olwk1")
 
 [node name="txt_NodeName" type="Label" parent="."]
-offset_right = 283.0
+offset_left = 50.0
+offset_right = 282.0
 offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_mb4fu")
+uppercase = true
+
+[node name="txt_Coord" type="Label" parent="."]
+offset_right = 50.0
+offset_bottom = 23.0
+text = "(70,5)"
 label_settings = SubResource("LabelSettings_mb4fu")
 uppercase = true
 
