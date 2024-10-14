@@ -23,4 +23,4 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
-[node name="DialogueNode" parent="." instance=ExtResource("1_vmf3m")]
+[node name="DialogueNode0,0" parent="." instance=ExtResource("1_vmf3m")]

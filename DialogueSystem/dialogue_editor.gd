@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#TODO: Take the first Dialogue node and duplicate it according to DialogueGrid.WIDTH / HEIGHT
-	get_node("DialogueNode").SetCoord(0, 0);
+	get_node("DialogueNode0,0").SetCoord(0, 0);
 	var x = -1;
 	var y = 0;
 	for i in DialogueGrid.HEIGHT:
@@ -13,7 +13,8 @@ func _ready() -> void:
 			if x == 0 && y == 0:
 				print("First one, don't run");
 			else:
-				var dup = get_node("DialogueNode").duplicate();
+				var dup = get_node("DialogueNode0,0").duplicate();
+				dup.name = str("DialogueNode", x, ",", y);
 				var vx : Vector2 = Vector2(324.0 * x, 162.0 * y)
 				dup.position = vx;
 				dup.SetCoord(x, y);
