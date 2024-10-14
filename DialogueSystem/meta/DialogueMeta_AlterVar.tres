@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://d1yq46rnwuram"]
+
+[ext_resource type="Script" path="res://DialogueSystem/meta/DialogueNodeMetaData.gd" id="1_0wdxb"]
+
+[resource]
+script = ExtResource("1_0wdxb")
+command_name = "setvar"
+arguments = Array[String](["Variable Name", "Operator", "Value", "NextStep"])
+defaultValues = Array[String](["%var", "=", "0", "1,0"])

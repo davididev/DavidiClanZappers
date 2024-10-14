@@ -1,9 +1,18 @@
 extends Node2D
 
+var selectedX : int = 0;
+var selectedY : int = 0;
+var creatingCommand : String = "";
+var creatingArgs : Array[String];
+var currentFile : DialogueGrid;
+var metaArgsSize : int = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#TODO: Take the first Dialogue node and duplicate it according to DialogueGrid.WIDTH / HEIGHT
+	currentFile = DialogueGrid.new();
+	currentFile.Init();
+	SetPanel(0);
 	get_node("DialogueNode0,0").SetCoord(0, 0);
 	var x = -1;
 	var y = 0;
@@ -25,6 +34,41 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+#Function called when you press the add dialogue node button
+func AddDialogueNode():
+	#Called when you set the arguments and create the node
+	SaveDialigueNode();
+
+
+func CreateNewNode(x : int, y : int):
+	selectedX = x;
+	selectedY = y;
+	get_node("Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Header").text = str("Add command on: (", x, ",", y, ")");
+	creatingCommand = "";
+	creatingArgs.clear();
+	SetPanel(1);
+
+
+func SetNewNodeArguments(commandName : String):
+	SetPanel(2);
+	var meta : DialogueNodeMetaData = ObtainDialogueMeta.GetMeta(commandName);
+	creatingCommand = meta.command_name;
+	metaArgsSize = meta.arguments.size();
+	#creatingArgs = meta.arguments;
+	for i in range(0, 6):
+		if i < meta.arguments.size():
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Label")).visible = true;
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Text")).visible = true;
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Label")).text = meta.arguments[i];
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Text")).text = meta.defaultValues[i];
+		else:
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Label")).visible = false;
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Text")).visible = false;
+func SetPanel(id : int):
+	get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile").visible = id == 0;
+	get_node("Camera2D/NodeEditor/ColorRect/PanelPickNodeType").visible = id == 1;
+	get_node("Camera2D/NodeEditor/ColorRect/PanelSetArgs").visible = id == 2;
+
 var cam : Camera2D;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,3 +81,27 @@ func _process(delta: float) -> void:
 		moveY *= 2.0;
 	var moveRel = Vector2(moveX * 324.0, moveY * 324.0) * delta;
 	cam.position = cam.position + moveRel;
+
+
+func _on_button_dialogue_box_pressed() -> void:
+	SetNewNodeArguments("str");
+
+
+func _on_button_choice_pressed() -> void:
+	SetNewNodeArguments("choice");
+
+
+#Called when we add a new node or edit the node from the add node button
+func SaveDialigueNode():
+	var first = true;
+	creatingArgs.clear();
+	for i in range(0, 6):
+		if i < metaArgsSize:
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Label")).visible = true;
+			get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Text")).visible = true;
+			creatingArgs.append(get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Text")).text);
+	var entry : DialogueEntry;
+	
+	currentFile.AddEntryToGrid(selectedX, selectedY, creatingCommand, creatingArgs);
+	get_node(str("DialogueNode", selectedX, ",", selectedY)).RefreshNode(currentFile.GetEntry(selectedX, selectedY));
+	SetPanel(0);
