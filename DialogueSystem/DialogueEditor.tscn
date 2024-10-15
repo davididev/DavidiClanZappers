@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://de561b4xif0ds"]
+[gd_scene load_steps=4 format=3 uid="uid://de561b4xif0ds"]
 
 [ext_resource type="Script" path="res://DialogueSystem/dialogue_editor.gd" id="1_08vol"]
 [ext_resource type="PackedScene" uid="uid://c84q1bhurmaje" path="res://DialogueSystem/DialogueNode.tscn" id="1_vmf3m"]
+[ext_resource type="Theme" uid="uid://bga4dn6xiaw85" path="res://DialogueSystem/meta/InputTextTheme.tres" id="2_3jxqi"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_08vol")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(200, 200)
 
 [node name="NodeEditor" type="CanvasLayer" parent="Camera2D"]
 
@@ -73,6 +75,7 @@ text = "blah blah blah"
 offset_left = 384.0
 offset_right = 777.0
 offset_bottom = 40.0
+theme = ExtResource("2_3jxqi")
 
 [node name="Arg 1 Label" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelSetArgs"]
 offset_top = 49.0
@@ -85,6 +88,7 @@ offset_left = 384.0
 offset_top = 48.0
 offset_right = 777.0
 offset_bottom = 88.0
+theme = ExtResource("2_3jxqi")
 
 [node name="Arg 2 Label" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelSetArgs"]
 offset_top = 97.0
@@ -97,6 +101,7 @@ offset_left = 384.0
 offset_top = 96.0
 offset_right = 777.0
 offset_bottom = 136.0
+theme = ExtResource("2_3jxqi")
 
 [node name="Arg 3 Label" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelSetArgs"]
 offset_top = 145.0
@@ -109,6 +114,7 @@ offset_left = 384.0
 offset_top = 144.0
 offset_right = 777.0
 offset_bottom = 184.0
+theme = ExtResource("2_3jxqi")
 
 [node name="Arg 4 Label" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelSetArgs"]
 offset_top = 201.0
@@ -121,6 +127,7 @@ offset_left = 384.0
 offset_top = 200.0
 offset_right = 777.0
 offset_bottom = 240.0
+theme = ExtResource("2_3jxqi")
 
 [node name="Arg 5 Label" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelSetArgs"]
 offset_top = 257.0
@@ -133,6 +140,7 @@ offset_left = 384.0
 offset_top = 256.0
 offset_right = 777.0
 offset_bottom = 296.0
+theme = ExtResource("2_3jxqi")
 
 [node name="DialogueNode0,0" parent="." instance=ExtResource("1_vmf3m")]
 root = NodePath("..")

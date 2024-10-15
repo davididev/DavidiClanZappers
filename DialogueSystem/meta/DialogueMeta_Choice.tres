@@ -6,4 +6,4 @@
 script = ExtResource("1_6jf3l")
 command_name = "choice"
 arguments = Array[String](["Choice1Str", "Choice2Str", "Choice3Str", "Choice4Str", "Outputs"])
-defaultValues = Array[String](["Yes", "No", "", "", "1,1.1,2"])
+defaultValues = Array[String](["Yes", "No", "", "", "1,1 1,2"])

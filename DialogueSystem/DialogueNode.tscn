@@ -1,16 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://c84q1bhurmaje"]
+[gd_scene load_steps=8 format=3 uid="uid://c84q1bhurmaje"]
 
 [ext_resource type="Script" path="res://DialogueSystem/dialogue_node_scene.gd" id="1_hptkn"]
 [ext_resource type="Texture2D" uid="uid://e5xgwcg17m8y" path="res://DialogueSystem/NodeEmpty.png" id="2_txslj"]
 [ext_resource type="Texture2D" uid="uid://p3n83iyfep58" path="res://DialogueSystem/NodeBlue.png" id="3_o47rx"]
 [ext_resource type="Texture2D" uid="uid://bjpbq4g8mb34l" path="res://DialogueSystem/NodeRed.png" id="4_olwk1"]
+[ext_resource type="FontFile" uid="uid://c3y787qm8icnd" path="res://Fonts/cour.ttf" id="5_nogvb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb4fu"]
 outline_color = Color(0.607843, 0.607843, 0.607843, 1)
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_w41vf"]
-default_font_size = 12
+default_font = ExtResource("5_nogvb")
+default_font_size = 15
 
 [node name="DialogueNode" type="Node2D"]
 script = ExtResource("1_hptkn")
@@ -49,11 +51,22 @@ label_settings = SubResource("LabelSettings_mb4fu")
 uppercase = true
 
 [node name="Txt_Main" type="Label" parent="."]
+offset_left = 5.0
 offset_top = 32.0
-offset_right = 321.0
+offset_right = 316.0
 offset_bottom = 162.0
 theme = SubResource("Theme_w41vf")
 autowrap_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 237.0
+offset_top = -3.0
+offset_right = 320.0
+offset_bottom = 28.0
+item_count = 2
+popup/item_0/text = "Edit"
+popup/item_1/text = "Delete"
+popup/item_1/id = 1
 
 [connection signal="mouse_entered" from="NodeEmpty" to="." method="_on_node_empty_mouse_entered"]
 [connection signal="mouse_exited" from="NodeEmpty" to="." method="_on_node_empty_mouse_exited"]

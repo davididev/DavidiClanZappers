@@ -11,13 +11,15 @@ const IMAGE_MULTI_FORK = 2;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	get_node("OptionButton").visible = false;
 
 func RefreshNode(myself : DialogueEntry):
 	if myself == null:
 		SetImage(IMAGE_EMPTY);
+		get_node("OptionButton").visible = false;
 		get_node("Txt_Main").text = "";
 	else:
+		get_node("OptionButton").visible = true;
 		if myself.cmd == "str":
 			SetImage(IMAGE_SINGLE_FORK);
 			get_node("txt_NodeName").text = "Dialogue Box";
