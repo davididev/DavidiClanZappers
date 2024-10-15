@@ -6,6 +6,22 @@ var creatingCommand : String = "";
 var creatingArgs : Array[String];
 var currentFile : DialogueGrid;
 var metaArgsSize : int = 0;
+var fileName = "default";
+
+func OnSaveButtonPressed():
+	ResourceSaver.save(currentFile, GetFileDirectory());
+	
+func OnLoadButtonPressed():
+	var res = ResourceLoader.load(GetFileDirectory()) as DialogueGrid;
+	if res != null:
+		currentFile = res;
+		for x in range(0, DialogueGrid.WIDTH):
+			for y in range(0, DialogueGrid.HEIGHT):
+				get_node(str("DialogueNode", x, ",", y)).RefreshNode(currentFile.GetEntry(x, y));
+func OnChangeTextBox():
+	fileName = get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileName").text;
+func GetFileDirectory():
+	return str("res://DialogueSystem/output/", fileName, ".res");
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
