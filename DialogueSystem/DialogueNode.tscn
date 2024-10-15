@@ -70,3 +70,4 @@ popup/item_1/id = 1
 
 [connection signal="mouse_entered" from="NodeEmpty" to="." method="_on_node_empty_mouse_entered"]
 [connection signal="mouse_exited" from="NodeEmpty" to="." method="_on_node_empty_mouse_exited"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

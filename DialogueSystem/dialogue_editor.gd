@@ -15,8 +15,24 @@ func OnNewFilePressed() -> void:
 			get_node(str("DialogueNode", x, ",", y)).RefreshNode(null);
 			
 func OnSaveButtonPressed():
-	ResourceSaver.save(currentFile, GetFileDirectory());
+	var newRes = currentFile.duplicate();
+	ResourceSaver.save(newRes, GetFileDirectory());
 	
+
+func StartEditNode(x : int, y : int):
+	selectedX = x;
+	selectedY = y;
+	SetPanel(2);
+	var entry = currentFile.GetEntry(x, y);
+	SetNewNodeArguments(entry.cmd);
+	var args = entry.GetArguments()
+	for i in range(0, args.size()):
+		get_node(str("Camera2D/NodeEditor/ColorRect/PanelSetArgs/Arg ", i, " Text")).text = args[i];
+		
+func DeleteNode(x : int, y : int):
+	currentFile.AddEntryToGrid(x, y, "", creatingArgs);
+	get_node(str("DialogueNode", x, ",", y)).RefreshNode(null);
+
 func OnLoadButtonPressed():
 	var res = ResourceLoader.load(GetFileDirectory()) as DialogueGrid;
 	await get_tree().create_timer(0.05);

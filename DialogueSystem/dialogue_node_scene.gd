@@ -76,3 +76,11 @@ func _on_node_empty_mouse_exited() -> void:
 	if get_node("NodeEmpty").visible == true:
 		hover_empty_node = false;
 		get_node("NodeEmpty").modulate = Color(1.0, 1.0, 1.0, (55.0 / 255.0));
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	if index == 0:  #Edit
+		get_node(root).StartEditNode(x, y);
+	if index == 1:
+		get_node(root).DeleteNode(x, y);
+	get_node("OptionButton").selected = -1;
