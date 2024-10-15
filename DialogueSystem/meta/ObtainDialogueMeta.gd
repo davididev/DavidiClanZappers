@@ -8,5 +8,8 @@ static func GetMeta(command_str : String) -> DialogueNodeMetaData:
 		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_Choice.tres");
 	if command_str == "setvar":
 		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_AlterVar.tres");
-		
+	if command_str == "ifthen":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_IfStatement.tres");
+	if command_str == "var":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_AlterVar.tres");
 	return null;

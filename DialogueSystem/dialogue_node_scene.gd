@@ -27,9 +27,12 @@ func RefreshNode(myself : DialogueEntry):
 		if myself.cmd == "choice":
 			SetImage(IMAGE_MULTI_FORK);
 			get_node("txt_NodeName").text = "Choice Selection";
-		if myself.cmd == "setvar":
+		if myself.cmd == "var":
 			SetImage(IMAGE_SINGLE_FORK);
 			get_node("txt_NodeName").text = "Set/Modify Var";
+		if myself.cmd == "ifthen":
+			SetImage(IMAGE_MULTI_FORK);
+			get_node("txt_NodeName").text = "If/Then/Else";
 			
 		var args = myself.GetArguments();
 		var argsStr = "";

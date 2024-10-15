@@ -26,6 +26,7 @@ grow_vertical = 0
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
 [node name="PanelSelectFile" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
+visible = false
 
 [node name="FileName" type="TextEdit" parent="Camera2D/NodeEditor/ColorRect/PanelSelectFile"]
 offset_left = 87.0
@@ -63,7 +64,6 @@ offset_bottom = 251.0
 text = "New"
 
 [node name="PanelPickNodeType" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
-visible = false
 
 [node name="Button DialogueBox" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_left = 82.0
@@ -78,6 +78,20 @@ offset_top = 87.0
 offset_right = 546.0
 offset_bottom = 137.0
 text = "Choice Box"
+
+[node name="Button IfThen" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 562.0
+offset_top = 87.0
+offset_right = 762.0
+offset_bottom = 137.0
+text = "If/Then/Else"
+
+[node name="Button SetVar2" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 562.0
+offset_top = 154.0
+offset_right = 762.0
+offset_bottom = 204.0
+text = "Modify Var"
 
 [node name="Header" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_right = 40.0
@@ -187,4 +201,6 @@ root = NodePath("..")
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/NewButton" to="." method="OnNewFilePressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button DialogueBox" to="." method="_on_button_dialogue_box_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Choice" to="." method="_on_button_choice_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button IfThen" to="." method="_on_button_if_then_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button SetVar2" to="." method="_on_button_set_var_2_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSetArgs/Add Node Button" to="." method="AddDialogueNode"]

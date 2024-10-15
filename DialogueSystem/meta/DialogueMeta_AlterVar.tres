@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_0wdxb")
-command_name = "setvar"
+command_name = "var"
 arguments = Array[String](["Variable Name", "Operator", "Value", "NextStep"])
 defaultValues = Array[String](["%var", "=", "0", "1,0"])

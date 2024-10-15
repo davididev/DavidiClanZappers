@@ -131,6 +131,7 @@ func _on_button_choice_pressed() -> void:
 	SetNewNodeArguments("choice");
 
 
+
 #Called when we add a new node or edit the node from the add node button
 func SaveDialigueNode():
 	var first = true;
@@ -145,3 +146,11 @@ func SaveDialigueNode():
 	currentFile.AddEntryToGrid(selectedX, selectedY, creatingCommand, creatingArgs);
 	get_node(str("DialogueNode", selectedX, ",", selectedY)).RefreshNode(currentFile.GetEntry(selectedX, selectedY));
 	SetPanel(0);
+
+
+func _on_button_if_then_pressed() -> void:
+	SetNewNodeArguments("ifthen");
+
+
+func _on_button_set_var_2_pressed() -> void:
+	SetNewNodeArguments("var");
