@@ -16,6 +16,7 @@ func _ready() -> void:
 func RefreshNode(myself : DialogueEntry):
 	if myself == null:
 		SetImage(IMAGE_EMPTY);
+		get_node("txt_NodeName").text = "";
 		get_node("OptionButton").visible = false;
 		get_node("Txt_Main").text = "";
 	else:

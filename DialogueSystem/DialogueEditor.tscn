@@ -55,6 +55,13 @@ offset_right = 436.0
 offset_bottom = 179.0
 text = "Load"
 
+[node name="NewButton" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelSelectFile"]
+offset_left = 50.0
+offset_top = 198.0
+offset_right = 260.0
+offset_bottom = 251.0
+text = "New"
+
 [node name="PanelPickNodeType" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
 visible = false
 
@@ -177,6 +184,7 @@ root = NodePath("..")
 [connection signal="text_changed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileName" to="." method="OnChangeTextBox"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/SaveButton" to="." method="OnSaveButtonPressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/LoadButton" to="." method="OnLoadButtonPressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/NewButton" to="." method="OnNewFilePressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button DialogueBox" to="." method="_on_button_dialogue_box_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Choice" to="." method="_on_button_choice_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSetArgs/Add Node Button" to="." method="AddDialogueNode"]
