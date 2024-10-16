@@ -34,13 +34,14 @@ func DeleteNode(x : int, y : int):
 	get_node(str("DialogueNode", x, ",", y)).RefreshNode(null);
 
 func OnLoadButtonPressed():
-	var res = ResourceLoader.load(GetFileDirectory()) as DialogueGrid;
-	await get_tree().create_timer(0.05);
-	if res != null:
-		currentFile = res;
-		for x in range(0, DialogueGrid.WIDTH):
-			for y in range(0, DialogueGrid.HEIGHT):
-				get_node(str("DialogueNode", x, ",", y)).RefreshNode(currentFile.GetEntry(x, y));
+	if ResourceLoader.exists(GetFileDirectory()):
+		var res = ResourceLoader.load(GetFileDirectory()) as DialogueGrid;
+		await get_tree().create_timer(0.05);
+		if res != null:
+			currentFile = res;
+			for x in range(0, DialogueGrid.WIDTH):
+				for y in range(0, DialogueGrid.HEIGHT):
+					get_node(str("DialogueNode", x, ",", y)).RefreshNode(currentFile.GetEntry(x, y));
 				
 func OnChangeTextBox():
 	fileName = get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileName").text;
