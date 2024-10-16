@@ -64,6 +64,17 @@ func ObtainDialogue():
 			EndDialogue();
 		if command == "var":
 			StreamModifyVariables(args);
+		if command == "tel":
+			StreamTeleportNPC(args);
+
+func StreamTeleportNPC(args : Array[String]):
+	var npcName = args[0];
+	var positionStr = args[1].split(",");
+	var nextNodeStr = args[2];
+	var pos : Vector3 = Vector3(positionStr[0].to_float(), positionStr[1].to_float(), positionStr[2].to_float());
+	NPC.npcList[npcName].TeleportActor(pos);
+	DialogueArgsUtility.SetNextNodeFromStr(nextNodeStr);
+	
 
 func StreamModifyVariables(args : Array[String]):
 	var varName = args[0];
