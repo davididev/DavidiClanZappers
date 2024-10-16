@@ -19,10 +19,22 @@ func _ready() -> void:
 	Instance = self;
 
 static func SetVariable(vname : String, vvalue : float):
-	if variables.find_key(vname) == null:  #Hasn't added variable yet
-		vvalue = variables.get_or_add(vname, vvalue);
+	#if variables.find_key(vname) == null:  #Hasn't added variable yet
+	#	print(str("Key ", vname, " does not exist yet."));
+	#	vvalue = variables.get_or_add(vname, vvalue);
+	#else:
+	#	print(str("Key ", vname, " exists.  Setting to ", vvalue))
+	#	variables[vname] = vvalue;
+	variables[vname] = vvalue;
+
+static func GetVariable(vname : String):
+	
+	if variables.has(vname) == false:  #Hasn't added variable yet
+		print(str("Get Var ", vname, "; Variable doesn't exist yet"));
+		return 0.0;
 	else:
-		variables[vname] = vvalue;
+		print(str("Get Var ", vname, "; Variable exists; value is", variables[vname]));
+		return variables[vname];
 
 func StartDialogue(runThis : DialogueGrid):
 	CurrentX = 0;
@@ -50,6 +62,38 @@ func ObtainDialogue():
 			StreamChoiceBox(args);
 		if command == "end":
 			EndDialogue();
+		if command == "var":
+			StreamModifyVariables(args);
+
+func StreamModifyVariables(args : Array[String]):
+	var varName = args[0];
+	var finalValue = GetVariable(varName);
+	
+	var operator = args[1];
+	var firstValue = DialogueArgsUtility.FilterDialogueVariables(args[2]).to_float();
+	
+	#Set var does this automatically
+	if operator == "=":  #Add var
+		finalValue = firstValue;
+	if operator == "+=":  #Add var
+		finalValue += firstValue;
+	if operator == "-=":  #Subtract var
+		finalValue -= firstValue;
+	if operator == "*=":  #Multiply var
+		finalValue *= firstValue;
+	if operator == "/=":  #Divide var
+		finalValue /= firstValue;
+	if operator == "+":  #Add var
+		finalValue += firstValue;
+	if operator == "-":  #Subtract var
+		finalValue -= firstValue;
+	if operator == "*":  #Multiply var
+		finalValue *= firstValue;
+	if operator == "/":  #Divide var
+		finalValue /= firstValue;
+	
+	SetVariable(varName, finalValue);
+	DialogueArgsUtility.SetNextNodeFromStr(args[3]);
 
 func StreamDialogueBox(args : Array[String]):
 	
