@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjpbq4g8mb34l"
-path="res://.godot/imported/NodeRed.png-a6e1890a0314319f01587797c0c5c062.ctex"
+uid="uid://e5xgwcg17m8y"
+path="res://.godot/imported/NodeEmpty.png-d5851b29443728a84349b172ac4cf9ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogueSystem/NodeRed.png"
-dest_files=["res://.godot/imported/NodeRed.png-a6e1890a0314319f01587797c0c5c062.ctex"]
+source_file="res://DialogueSystem/ui/NodeEmpty.png"
+dest_files=["res://.godot/imported/NodeEmpty.png-d5851b29443728a84349b172ac4cf9ad.ctex"]
 
 [params]
 

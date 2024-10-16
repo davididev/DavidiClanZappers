@@ -192,3 +192,19 @@ func _on_button_sound_pressed() -> void:
 func _on_file_names_box_item_selected(index: int) -> void:
 	var s = get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileNamesBox").get_item_text(index);
 	get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileName").text = s;
+
+
+func _on_butotn_music_pressed() -> void:
+	SetNewNodeArguments("mus"); 
+
+
+func _on_button_end_pressed() -> void:
+	SetNewNodeArguments("end");
+
+
+func _on_button_change_scene_pressed() -> void:
+	SetNewNodeArguments("sce");
+
+
+func _on_button_teleport_pressed() -> void:
+	SetNewNodeArguments("tel");

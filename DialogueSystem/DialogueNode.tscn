@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c84q1bhurmaje"]
+[gd_scene load_steps=9 format=3 uid="uid://c84q1bhurmaje"]
 
 [ext_resource type="Script" path="res://DialogueSystem/dialogue_node_scene.gd" id="1_hptkn"]
-[ext_resource type="Texture2D" uid="uid://e5xgwcg17m8y" path="res://DialogueSystem/NodeEmpty.png" id="2_txslj"]
-[ext_resource type="Texture2D" uid="uid://p3n83iyfep58" path="res://DialogueSystem/NodeBlue.png" id="3_o47rx"]
-[ext_resource type="Texture2D" uid="uid://bjpbq4g8mb34l" path="res://DialogueSystem/NodeRed.png" id="4_olwk1"]
+[ext_resource type="Texture2D" uid="uid://e5xgwcg17m8y" path="res://DialogueSystem/ui/NodeEmpty.png" id="2_txslj"]
+[ext_resource type="Texture2D" uid="uid://p3n83iyfep58" path="res://DialogueSystem/ui/NodeBlue.png" id="3_o47rx"]
+[ext_resource type="Texture2D" uid="uid://bjpbq4g8mb34l" path="res://DialogueSystem/ui/NodeRed.png" id="4_olwk1"]
+[ext_resource type="Texture2D" uid="uid://cook7ex8wmcpb" path="res://DialogueSystem/ui/NodeGreen.png" id="5_if6m3"]
 [ext_resource type="FontFile" uid="uid://c3y787qm8icnd" path="res://Fonts/cour.ttf" id="5_nogvb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb4fu"]
@@ -16,7 +17,7 @@ default_font_size = 15
 
 [node name="DialogueNode" type="Node2D"]
 script = ExtResource("1_hptkn")
-possibleImages = Array[NodePath]([NodePath("NodeEmpty"), NodePath("NodeBlue"), NodePath("NodeRed")])
+possibleImages = Array[NodePath]([NodePath("NodeEmpty"), NodePath("NodeBlue"), NodePath("NodeGreen"), NodePath("NodeRed")])
 
 [node name="NodeEmpty" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.215686)
@@ -35,6 +36,12 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_olwk1")
+
+[node name="NodeGreen" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_if6m3")
 
 [node name="txt_NodeName" type="Label" parent="."]
 offset_left = 50.0

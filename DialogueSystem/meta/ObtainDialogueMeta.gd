@@ -22,4 +22,12 @@ static func GetMeta(command_str : String) -> DialogueNodeMetaData:
 		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_Flash.tres");
 	if command_str == "snd":
 		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_PlaySound.tres");
+	if command_str == "mus":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_Music.tres");
+	if command_str == "end":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_End.tres");
+	if command_str == "sce":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_ChangeScene.tres");
+	if command_str == "tel":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueTeleportActor.tres");
 	return null;

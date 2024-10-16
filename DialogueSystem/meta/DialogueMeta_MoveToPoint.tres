@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_1f75v")
 command_name = "move"
-arguments = Array[String](["Actor to move", "Position", "Move Speed", "Wait Until Done", "Next Node"])
-defaultValues = Array[String](["Player", "5,0,0", "10.0", "true", "1,0"])
+arguments = Array[String](["Actor to move", "Position", "Move Speed", "Wait Until Done", "Ignore Y Axis", "Next Node"])
+defaultValues = Array[String](["Player", "5,0,0", "10.0", "true", "true", "1,0"])

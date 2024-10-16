@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://cslervsgh6j21"]
+
+[ext_resource type="Script" path="res://DialogueSystem/meta/DialogueNodeMetaData.gd" id="1_fswdv"]
+
+[resource]
+script = ExtResource("1_fswdv")
+command_name = "sce"
+arguments = Array[String](["Scene Directory", "Position"])
+defaultValues = Array[String](["Game1/Scene", "0,0,0"])

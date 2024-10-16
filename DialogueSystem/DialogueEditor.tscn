@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://de561b4xif0ds"]
+[gd_scene load_steps=7 format=3 uid="uid://de561b4xif0ds"]
 
 [ext_resource type="Script" path="res://DialogueSystem/dialogue_editor.gd" id="1_08vol"]
 [ext_resource type="PackedScene" uid="uid://c84q1bhurmaje" path="res://DialogueSystem/DialogueNode.tscn" id="1_vmf3m"]
 [ext_resource type="Theme" uid="uid://bga4dn6xiaw85" path="res://DialogueSystem/meta/InputTextTheme.tres" id="2_3jxqi"]
+[ext_resource type="Theme" uid="uid://lebvw2nrujou" path="res://DialogueSystem/ui/Theme_ButtonOneFork.tres" id="2_omscw"]
+[ext_resource type="Theme" uid="uid://bh6thbwa30yyu" path="res://DialogueSystem/ui/ThemeButton_NoFork.tres" id="3_x18sg"]
+[ext_resource type="Theme" uid="uid://de752qimi48l3" path="res://DialogueSystem/ui/ThemeButton_MultiFork.tres" id="4_gwdfu"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_08vol")
@@ -26,6 +29,7 @@ grow_vertical = 0
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
 [node name="PanelSelectFile" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
+visible = false
 
 [node name="FileName" type="TextEdit" parent="Camera2D/NodeEditor/ColorRect/PanelSelectFile"]
 offset_left = 87.0
@@ -76,13 +80,13 @@ offset_bottom = 54.0
 text = "File in list:"
 
 [node name="PanelPickNodeType" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
-visible = false
 
 [node name="Button DialogueBox" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_left = 26.0
 offset_top = 47.0
 offset_right = 226.0
 offset_bottom = 97.0
+theme = ExtResource("2_omscw")
 text = "Dialogue Box"
 
 [node name="Button Move Actor" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -90,6 +94,7 @@ offset_left = 26.0
 offset_top = 111.0
 offset_right = 226.0
 offset_bottom = 161.0
+theme = ExtResource("2_omscw")
 text = "Move to pt"
 
 [node name="Button Sound" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -97,6 +102,7 @@ offset_left = 26.0
 offset_top = 175.0
 offset_right = 226.0
 offset_bottom = 225.0
+theme = ExtResource("2_omscw")
 text = "Play sound fx"
 
 [node name="Button Send Signal" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -104,13 +110,31 @@ offset_left = 738.0
 offset_top = 47.0
 offset_right = 938.0
 offset_bottom = 97.0
+theme = ExtResource("2_omscw")
 text = "Send Signal"
+
+[node name="Button Change Scene" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 938.0
+offset_top = 47.0
+offset_right = 1138.0
+offset_bottom = 97.0
+theme = ExtResource("3_x18sg")
+text = "Change Scene"
+
+[node name="Button Teleport" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 938.0
+offset_top = 111.0
+offset_right = 1138.0
+offset_bottom = 161.0
+theme = ExtResource("2_omscw")
+text = "Teleport"
 
 [node name="Button Flash" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_left = 738.0
 offset_top = 116.0
 offset_right = 938.0
 offset_bottom = 166.0
+theme = ExtResource("2_omscw")
 text = "Flash"
 
 [node name="Button Choice" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -118,6 +142,7 @@ offset_left = 290.0
 offset_top = 47.0
 offset_right = 490.0
 offset_bottom = 97.0
+theme = ExtResource("4_gwdfu")
 text = "Choice Box"
 
 [node name="Butotn Wait" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -125,13 +150,31 @@ offset_left = 290.0
 offset_top = 111.0
 offset_right = 490.0
 offset_bottom = 161.0
+theme = ExtResource("2_omscw")
 text = "Wait"
+
+[node name="Butotn Music" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 290.0
+offset_top = 175.0
+offset_right = 490.0
+offset_bottom = 225.0
+theme = ExtResource("2_omscw")
+text = "Play Music"
+
+[node name="Button End" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 506.0
+offset_top = 175.0
+offset_right = 706.0
+offset_bottom = 225.0
+theme = ExtResource("3_x18sg")
+text = "End Dialogue"
 
 [node name="Button IfThen" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_left = 506.0
 offset_top = 47.0
 offset_right = 706.0
 offset_bottom = 97.0
+theme = ExtResource("4_gwdfu")
 text = "If/Then/Else"
 
 [node name="Button SetVar2" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -139,6 +182,7 @@ offset_left = 506.0
 offset_top = 114.0
 offset_right = 706.0
 offset_bottom = 164.0
+theme = ExtResource("2_omscw")
 text = "Modify Var"
 
 [node name="Header" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -252,9 +296,13 @@ root = NodePath("..")
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Move Actor" to="." method="_on_button_move_actor_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Sound" to="." method="_on_button_sound_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Send Signal" to="." method="_on_button_send_signal_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Change Scene" to="." method="_on_button_change_scene_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Teleport" to="." method="_on_button_teleport_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Flash" to="." method="_on_button_flash_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Choice" to="." method="_on_button_choice_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Butotn Wait" to="." method="_on_butotn_wait_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Butotn Music" to="." method="_on_butotn_music_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button End" to="." method="_on_button_end_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button IfThen" to="." method="_on_button_if_then_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button SetVar2" to="." method="_on_button_set_var_2_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSetArgs/Add Node Button" to="." method="AddDialogueNode"]

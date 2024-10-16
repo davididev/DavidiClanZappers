@@ -7,7 +7,8 @@ var y : int = 0;
 var hover_empty_node = false;
 const IMAGE_EMPTY = 0;
 const IMAGE_SINGLE_FORK = 1;
-const IMAGE_MULTI_FORK = 2;
+const IMAGE_MULTI_FORK = 2
+const IMAGE_NO_FORK = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,6 +49,18 @@ func RefreshNode(myself : DialogueEntry):
 		if myself.cmd == "snd":
 			SetImage(IMAGE_SINGLE_FORK);
 			get_node("txt_NodeName").text = "Play Sound";	
+		if myself.cmd == "mus":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Play Music";	
+		if myself.cmd == "end":
+			SetImage(IMAGE_NO_FORK);
+			get_node("txt_NodeName").text = "End event";
+		if myself.cmd == "sce":
+			SetImage(IMAGE_NO_FORK);
+			get_node("txt_NodeName").text = "Change scene";	
+		if myself.cmd == "tel":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Teleport actor";
 		var args = myself.GetArguments();
 		var argsStr = "";
 		for arg in args:
