@@ -12,6 +12,7 @@ static var IsRunning = false;
 static var CurrentX : int = 0;
 static var CurrentY : int = 0;
 static var variables : Dictionary;
+static var Selected_Choice = -1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -45,7 +46,10 @@ func ObtainDialogue():
 		var args = currentNode.GetArguments();
 		if command == "str":
 			StreamDialogueBox(args);
-
+		if command == "choice":
+			StreamChoiceBox(args);
+		if command == "end":
+			EndDialogue();
 
 func StreamDialogueBox(args : Array[String]):
 	
@@ -90,6 +94,27 @@ func StreamDialogueBox(args : Array[String]):
 		await get_tree().create_timer(1.0 / 60.0).timeout;
 	DialogueArgsUtility.SetNextNodeFromStr(nextNode);
 
+
+
+func StreamChoiceBox(args : Array[String]):
+	visible = true;
+	Selected_Choice = -1;
+	get_node(HeaderText).text = "SELECT ONE";
+	get_node(BodyText).text = "";
+	var outputs = args[4].split(" ");
+	
+	for i in range(0, 4):
+		if args[i] != "":  
+			get_node(ChoiceButtons[i]).visible = true;
+			get_node(ChoiceButtons[i]).text = args[i];
+	get_node(ChoiceButtons[0]).grab_focus();
+	
+	while Selected_Choice == -1:
+		await get_tree().create_timer(1.0 / 60.0).timeout;
+	
+	DialogueArgsUtility.SetNextNodeFromStr(outputs[Selected_Choice]);
+	
+
 func EndDialogue():
 	dialogueThread = null;
 	IsRunning = false;
@@ -97,3 +122,19 @@ func EndDialogue():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_button_choice_1_pressed() -> void:
+	Selected_Choice = 0;
+
+
+func _on_button_choice_2_pressed() -> void:
+	Selected_Choice = 1;
+
+
+func _on_button_choice_3_pressed() -> void:
+	Selected_Choice = 2;
+
+
+func _on_button_choice_4_pressed() -> void:
+	Selected_Choice = 3;
