@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://de561b4xif0ds"]
 
-[ext_resource type="Script" path="res://DialogueSystem/dialogue_editor.gd" id="1_08vol"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/dialogue_editor.gd" id="1_08vol"]
 [ext_resource type="PackedScene" uid="uid://c84q1bhurmaje" path="res://DialogueSystem/DialogueNode.tscn" id="1_vmf3m"]
 [ext_resource type="Theme" uid="uid://bga4dn6xiaw85" path="res://DialogueSystem/meta/InputTextTheme.tres" id="2_3jxqi"]
 [ext_resource type="Theme" uid="uid://lebvw2nrujou" path="res://DialogueSystem/ui/Theme_ButtonOneFork.tres" id="2_omscw"]
