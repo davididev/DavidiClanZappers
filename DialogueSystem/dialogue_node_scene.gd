@@ -33,7 +33,21 @@ func RefreshNode(myself : DialogueEntry):
 		if myself.cmd == "ifthen":
 			SetImage(IMAGE_MULTI_FORK);
 			get_node("txt_NodeName").text = "If/Then/Else";
-			
+		if myself.cmd == "msg":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Send Message";
+		if myself.cmd == "move":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Move Actor";
+		if myself.cmd == "wait":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Wait";
+		if myself.cmd == "flash":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Flash";	
+		if myself.cmd == "snd":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Play Sound";	
 		var args = myself.GetArguments();
 		var argsStr = "";
 		for arg in args:

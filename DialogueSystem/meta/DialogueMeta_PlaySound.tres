@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://7bkf3hx5eu2v"]
+
+[ext_resource type="Script" path="res://DialogueSystem/meta/DialogueNodeMetaData.gd" id="1_34t00"]
+
+[resource]
+script = ExtResource("1_34t00")
+command_name = "snd"
+arguments = Array[String](["Sound file", "Next node"])
+defaultValues = Array[String](["sound.wav", "1,0"])

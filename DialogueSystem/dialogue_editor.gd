@@ -154,3 +154,23 @@ func _on_button_if_then_pressed() -> void:
 
 func _on_button_set_var_2_pressed() -> void:
 	SetNewNodeArguments("var");
+
+
+func _on_button_send_signal_pressed() -> void:
+	SetNewNodeArguments("msg");
+
+
+func _on_button_move_actor_pressed() -> void:
+	SetNewNodeArguments("move");
+
+
+func _on_butotn_wait_pressed() -> void:
+	SetNewNodeArguments("wait");
+
+
+func _on_button_flash_pressed() -> void:
+	SetNewNodeArguments("flash");
+
+
+func _on_button_sound_pressed() -> void:
+	SetNewNodeArguments("snd"); 

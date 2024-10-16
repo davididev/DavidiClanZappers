@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://xemctxfx1ltt"]
+
+[ext_resource type="Script" path="res://DialogueSystem/meta/DialogueNodeMetaData.gd" id="1_k8n2l"]
+
+[resource]
+script = ExtResource("1_k8n2l")
+command_name = "msg"
+arguments = Array[String](["Actor Name", "Signal name", "Next node"])
+defaultValues = Array[String](["Player", "Damage", "1,0"])

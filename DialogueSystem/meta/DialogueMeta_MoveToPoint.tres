@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://cotitnjiqnk2u"]
+
+[ext_resource type="Script" path="res://DialogueSystem/meta/DialogueNodeMetaData.gd" id="1_1f75v"]
+
+[resource]
+script = ExtResource("1_1f75v")
+command_name = "move"
+arguments = Array[String](["Actor to move", "Position", "Move Speed", "Wait Until Done", "Next Node"])
+defaultValues = Array[String](["Player", "5,0,0", "10.0", "true", "1,0"])

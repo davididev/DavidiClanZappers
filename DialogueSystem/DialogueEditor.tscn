@@ -66,31 +66,66 @@ text = "New"
 [node name="PanelPickNodeType" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
 
 [node name="Button DialogueBox" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
-offset_left = 82.0
-offset_top = 87.0
-offset_right = 282.0
-offset_bottom = 137.0
+offset_left = 26.0
+offset_top = 47.0
+offset_right = 226.0
+offset_bottom = 97.0
 text = "Dialogue Box"
 
+[node name="Button Move Actor" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 26.0
+offset_top = 111.0
+offset_right = 226.0
+offset_bottom = 161.0
+text = "Move to pt"
+
+[node name="Button Sound" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 26.0
+offset_top = 175.0
+offset_right = 226.0
+offset_bottom = 225.0
+text = "Play sound fx"
+
+[node name="Button Send Signal" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 738.0
+offset_top = 47.0
+offset_right = 938.0
+offset_bottom = 97.0
+text = "Send Signal"
+
+[node name="Button Flash" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 738.0
+offset_top = 116.0
+offset_right = 938.0
+offset_bottom = 166.0
+text = "Flash"
+
 [node name="Button Choice" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
-offset_left = 346.0
-offset_top = 87.0
-offset_right = 546.0
-offset_bottom = 137.0
+offset_left = 290.0
+offset_top = 47.0
+offset_right = 490.0
+offset_bottom = 97.0
 text = "Choice Box"
 
+[node name="Butotn Wait" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 290.0
+offset_top = 111.0
+offset_right = 490.0
+offset_bottom = 161.0
+text = "Wait"
+
 [node name="Button IfThen" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
-offset_left = 562.0
-offset_top = 87.0
-offset_right = 762.0
-offset_bottom = 137.0
+offset_left = 506.0
+offset_top = 47.0
+offset_right = 706.0
+offset_bottom = 97.0
 text = "If/Then/Else"
 
 [node name="Button SetVar2" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
-offset_left = 562.0
-offset_top = 154.0
-offset_right = 762.0
-offset_bottom = 204.0
+offset_left = 506.0
+offset_top = 114.0
+offset_right = 706.0
+offset_bottom = 164.0
 text = "Modify Var"
 
 [node name="Header" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
@@ -200,7 +235,12 @@ root = NodePath("..")
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/LoadButton" to="." method="OnLoadButtonPressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/NewButton" to="." method="OnNewFilePressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button DialogueBox" to="." method="_on_button_dialogue_box_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Move Actor" to="." method="_on_button_move_actor_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Sound" to="." method="_on_button_sound_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Send Signal" to="." method="_on_button_send_signal_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Flash" to="." method="_on_button_flash_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Choice" to="." method="_on_button_choice_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Butotn Wait" to="." method="_on_butotn_wait_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button IfThen" to="." method="_on_button_if_then_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button SetVar2" to="." method="_on_button_set_var_2_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSetArgs/Add Node Button" to="." method="AddDialogueNode"]

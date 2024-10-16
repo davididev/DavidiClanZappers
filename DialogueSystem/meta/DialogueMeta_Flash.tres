@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://enfete3usp2p"]
+
+[ext_resource type="Script" path="res://DialogueSystem/meta/DialogueNodeMetaData.gd" id="1_c4m48"]
+
+[resource]
+script = ExtResource("1_c4m48")
+command_name = "flash"
+arguments = Array[String](["Flash Color", "Time", "Next node"])
+defaultValues = Array[String](["1.0 1.0 1.0", "0.5", "1,0"])

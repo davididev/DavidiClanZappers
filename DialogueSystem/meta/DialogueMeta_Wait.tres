@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://c54nd86vxsj7s"]
+
+[ext_resource type="Script" path="res://DialogueSystem/meta/DialogueNodeMetaData.gd" id="1_1fx5t"]
+
+[resource]
+script = ExtResource("1_1fx5t")
+command_name = "wait"
+arguments = Array[String](["Wait Time", "Wait for all movement", "Next node"])
+defaultValues = Array[String](["5.0", "false", "1,0"])
