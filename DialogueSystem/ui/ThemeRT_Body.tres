@@ -1,8 +1,13 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://btqtpcg0hhree"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://btqtpcg0hhree"]
 
 [ext_resource type="FontFile" uid="uid://dqyinpbj5yjxr" path="res://Fonts/PixelOperator.ttf" id="1_v4qh3"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t5wx1"]
+
 [resource]
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_v4qh3")
+Button/styles/focus = SubResource("StyleBoxTexture_t5wx1")
 RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/shadow_offset_x = 2
 RichTextLabel/constants/shadow_offset_y = 2

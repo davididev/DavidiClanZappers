@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=13 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://b7lrgt3hlawkv" path="res://DialogueSystem/ui/ThemeRT_Header.tres" id="8_id21u"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueHandler.gd" id="8_oha4v"]
 [ext_resource type="Theme" uid="uid://btqtpcg0hhree" path="res://DialogueSystem/ui/ThemeRT_Body.tres" id="9_ayg6i"]
+[ext_resource type="Theme" uid="uid://g2i82i2usg33" path="res://DialogueSystem/ui/ThemeChoiceButton.tres" id="11_sm0hw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uve4q"]
 font_size = 25
@@ -123,6 +124,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DialogueBox" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -134,6 +136,9 @@ grow_horizontal = 2
 pivot_offset = Vector2(256, 0)
 texture = ExtResource("7_qxomr")
 script = ExtResource("8_oha4v")
+HeaderText = NodePath("Header")
+BodyText = NodePath("Body")
+ChoiceButtons = Array[NodePath]([NodePath("Button Choice1"), NodePath("Button Choice2"), NodePath("Button Choice3"), NodePath("Button Choice4")])
 
 [node name="Header" type="RichTextLabel" parent="DialogueBox"]
 layout_mode = 0
@@ -152,3 +157,43 @@ offset_bottom = 247.0
 theme = ExtResource("9_ayg6i")
 bbcode_enabled = true
 text = "Blah blah blah"
+
+[node name="Button Choice1" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 42.0
+offset_right = 500.0
+offset_bottom = 92.0
+theme = ExtResource("11_sm0hw")
+text = "Choice lol"
+
+[node name="Button Choice2" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 93.0
+offset_right = 500.0
+offset_bottom = 143.0
+theme = ExtResource("11_sm0hw")
+text = "Choice lol"
+
+[node name="Button Choice3" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 144.0
+offset_right = 500.0
+offset_bottom = 194.0
+theme = ExtResource("11_sm0hw")
+text = "Choice lol"
+
+[node name="Button Choice4" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 196.0
+offset_right = 500.0
+offset_bottom = 246.0
+theme = ExtResource("11_sm0hw")
+text = "Choice lol"

@@ -23,3 +23,4 @@ static func SetNextNodeFromStr(s : String):
 	var myCoords = s.split(",");
 	DialogueHandler.CurrentX = myCoords[0].to_int();
 	DialogueHandler.CurrentY = myCoords[1].to_int();
+	DialogueHandler.Instance.ObtainDialogue();

@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://g2i82i2usg33"]
+
+[ext_resource type="FontFile" uid="uid://dqyinpbj5yjxr" path="res://Fonts/PixelOperator.ttf" id="1_n605u"]
+[ext_resource type="Texture2D" uid="uid://cj7q33tosc7n0" path="res://DialogueSystem/ui/ChoiceSelected.png" id="1_yymr8"]
+[ext_resource type="Texture2D" uid="uid://dy11roxuw8wwh" path="res://DialogueSystem/ui/ChoiceButtonNonSelected.png" id="2_pvmh7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5k38i"]
+texture = ExtResource("1_yymr8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3qwwk"]
+texture = ExtResource("1_yymr8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hv5gh"]
+texture = ExtResource("2_pvmh7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mat63"]
+bg_color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_n605u")
+Button/styles/focus = SubResource("StyleBoxTexture_5k38i")
+Button/styles/hover = SubResource("StyleBoxTexture_3qwwk")
+Button/styles/normal = SubResource("StyleBoxTexture_hv5gh")
+Button/styles/pressed = SubResource("StyleBoxFlat_mat63")
