@@ -26,7 +26,6 @@ grow_vertical = 0
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
 [node name="PanelSelectFile" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
-visible = false
 
 [node name="FileName" type="TextEdit" parent="Camera2D/NodeEditor/ColorRect/PanelSelectFile"]
 offset_left = 87.0
@@ -63,7 +62,21 @@ offset_right = 260.0
 offset_bottom = 251.0
 text = "New"
 
+[node name="FileNamesBox" type="OptionButton" parent="Camera2D/NodeEditor/ColorRect/PanelSelectFile"]
+offset_left = 421.0
+offset_top = 54.0
+offset_right = 774.0
+offset_bottom = 98.0
+
+[node name="Label2" type="Label" parent="Camera2D/NodeEditor/ColorRect/PanelSelectFile"]
+offset_left = 420.0
+offset_top = 8.0
+offset_right = 818.0
+offset_bottom = 54.0
+text = "File in list:"
+
 [node name="PanelPickNodeType" type="Node2D" parent="Camera2D/NodeEditor/ColorRect"]
+visible = false
 
 [node name="Button DialogueBox" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_left = 26.0
@@ -234,6 +247,7 @@ root = NodePath("..")
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/SaveButton" to="." method="OnSaveButtonPressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/LoadButton" to="." method="OnLoadButtonPressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/NewButton" to="." method="OnNewFilePressed"]
+[connection signal="item_selected" from="Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileNamesBox" to="." method="_on_file_names_box_item_selected"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button DialogueBox" to="." method="_on_button_dialogue_box_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Move Actor" to="." method="_on_button_move_actor_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Sound" to="." method="_on_button_sound_pressed"]

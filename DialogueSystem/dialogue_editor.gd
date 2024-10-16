@@ -109,6 +109,17 @@ func SetPanel(id : int):
 	get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile").visible = id == 0;
 	get_node("Camera2D/NodeEditor/ColorRect/PanelPickNodeType").visible = id == 1;
 	get_node("Camera2D/NodeEditor/ColorRect/PanelSetArgs").visible = id == 2;
+	
+	if id == 0: #Select file- refresh dropdown
+		var box : OptionButton = get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileNamesBox");
+		box.clear();
+		var dir = DirAccess.open("res://DialogueSystem/output");
+		var list = dir.get_files();
+		for i in range(0, list.size()):
+			var str = list[i];
+			str = str.rstrip(".res");
+			box.add_item(str);
+		
 
 var cam : Camera2D;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -175,3 +186,8 @@ func _on_button_flash_pressed() -> void:
 
 func _on_button_sound_pressed() -> void:
 	SetNewNodeArguments("snd"); 
+
+
+func _on_file_names_box_item_selected(index: int) -> void:
+	var s = get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileNamesBox").get_item_text(index);
+	get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileName").text = s;
