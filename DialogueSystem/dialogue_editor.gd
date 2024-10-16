@@ -120,6 +120,7 @@ func SetPanel(id : int):
 			str = str.rstrip(".res");
 			box.add_item(str);
 		
+		box.selected = -1;
 
 var cam : Camera2D;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
