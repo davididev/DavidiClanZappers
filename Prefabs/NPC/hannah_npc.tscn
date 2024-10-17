@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://uv1my8jy05dd"]
+
+[ext_resource type="PackedScene" uid="uid://60swx8n3tj41" path="res://Graphics/Characters/Hannah/HannahModelFinal.glb" id="1_6vufn"]
+[ext_resource type="AnimationLibrary" uid="uid://brwc15o334uy0" path="res://Graphics/Characters/AvatarAnimationLib.res" id="2_b288w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dnxv8"]
+
+[node name="HannahNPC" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_dnxv8")
+
+[node name="HannahModelFinal" parent="CharacterBody3D/CollisionShape3D" instance=ExtResource("1_6vufn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CharacterBody3D/CollisionShape3D/HannahModelFinal"]
+libraries = {
+"AvatarAnimationLib": ExtResource("2_b288w")
+}

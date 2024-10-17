@@ -46,6 +46,7 @@ func OnLoadButtonPressed():
 func OnChangeTextBox():
 	fileName = get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileName").text;
 func GetFileDirectory():
+	fileName = get_node("Camera2D/NodeEditor/ColorRect/PanelSelectFile/FileName").text;
 	return str("res://DialogueSystem/output/", fileName, ".res");
 
 # Called when the node enters the scene tree for the first time.

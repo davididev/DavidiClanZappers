@@ -1,0 +1,8 @@
+[gd_resource type="BoneMap" load_steps=2 format=3 uid="uid://fdot850u3adm"]
+
+[sub_resource type="SkeletonProfile" id="SkeletonProfile_xsp2m"]
+
+[resource]
+resource_local_to_scene = true
+profile = SubResource("SkeletonProfile_xsp2m")
+bonemap = null

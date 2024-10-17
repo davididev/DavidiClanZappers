@@ -1,4 +1,7 @@
-[gd_resource type="BoneMap" format=3 uid="uid://cnnpgippdmblw"]
+[gd_resource type="BoneMap" load_steps=2 format=3 uid="uid://cnnpgippdmblw"]
+
+[sub_resource type="SkeletonProfile" id="SkeletonProfile_sapjp"]
 
 [resource]
+profile = SubResource("SkeletonProfile_sapjp")
 bonemap = null
