@@ -8,7 +8,7 @@ func GetArguments() -> Array[String]:
 	var temp = args.split("_");
 	var temp2 : Array[String];
 	for i in temp.size():
-		print(str("Adding ", i, ": ", temp[i]));
+		#print(str("Adding ", i, ": ", temp[i]));
 		temp2.append(temp[i].replace("&u;", "_"));
 		
 	return temp2;

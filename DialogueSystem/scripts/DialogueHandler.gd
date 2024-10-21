@@ -30,10 +30,10 @@ static func SetVariable(vname : String, vvalue : float):
 static func GetVariable(vname : String):
 	
 	if variables.has(vname) == false:  #Hasn't added variable yet
-		print(str("Get Var ", vname, "; Variable doesn't exist yet"));
+		#print(str("Get Var ", vname, "; Variable doesn't exist yet"));
 		return 0.0;
 	else:
-		print(str("Get Var ", vname, "; Variable exists; value is", variables[vname]));
+		#print(str("Get Var ", vname, "; Variable exists; value is", variables[vname]));
 		return variables[vname];
 
 func StartDialogue(runThis : DialogueGrid):

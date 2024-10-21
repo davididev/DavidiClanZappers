@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 
 func set_cc_rotation(moveVec : Vector3, delta : float):
-	if moveVec != Vector3.ZERO:
+	if moveVec != Vector3.ZERO && DialogueHandler.IsRunning == false:
 		targetAngle = rad_to_deg(atan2(moveVec.x, moveVec.z));;
 		
 	var cc : CharacterBody3D = get_node(characterController);
@@ -57,7 +57,10 @@ func _process(delta: float) -> void:
 		
 		
 	moveSpeed.y = gravity;
-	cc.velocity = moveSpeed;
+	if DialogueHandler.IsRunning:
+		cc.velocity = Vector3.ZERO;
+	else:
+		cc.velocity = moveSpeed;
 	cc.move_and_slide();
 	
 	
