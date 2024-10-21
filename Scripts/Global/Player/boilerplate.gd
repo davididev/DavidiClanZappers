@@ -35,6 +35,10 @@ func set_cc_rotation(moveVec : Vector3, delta : float):
 func _process(delta: float) -> void:
 	var cc : CharacterBody3D = get_node(characterController);
 	var moveVec = Vector3(Input.get_axis("move_left", "move_right"), 0.0, Input.get_axis("move_up", "move_down"));
+	
+	if DialogueHandler.IsRunning:
+		moveVec = Vector3.ZERO;
+	
 	if moveVec.x == 0.0:
 		moveSpeed.x = move_toward(moveSpeed.x, 0.0, MOVE_PER_SECOND * delta);
 	else:
@@ -43,6 +47,8 @@ func _process(delta: float) -> void:
 		moveSpeed.z = move_toward(moveSpeed.z, 0.0, MOVE_PER_SECOND * delta);
 	else:
 		moveSpeed.z = move_toward(moveSpeed.z, MAX_SPEED * moveVec.z, MOVE_PER_SECOND * delta);
+	
+	
 	
 	set_cc_rotation(moveVec, delta);
 	
@@ -57,10 +63,8 @@ func _process(delta: float) -> void:
 		
 		
 	moveSpeed.y = gravity;
-	if DialogueHandler.IsRunning:
-		cc.velocity = Vector3.ZERO;
-	else:
-		cc.velocity = moveSpeed;
+	
+	cc.velocity = moveSpeed;
 	cc.move_and_slide();
 	
 	
