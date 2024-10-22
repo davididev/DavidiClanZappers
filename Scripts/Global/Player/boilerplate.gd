@@ -79,8 +79,8 @@ func single_play_animatuons(delta : float):
 	
 	attackAnimationTime -= delta;
 	if attackAnimationTime <= 0.0:
-		if lastAnimation == &"AvatarAnimationLib/JumpStart":
-			lastAnimation = &"AvatarAnimationLib/JumpIdle";
+		if lastAnimation == &"HumanoidAnim/JumpStart":
+			lastAnimation = &"HumanoidAnim/JumpIdle";
 			get_node(animationPlayer).play(lastAnimation);
 
 func movement_animations():
@@ -90,24 +90,24 @@ func movement_animations():
 		return;
 	
 	if is_equal_approx(gravity, 0.0):
-		if lastAnimation == &"AvatarAnimationLib/JumpIdle":
-			lastAnimation = &"AvatarAnimationLib/JumpEnd";
+		if lastAnimation == &"HumanoidAnim/JumpIdle":
+			lastAnimation = &"HumanoidAnim/JumpEnd";
 			get_node(animationPlayer).play(lastAnimation);
-			attackAnimationTime = 0.3333;
+			attackAnimationTime = 2.25;
 		
 		if xzMove.length() > 0.1:
-			if lastAnimation != &"AvatarAnimationLib/Run":
-				lastAnimation = &"AvatarAnimationLib/Run";
+			if lastAnimation != &"HumanoidAnim/Walk":
+				lastAnimation = &"HumanoidAnim/Walk";
 				get_node(animationPlayer).play(lastAnimation);
 		else:
-			if lastAnimation != &"AvatarAnimationLib/Idle":
-				lastAnimation = &"AvatarAnimationLib/Idle";
+			if lastAnimation != &"HumanoidAnim/Idle":
+				lastAnimation = &"HumanoidAnim/Idle";
 				get_node(animationPlayer).play(lastAnimation);
 	else:
-		if lastAnimation == &"AvatarAnimationLib/Run" || lastAnimation == &"AvatarAnimationLib/Idle":
-			lastAnimation = &"AvatarAnimationLib/JumpStart";
+		if lastAnimation == &"HumanoidAnim/Run" || lastAnimation == &"HumanoidAnim/Idle":
+			lastAnimation = &"HumanoidAnim/JumpStart";
 			get_node(animationPlayer).play(lastAnimation);
-			attackAnimationTime = 0.3333;
+			attackAnimationTime = 0.833;
 		else:
-			lastAnimation = &"AvatarAnimationLib/JumpIdle";
+			lastAnimation = &"HumanoidAnim/JumpIdle";
 			get_node(animationPlayer).play(lastAnimation);
