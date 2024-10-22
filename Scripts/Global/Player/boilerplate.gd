@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	
 	if cc.is_on_floor() && gravity < 0.0:
 		gravity = 0.0;
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") && DialogueHandler.IsRunning == false:
 			gravity = 5.0;
 		
 		
