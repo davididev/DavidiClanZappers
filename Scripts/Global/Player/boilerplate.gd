@@ -93,21 +93,21 @@ func movement_animations():
 		if lastAnimation == &"HumanoidAnim/JumpIdle":
 			lastAnimation = &"HumanoidAnim/JumpEnd";
 			get_node(animationPlayer).play(lastAnimation);
-			attackAnimationTime = 2.25;
+			attackAnimationTime = 1.09;
 		
 		if xzMove.length() > 0.1:
 			if lastAnimation != &"HumanoidAnim/Walk":
 				lastAnimation = &"HumanoidAnim/Walk";
 				get_node(animationPlayer).play(lastAnimation);
-		else:
+		if xzMove.length() < 0.1:
 			if lastAnimation != &"HumanoidAnim/Idle":
 				lastAnimation = &"HumanoidAnim/Idle";
 				get_node(animationPlayer).play(lastAnimation);
 	else:
-		if lastAnimation == &"HumanoidAnim/Run" || lastAnimation == &"HumanoidAnim/Idle":
+		if lastAnimation == &"HumanoidAnim/Walk" || lastAnimation == &"HumanoidAnim/Idle":
 			lastAnimation = &"HumanoidAnim/JumpStart";
 			get_node(animationPlayer).play(lastAnimation);
-			attackAnimationTime = 0.833;
+			attackAnimationTime = 0.47;
 		else:
 			lastAnimation = &"HumanoidAnim/JumpIdle";
 			get_node(animationPlayer).play(lastAnimation);
