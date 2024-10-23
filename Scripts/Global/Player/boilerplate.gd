@@ -2,7 +2,6 @@ extends Node3D
 
 @export var playerRoot : NodePath;
 @export var characterController : NodePath;
-@export var animationPlayer : NodePath;
 @export var camera : NodePath;
 
 static var StartingPosition : Vector3 = Vector3(0.0, 0.0, 0.0);
@@ -12,9 +11,6 @@ const MAX_SPEED = 6.0;
 const ROTATE_PER_SECOND = 4.0;
 
 var gravity = 0.0;
-
-var lastAnimation : StringName = &"";
-var attackAnimationTime = -1.0;
 var targetAngle : float = 0.0;
 
 # Called when the node enters the scene tree for the first time.
@@ -48,8 +44,6 @@ func _process(delta: float) -> void:
 	else:
 		moveSpeed.z = move_toward(moveSpeed.z, MAX_SPEED * moveVec.z, MOVE_PER_SECOND * delta);
 	
-	
-	
 	set_cc_rotation(moveVec, delta);
 	
 	gravity -= 9.8 * delta;
@@ -70,46 +64,4 @@ func _process(delta: float) -> void:
 	
 	
 	get_node(camera).position = cc.position + Vector3(0.0, 10.0, 3.0);
-	movement_animations();
-	single_play_animatuons(delta);
-
-func single_play_animatuons(delta : float):
-	if attackAnimationTime < 0.0:  #Playing attack or jump animation, don't play movement animations
-		return;
 	
-	attackAnimationTime -= delta;
-	if attackAnimationTime <= 0.0:
-		if lastAnimation == &"HumanoidAnim/JumpStart":
-			lastAnimation = &"HumanoidAnim/JumpIdle";
-			get_node(animationPlayer).play(lastAnimation);
-		
-
-func movement_animations():
-	var xzMove = moveSpeed;
-	xzMove.y = 0.0;
-	if attackAnimationTime > 0.0:  #Playing attack or jump animation, don't play movement animations
-		return;
-	
-	if is_equal_approx(gravity, 0.0):
-		if lastAnimation == &"HumanoidAnim/JumpIdle":
-			lastAnimation = &"HumanoidAnim/JumpEnd";
-			get_node(animationPlayer).play(lastAnimation);
-			attackAnimationTime = 1.1;
-			return;
-		
-		if xzMove.length() > 0.1:
-			if lastAnimation != &"HumanoidAnim/Walk":
-				lastAnimation = &"HumanoidAnim/Walk";
-				get_node(animationPlayer).play(lastAnimation);
-		if xzMove.length() < 0.1:
-			if lastAnimation != &"HumanoidAnim/Idle":
-				lastAnimation = &"HumanoidAnim/Idle";
-				get_node(animationPlayer).play(lastAnimation);
-	else:
-		if lastAnimation == &"HumanoidAnim/Walk" || lastAnimation == &"HumanoidAnim/Idle":
-			lastAnimation = &"HumanoidAnim/JumpStart";
-			get_node(animationPlayer).play(lastAnimation);
-			attackAnimationTime = 0.47;
-		else:
-			lastAnimation = &"HumanoidAnim/JumpIdle";
-			get_node(animationPlayer).play(lastAnimation);
