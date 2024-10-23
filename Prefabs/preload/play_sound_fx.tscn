@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqgobalwpmkp1"]
+
+[ext_resource type="Script" path="res://Prefabs/preload/playSoundFX.gd" id="1_najgc"]
+
+[node name="SoundFXPlayer" type="Node3D"]
+script = ExtResource("1_najgc")
+ref = NodePath("AudioStreamPlayer3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 50.0
+bus = &"Sound"

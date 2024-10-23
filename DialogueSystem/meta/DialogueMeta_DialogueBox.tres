@@ -6,4 +6,4 @@
 script = ExtResource("1_k7vap")
 command_name = "str"
 arguments = Array[String](["CharName", "TextToDisplay", "CharsPerSecond", "SoundFX", "NextNode"])
-defaultValues = Array[String](["Player", "Hi I'm saying hi", "10", "Tutorial.wav", "1,0"])
+defaultValues = Array[String](["Player", "Hi I'm saying hi", "15", "Tutorial", "1,0"])

@@ -133,6 +133,12 @@ func StreamDialogueBox(args : Array[String]):
 	text = DialogueArgsUtility.FilterDialogueVariables(text);
 	var charsPerSecond = DialogueArgsUtility.ConvertStringToFloat(args[2]);
 	var soundFXDirectory = args[3];
+	
+	var asset_name : String = str("res://DialogueSystem/audio/", soundFXDirectory, ".mp3");
+	get_node("AudioStreamPlayer3D").stream = load(asset_name);
+	#get_node("AudioStreamPlayer3D").play();
+	textboxsoundrunning = true;
+	
 	var nextNode = args[4];
 	
 	var currentCharID = 1;
@@ -161,8 +167,13 @@ func StreamDialogueBox(args : Array[String]):
 		get_node(BodyText).text = subStr;
 		await get_tree().create_timer(1.0 / charsPerSecond).timeout;
 	get_node(BodyText).text = text;
+	get_node("AudioStreamPlayer3D").stop();
+	textboxsoundrunning = false;
+	
 	while Input.is_action_pressed("jump") == false:
 		await get_tree().create_timer(1.0 / 60.0).timeout;
+	
+	
 	DialogueArgsUtility.SetNextNodeFromStr(nextNode);
 
 
@@ -190,9 +201,13 @@ func EndDialogue():
 	dialogueThread = null;
 	IsRunning = false;
 
+var textboxsoundrunning = false;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if textboxsoundrunning == true:
+		if get_node("AudioStreamPlayer3D").playing == false:
+			get_node("AudioStreamPlayer3D").pitch_scale = randf_range(0.75, 1.25);
+			get_node("AudioStreamPlayer3D").play();
 
 
 func _on_button_choice_1_pressed() -> void:

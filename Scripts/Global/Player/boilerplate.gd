@@ -53,6 +53,7 @@ func _process(delta: float) -> void:
 	if cc.is_on_floor() && gravity < 0.0:
 		gravity = 0.0;
 		if Input.is_action_just_pressed("jump") && DialogueHandler.IsRunning == false && NPC.NPCsOverlapped.size() == 0:
+			SoundFXPlayer.PlaySound("retro/jump_002.ogg", get_tree(), get_node("CharacterBody3D").global_position);
 			gravity = 5.0;
 		
 	#Interact

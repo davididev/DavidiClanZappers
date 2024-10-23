@@ -14,6 +14,10 @@ config/name="Davidi Clan Adventures"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://global_audio.tres"
+
 [editor]
 
 export/convert_text_resources_to_binary=false

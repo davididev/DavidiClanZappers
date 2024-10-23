@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=14 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -14,6 +14,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_uve4q"]
 font_size = 25
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_rj4xf"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -197,6 +199,10 @@ offset_right = 500.0
 offset_bottom = 246.0
 theme = ExtResource("11_sm0hw")
 text = "Choice lol"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="DialogueBox"]
+stream = SubResource("AudioStreamMP3_rj4xf")
+bus = &"Sound"
 
 [connection signal="pressed" from="DialogueBox/Button Choice1" to="DialogueBox" method="_on_button_choice_1_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice2" to="DialogueBox" method="_on_button_choice_2_pressed"]
