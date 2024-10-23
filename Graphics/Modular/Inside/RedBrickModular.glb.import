@@ -1,0 +1,236 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bbpqyos30vpx"
+path="res://.godot/imported/RedBrickModular.glb-6cb40dc46ddd3c09116590628527fc9d.scn"
+
+[deps]
+
+source_file="res://Graphics/Modular/Inside/RedBrickModular.glb"
+dest_files=["res://.godot/imported/RedBrickModular.glb-6cb40dc46ddd3c09116590628527fc9d.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"M_Building_Inner_png.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.003": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.004": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.005": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.006": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.007": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.008": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.009": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.010": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.011": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.012": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.013": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.014": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+},
+"M_Building_Inner_png.015": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_BuildingInner.tres"
+}
+},
+"meshes": {
+"RedBrickModular_FLOOR1_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_001.res"
+},
+"RedBrickModular_FLOOR1_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_003.res"
+},
+"RedBrickModular_FLOOR1_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_006.res"
+},
+"RedBrickModular_FLOOR1_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_007.res"
+},
+"RedBrickModular_FLOOR1_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_008.res"
+},
+"RedBrickModular_FLOOR1_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_009.res"
+},
+"RedBrickModular_FLOOR1_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_010.res"
+},
+"RedBrickModular_FLOOR1_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_011.res"
+},
+"RedBrickModular_FLOOR1_012": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_012.res"
+},
+"RedBrickModular_FLOOR1_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_013.res"
+},
+"RedBrickModular_FLOOR1_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_014.res"
+},
+"RedBrickModular_FLOOR1_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_FLOOR1_015.res"
+},
+"RedBrickModular_WALL1_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_WALL1_001.res"
+},
+"RedBrickModular_WALL1_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_WALL1_003.res"
+},
+"RedBrickModular_WALL1_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Inside/RedBrick/RedBrickModular_WALL1_004.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
