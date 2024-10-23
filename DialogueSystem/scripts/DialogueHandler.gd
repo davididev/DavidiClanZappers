@@ -66,7 +66,23 @@ func ObtainDialogue():
 			StreamModifyVariables(args);
 		if command == "tel":
 			StreamTeleportNPC(args);
+		if command == "wait":
+			StreamWait(args);
 
+func StreamWait(args : Array[String]):
+	var waitTime = args[0].to_float();
+	var waitForMovement = true;
+	if args[1] == "false":
+		waitForMovement = false;
+	var nextNodeStr = args[2];
+	
+	await get_tree().create_timer(waitTime).timeout;
+	if waitForMovement == true:
+		print("TODO: Wait for movement");
+	
+	DialogueArgsUtility.SetNextNodeFromStr(nextNodeStr);
+	
+	
 func StreamTeleportNPC(args : Array[String]):
 	var npcName = args[0];
 	var positionStr = args[1].split(",");
