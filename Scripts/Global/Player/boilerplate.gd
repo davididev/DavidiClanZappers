@@ -82,18 +82,20 @@ func single_play_animatuons(delta : float):
 		if lastAnimation == &"HumanoidAnim/JumpStart":
 			lastAnimation = &"HumanoidAnim/JumpIdle";
 			get_node(animationPlayer).play(lastAnimation);
+		
 
 func movement_animations():
 	var xzMove = moveSpeed;
 	xzMove.y = 0.0;
-	if attackAnimationTime >= 0.0:  #Playing attack or jump animation, don't play movement animations
+	if attackAnimationTime > 0.0:  #Playing attack or jump animation, don't play movement animations
 		return;
 	
 	if is_equal_approx(gravity, 0.0):
 		if lastAnimation == &"HumanoidAnim/JumpIdle":
 			lastAnimation = &"HumanoidAnim/JumpEnd";
 			get_node(animationPlayer).play(lastAnimation);
-			attackAnimationTime = 1.09;
+			attackAnimationTime = 1.1;
+			return;
 		
 		if xzMove.length() > 0.1:
 			if lastAnimation != &"HumanoidAnim/Walk":
