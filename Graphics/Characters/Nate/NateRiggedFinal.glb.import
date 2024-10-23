@@ -5434,7 +5434,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "res://Graphics/Characters/Nate/Idle.res",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
@@ -12630,7 +12630,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "res://Graphics/Characters/Nate/Run.res",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
@@ -14429,7 +14429,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "res://Graphics/Characters/Nate/Walk.res",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
@@ -16239,7 +16239,8 @@ _subresources={
 
 },
 "PATH:godot_rig/Skeleton3D/DONOTCOPY_NateMesh": {
-"mesh_instance/cast_shadow": 0
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 12
 }
 }
 }

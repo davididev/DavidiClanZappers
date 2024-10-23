@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj86i4actyt73"]
+
+[ext_resource type="Script" path="res://Prefabs/Player/drop_shadow.gd" id="1_oojeg"]
+[ext_resource type="Texture2D" uid="uid://dy1x5nhv8d6js" path="res://Graphics/Characters/DropShadow.png" id="2_lssh4"]
+
+[node name="DropShadow" type="Node3D"]
+script = ExtResource("1_oojeg")
+
+[node name="Decal" type="Decal" parent="."]
+layers = 3
+size = Vector3(1.5, 1, 1.5)
+texture_albedo = ExtResource("2_lssh4")

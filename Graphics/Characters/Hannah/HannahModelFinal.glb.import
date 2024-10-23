@@ -46,7 +46,8 @@ _subresources={
 
 },
 "PATH:godot_rig/Skeleton3D/DONOTCOPY_HannahSprite": {
-"mesh_instance/cast_shadow": 0
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 12
 }
 }
 }
