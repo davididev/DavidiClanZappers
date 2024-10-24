@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq5e2at6m5qp"]
+[gd_scene load_steps=10 format=3 uid="uid://cq5e2at6m5qp"]
 
 [ext_resource type="PackedScene" uid="uid://dhimtq0lw3r1d" path="res://Graphics/Characters/Nate/NateRiggedFinal.glb" id="1_k1dg4"]
 [ext_resource type="Script" path="res://Scripts/Global/Player/boilerplate.gd" id="1_s37ou"]
 [ext_resource type="AnimationLibrary" uid="uid://b6duaeanku1a2" path="res://Graphics/Characters/HumanoidAnim.res" id="2_6qe7q"]
+[ext_resource type="Script" path="res://Scripts/Global/Player/Avatar.gd" id="2_7qsrn"]
 [ext_resource type="PackedScene" uid="uid://dvirhrprjhmnw" path="res://Prefabs/Player/player_ui.tscn" id="3_nnjor"]
 [ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="4_87t5j"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="5_k1b6g"]
@@ -20,6 +21,7 @@ camera = NodePath("Camera3D")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 collision_layer = 4
 collision_mask = 27
+script = ExtResource("2_7qsrn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)

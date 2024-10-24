@@ -125,6 +125,19 @@ label_settings = SubResource("LabelSettings_uve4q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HUD" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -262.0
+offset_right = 20.0
+offset_bottom = 143.0
+grow_horizontal = 2
+theme = ExtResource("8_id21u")
+bbcode_enabled = true
+text = "..."
+
 [node name="DialogueBox" type="TextureRect" parent="."]
 visible = false
 layout_mode = 1
