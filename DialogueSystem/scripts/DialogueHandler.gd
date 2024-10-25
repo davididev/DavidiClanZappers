@@ -68,7 +68,17 @@ func ObtainDialogue():
 			StreamTeleportNPC(args);
 		if command == "wait":
 			StreamWait(args);
-
+		if command == "sce":
+			SteamTeleport(args);
+			
+	
+func SteamTeleport(args : Array[String]):
+	await get_tree().create_timer(0.5).timeout;
+	LoadingUI.SceneToLoad = args[0];
+	BoilerPlate.StartingPosition = DialogueArgsUtility.ConvertStringToVector3(args[1]);
+	get_tree().change_scene_to_file("res://Scenes/Global/Loading.tscn");
+	DialogueHandler.IsRunning = false;
+	
 func StreamWait(args : Array[String]):
 	var waitTime = args[0].to_float();
 	var waitForMovement = true;
@@ -126,7 +136,7 @@ func StreamDialogueBox(args : Array[String]):
 	
 	var charName = args[0];
 	visible = true;
-	get_node(HeaderText).text = charName;
+	get_node(HeaderText).text = str("[center]", charName, "[/center]");
 	get_node(BodyText).text = "";
 	var text : String = args[1];
 	text = DialogueArgsUtility.FilterRichText(text);

@@ -1,8 +1,10 @@
-extends Node3D
+class_name BoilerPlate extends Node3D
 
 @export var playerRoot : NodePath;
 @export var characterController : NodePath;
 @export var camera : NodePath;
+
+
 
 static var StartingPosition : Vector3 = Vector3(0.0, 0.0, 0.0);
 var moveSpeed = Vector3(0.0, 0.0, 0.0);
@@ -72,7 +74,7 @@ func _process(delta: float) -> void:
 		
 		if closestNPC != null:
 			if closestNPC.DialogueOnInteract != null:
-				DialogueHandler.Instance.StartDialogue(closestNPC.DialogueOnInteract);
+				closestNPC.RunEvent();
 		
 	moveSpeed.y = gravity;
 	

@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Avatar extends CharacterBody3D
 
 var damageDelay : float = -1.0;
 

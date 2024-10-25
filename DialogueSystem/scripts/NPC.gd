@@ -5,6 +5,9 @@ static var npcList : Dictionary;
 @export var character_controller_path : NodePath;
 @export var DialogueOnInteract : DialogueGrid;
 var cc : CharacterBody3D;
+@export var usesCC = true;
+
+signal PreDialogueEvent;
 
 static var NPCsOverlapped : Array[NPC];
 
@@ -17,7 +20,7 @@ func _enter_tree() -> void:
 	npcList[actor_name] = self;
 
 func _process(delta: float) -> void:
-	if cc == null:
+	if usesCC && cc == null:
 		cc = get_node(character_controller_path);
 		
 func TeleportActor(pos : Vector3):
@@ -25,10 +28,15 @@ func TeleportActor(pos : Vector3):
 		cc = get_node(character_controller_path);
 	cc.global_position = pos;
 
+func RunEvent():
+	PreDialogueEvent.emit();
+	DialogueHandler.Instance.StartDialogue(DialogueOnInteract);
 
 func PlayerEnteredField(node: Node) -> void:
-	NPCsOverlapped.append(self);
+	if node.is_in_group("Player"):
+		NPCsOverlapped.append(self);
 
 
 func PlayerExitedField(node: Node) -> void:
-	NPCsOverlapped.erase(self);
+	if node.is_in_group("Player"):
+		NPCsOverlapped.erase(self);

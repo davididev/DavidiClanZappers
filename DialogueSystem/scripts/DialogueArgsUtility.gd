@@ -11,6 +11,14 @@ static func FilterRichText(s : String):
 	s = s.replace("\\n", "\n")
 	return s;
 
+static func ConvertStringToVector3(s : String):
+	var vec : Vector3;
+	var coords = s.split(",");
+	vec.x = (coords[0].to_float());
+	vec.y = (coords[1].to_float());
+	vec.z = (coords[2].to_float());
+	return vec;
+
 static func FilterDialogueVariables(s : String):
 	if s.contains("%"):
 		for vkey  in DialogueHandler.variables.keys():

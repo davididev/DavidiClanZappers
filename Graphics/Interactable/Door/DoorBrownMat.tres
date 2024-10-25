@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bf6262otdc0ba"]
+
+[ext_resource type="Texture2D" uid="uid://drn3bnla5fvtr" path="res://Graphics/Interactable/Door/BrownDoorUV.png" id="1_al5co"]
+
+[resource]
+albedo_texture = ExtResource("1_al5co")

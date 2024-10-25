@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjlxlir8cfekg"]
+
+[ext_resource type="PackedScene" uid="uid://c7isy82gcty00" path="res://Graphics/Interactable/Door/DoorModel.glb" id="1_3x4m1"]
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/Door.gd" id="2_cldt6"]
+[ext_resource type="Material" uid="uid://bf6262otdc0ba" path="res://Graphics/Interactable/Door/DoorBrownMat.tres" id="2_u4ot6"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/TeleportEvent.res" id="3_qg1tr"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="4_qltyw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wgh73"]
+radius = 5.0
+
+[node name="DoorModel" instance=ExtResource("1_3x4m1")]
+script = ExtResource("2_cldt6")
+DialogueBase = ExtResource("3_qg1tr")
+SoundOnOpen = "rpg/doorOpen_1.ogg"
+NPCRef = NodePath("NPC")
+
+[node name="Door" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_u4ot6")
+
+[node name="NPC" type="Node3D" parent="." index="1"]
+script = ExtResource("4_qltyw")
+character_controller_path = NodePath("..")
+usesCC = false
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+transform = Transform3D(0.96616, 0.25126, -0.0583323, -0.249926, 0.967823, 0.0292585, 0.0638069, -0.0136896, 0.997868, 1, 0, 0)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 1.28057e-08, 7.45058e-09, 4.22006e-08, 1, -6.51926e-09, 1.49012e-08, -9.31323e-10, 1, -0.499851, 1.93565, 0.058517)
+shape = SubResource("SphereShape3D_wgh73")
+
+[connection signal="PreDialogueEvent" from="NPC" to="." method="_on_npc_pre_dialogue_event"]
+[connection signal="body_entered" from="Area3D" to="NPC" method="PlayerEnteredField"]
+[connection signal="body_exited" from="Area3D" to="NPC" method="PlayerExitedField"]
