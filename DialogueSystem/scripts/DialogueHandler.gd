@@ -70,8 +70,16 @@ func ObtainDialogue():
 			StreamWait(args);
 		if command == "sce":
 			SteamTeleport(args);
+		if command == "msg":
+			StreamSendMessage(args);
 			
-	
+func StreamSendMessage(args : Array[String]):
+	var actorName = args[0];
+	var signalName = args[1];
+	var nextNodeStr = args[2];
+	NPC.npcList[actorName].emit_signal(signalName);
+	DialogueArgsUtility.SetNextNodeFromStr(nextNodeStr);
+
 func SteamTeleport(args : Array[String]):
 	PlayerUI.fadeTarget = Color(0.0, 0.0, 0.0, 1.0);
 	await get_tree().create_timer(0.5).timeout;
