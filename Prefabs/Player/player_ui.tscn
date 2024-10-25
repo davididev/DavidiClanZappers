@@ -217,6 +217,16 @@ text = "Choice lol"
 stream = SubResource("AudioStreamMP3_rj4xf")
 bus = &"Sound"
 
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="DialogueBox/Button Choice1" to="DialogueBox" method="_on_button_choice_1_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice2" to="DialogueBox" method="_on_button_choice_2_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice3" to="DialogueBox" method="_on_button_choice_3_pressed"]

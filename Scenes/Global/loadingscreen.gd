@@ -17,5 +17,6 @@ func _process(delta):
 		
 		var percentage = round(progress[0] * 100.0);
 		#get_node("CanvasLayer/PerctangeText").text = str(percentage, "%")
+		get_node("Camera2D/CanvasGroup/RichTextLabel").text = str("[center]Loading ", percentage, "%[/center]");
 	elif status == ResourceLoader.THREAD_LOAD_LOADED:
 		get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(resource_name));

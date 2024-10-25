@@ -73,6 +73,7 @@ func ObtainDialogue():
 			
 	
 func SteamTeleport(args : Array[String]):
+	PlayerUI.fadeTarget = Color(0.0, 0.0, 0.0, 1.0);
 	await get_tree().create_timer(0.5).timeout;
 	LoadingUI.SceneToLoad = args[0];
 	BoilerPlate.StartingPosition = DialogueArgsUtility.ConvertStringToVector3(args[1]);
