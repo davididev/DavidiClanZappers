@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="4_qltyw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wgh73"]
-radius = 5.0
+radius = 2.0
 
 [node name="DoorModel" instance=ExtResource("1_3x4m1")]
 script = ExtResource("2_cldt6")
