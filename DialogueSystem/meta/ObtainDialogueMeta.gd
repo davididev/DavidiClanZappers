@@ -30,4 +30,8 @@ static func GetMeta(command_str : String) -> DialogueNodeMetaData:
 		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_ChangeScene.tres");
 	if command_str == "tel":
 		return ResourceLoader.load("res://DialogueSystem/meta/DialogueTeleportActor.tres");
+	if command_str == "ais":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_AddItemOrSpell.tres");
+	if command_str == "cis":
+		return ResourceLoader.load("res://DialogueSystem/meta/DialogueMeta_GetItemOrSpellCount.tres");
 	return null;

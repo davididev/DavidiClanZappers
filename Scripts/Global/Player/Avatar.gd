@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	var skel : Skeleton3D = get_node(SksletonNode);
 	var pos1 = skel.get_bone_global_pose(idLeft).origin + skel.global_position;
 	var pos2 = skel.get_bone_global_pose(idRight).origin + skel.global_position;
-	print(str(pos1, "   ", pos2));
+	#print(str(pos1, "   ", pos2));
 	pass;
 
 func Damage(amt : int) -> void:

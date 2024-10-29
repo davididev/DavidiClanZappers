@@ -61,6 +61,12 @@ func RefreshNode(myself : DialogueEntry):
 		if myself.cmd == "tel":
 			SetImage(IMAGE_SINGLE_FORK);
 			get_node("txt_NodeName").text = "Teleport actor";
+		if myself.cmd == "ais":
+			SetImage(IMAGE_MULTI_FORK);
+			get_node("txt_NodeName").text = "Add Item/Spell";
+		if myself.cmd == "cis":
+			SetImage(IMAGE_SINGLE_FORK);
+			get_node("txt_NodeName").text = "Count Item/Spell";
 		var args = myself.GetArguments();
 		var argsStr = "";
 		for arg in args:

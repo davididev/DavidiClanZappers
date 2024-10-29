@@ -72,7 +72,98 @@ func ObtainDialogue():
 			SteamTeleport(args);
 		if command == "msg":
 			StreamSendMessage(args);
-			
+		if command == "ais":
+			StreamAddItem(args);
+		if command == "cis":
+			StreamCountItem(args);
+		if command == "ifthen":
+			StreamIfThen(args);
+
+func StreamIfThen(args : Array[String]):
+	var variableName = args[0];
+	var operatorStr = args[1];
+	var valueStr = args[2];
+	var nextNodeIfTrue = args[3];
+	var nextNodeIfFalse = args[4];
+	
+	var valueLeft = DialogueArgsUtility.FilterDialogueVariables(variableName).to_float();
+	var valueRight = DialogueArgsUtility.FilterDialogueVariables(valueStr).to_float();
+	
+	var isTrue = false;
+	if operatorStr == "==":
+		if is_equal_approx(valueLeft, valueRight):
+			isTrue = true;
+	if operatorStr == "!=":
+		if is_equal_approx(valueLeft, valueRight) == false:
+			isTrue = true;
+	if operatorStr == ">":
+		if valueLeft > valueRight:
+			isTrue = true;
+	if operatorStr == ">=":
+		if valueLeft >= valueRight:
+			isTrue = true;
+	if operatorStr == "<":
+		if valueLeft < valueRight:
+			isTrue = true;
+	if operatorStr == "<=":
+		if valueLeft <= valueRight:
+			isTrue = true;
+	
+	if isTrue:
+		DialogueArgsUtility.SetNextNodeFromStr(nextNodeIfTrue);
+	else:
+		DialogueArgsUtility.SetNextNodeFromStr(nextNodeIfFalse);
+
+func StreamCountItem(args : Array[String]):
+	var itemOrSpell = DialogueArgsUtility.ConvertStringToInt(args[0]);
+	var isItem = true;
+	if args[1] == "false":
+		isItem = false;
+	var varNameToSet = args[2];
+	var nextNodeStr = args[3];
+	var count = 0;
+	if isItem:
+		for i in range(0, 12):
+			if GameDataHolder.Instance.data.Items[i] == itemOrSpell:
+				count += 1;
+	if isItem == false:
+		for i in range(0, 8):
+			if GameDataHolder.Instance.data.Spells[i] == itemOrSpell:
+				count += 1;
+	
+	
+	SetVariable(varNameToSet, count);
+	
+	DialogueArgsUtility.SetNextNodeFromStr(nextNodeStr);
+	
+
+func StreamAddItem(args : Array[String]):
+	var itemSpellID = DialogueArgsUtility.ConvertStringToInt(args[0]);
+	var isItem = true;
+	if args[1] == "false":
+		isItem = false;
+	var nextNodeSuccess = args[2];
+	var nextNodeFailure = args[3];
+	
+	var success = false;
+	if isItem:
+		for i in range(0, 12):
+			if GameDataHolder.Instance.data.Items[i] == 0:
+				success = true;
+				GameDataHolder.Instance.data.Items[i] = itemSpellID;
+				break;
+	if isItem == false:
+		for i in range(0, 8):
+			if GameDataHolder.Instance.data.Spells[i] == 0:
+				success = true;
+				GameDataHolder.Instance.data.Spells[i] = itemSpellID;
+				break;
+	
+	if success:
+		DialogueArgsUtility.SetNextNodeFromStr(nextNodeSuccess);
+	else:
+		DialogueArgsUtility.SetNextNodeFromStr(nextNodeFailure);
+	
 func StreamSendMessage(args : Array[String]):
 	var actorName = args[0];
 	var signalName = args[1];

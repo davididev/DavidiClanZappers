@@ -130,10 +130,10 @@ theme = ExtResource("2_omscw")
 text = "Teleport"
 
 [node name="Button Flash" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
-offset_left = 738.0
-offset_top = 116.0
-offset_right = 938.0
-offset_bottom = 166.0
+offset_left = 734.0
+offset_top = 115.0
+offset_right = 934.0
+offset_bottom = 165.0
 theme = ExtResource("2_omscw")
 text = "Flash"
 
@@ -144,6 +144,14 @@ offset_right = 490.0
 offset_bottom = 97.0
 theme = ExtResource("4_gwdfu")
 text = "Choice Box"
+
+[node name="Button Add Item" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 738.0
+offset_top = 171.0
+offset_right = 938.0
+offset_bottom = 221.0
+theme = ExtResource("4_gwdfu")
+text = "Add Item / Spell"
 
 [node name="Butotn Wait" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_left = 290.0
@@ -160,6 +168,14 @@ offset_right = 490.0
 offset_bottom = 225.0
 theme = ExtResource("2_omscw")
 text = "Play Music"
+
+[node name="Button Get Item Count" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
+offset_left = 930.0
+offset_top = 175.0
+offset_right = 1130.0
+offset_bottom = 225.0
+theme = ExtResource("2_omscw")
+text = "Get Item / Spell Ct"
 
 [node name="Button End" type="Button" parent="Camera2D/NodeEditor/ColorRect/PanelPickNodeType"]
 offset_left = 506.0
@@ -300,8 +316,10 @@ root = NodePath("..")
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Teleport" to="." method="_on_button_teleport_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Flash" to="." method="_on_button_flash_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Choice" to="." method="_on_button_choice_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Add Item" to="." method="_on_button_add_item_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Butotn Wait" to="." method="_on_butotn_wait_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Butotn Music" to="." method="_on_butotn_music_pressed"]
+[connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button Get Item Count" to="." method="_on_button_get_item_count_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button End" to="." method="_on_button_end_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button IfThen" to="." method="_on_button_if_then_pressed"]
 [connection signal="pressed" from="Camera2D/NodeEditor/ColorRect/PanelPickNodeType/Button SetVar2" to="." method="_on_button_set_var_2_pressed"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNodeMetaData" load_steps=2 format=3 uid="uid://c6k7lwpsf2ria"]
+
+[ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueNodeMetaData.gd" id="1_wbst8"]
+
+[resource]
+script = ExtResource("1_wbst8")
+command_name = "cis"
+arguments = Array[String](["Item / Spell ID", "Is Item", "Variable output", "Next  Node"])
+defaultValues = Array[String](["1", "true", "%count", "1,0"])

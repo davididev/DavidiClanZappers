@@ -21,13 +21,18 @@ static func ConvertStringToVector3(s : String):
 
 static func FilterDialogueVariables(s : String):
 	if s.contains("%"):
-		for vkey  in DialogueHandler.variables.keys():
+		for vkey in DialogueHandler.variables.keys():
 			var vvalue = DialogueHandler.variables[vkey];
 			s = s.replace(vkey, str(vvalue));
 	return s;
 
 static func ConvertStringToFloat(s : String):
+	s = DialogueArgsUtility.FilterDialogueVariables(s);
 	return s.to_float();
+	
+static func ConvertStringToInt(s : String):
+	s = DialogueArgsUtility.FilterDialogueVariables(s);
+	return s.to_int();
 
 static func SetNextNodeFromStr(s : String):
 	var myCoords = s.split(",");

@@ -209,3 +209,11 @@ func _on_button_change_scene_pressed() -> void:
 
 func _on_button_teleport_pressed() -> void:
 	SetNewNodeArguments("tel");
+
+
+func _on_button_add_item_pressed() -> void:
+	SetNewNodeArguments("ais");
+
+
+func _on_button_get_item_count_pressed() -> void:
+	SetNewNodeArguments("cis");
