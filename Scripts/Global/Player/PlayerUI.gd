@@ -6,14 +6,37 @@ var lastJumpStr = true;  #Jump/Interact button last set to jump
 static var fadeTarget : Color;
 const FADE_PER_SECOND = 2.0;
 
+@export var pausePanels : Array[NodePath];
+static var LastPausePanel = 0;
+var paused = false;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.05).timeout;
 	UpdateHUD = true;
 	fadeTarget = Color(0.0, 0.0, 0.0, 0.0);
+	SetPausePanel(-1);
 	pass # Replace with function body.
 
 
+
+func SetPausePanel(id : int):
+	for i in range(0, pausePanels.size()):
+		get_node(pausePanels[i]).visible = id == i;
+		
+	if id == 0:  #Opened inventory menu
+		var invButtons = get_tree().get_nodes_in_group(&"InventoryButton");
+		for but in invButtons:
+			but.call("RedrawButton");
+
+	paused = id > -1;
+
+	if id > -1:
+		LastPausePanel = id;
+		#Now we set default button
+		if id == 0:
+			get_node("InventoryMenu/Spell Button 0").grab_focus();
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var currentJumpStr : bool = true;
@@ -28,6 +51,14 @@ func _process(delta: float) -> void:
 		c.b = move_toward(c.b, fadeTarget.b, FADE_PER_SECOND * delta);
 		c.a = move_toward(c.a, fadeTarget.a, FADE_PER_SECOND * delta);
 		rect.color = c;
+
+	if Input.is_action_just_pressed("pause"):
+		if paused:
+			SetPausePanel(-1);
+			Engine.time_scale = 1.0;
+		else:
+			SetPausePanel(LastPausePanel);
+			Engine.time_scale = 1.0 / 360.0;
 	
 	if currentJumpStr != lastJumpStr:  #UI Changed
 		lastJumpStr = currentJumpStr;
@@ -50,3 +81,7 @@ func UpdatePlayerHUD():  #TODO: Update HUD
 	print(str("VarName test 1: ", GameDataHolder.Instance.VarMeta.IntNames[0]));
 	UpdateHUD = false;
 	pass;
+
+
+func _on_item_button_pressed() -> void:
+	pass # Replace with function body.

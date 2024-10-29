@@ -30,7 +30,7 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_rlqv5"]
 size = Vector3(200, 1, 200)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" groups=["SaveNode"]]
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)

@@ -1,11 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=19 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
 [ext_resource type="Texture2D" uid="uid://yhm38wd40bhw" path="res://Graphics/UI/BG_Buttons.png" id="3_qcu7h"]
+[ext_resource type="Texture2D" uid="uid://bheph2yx0molv" path="res://Graphics/UI/Inventory/ItemNormal.png" id="3_rvf32"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_k8smy"]
+[ext_resource type="Texture2D" uid="uid://bbtvdvwxcwe0m" path="res://Graphics/UI/Inventory/ItemPressed.png" id="4_yjl54"]
 [ext_resource type="Texture2D" uid="uid://y3lyon53xkis" path="res://Graphics/UI/ButtonOverlay.png" id="5_1ibi7"]
+[ext_resource type="Texture2D" uid="uid://ro8rw3x4pb1f" path="res://Graphics/UI/Inventory/ItemHighlighted.png" id="5_j5pgy"]
 [ext_resource type="Texture2D" uid="uid://c1ynx5r4n2rfp" path="res://Graphics/UI/ButtonPressed.png" id="6_672h6"]
+[ext_resource type="Texture2D" uid="uid://dvel03a08u4tv" path="res://Graphics/UI/Inventory/Item0.png" id="6_dyhy3"]
+[ext_resource type="Script" path="res://Scripts/Global/UI/SpellOrItemButton.gd" id="6_y4ou3"]
 [ext_resource type="Texture2D" uid="uid://d605vtldbhtp" path="res://DialogueSystem/ui/DialogueBox.png" id="7_qxomr"]
 [ext_resource type="Theme" uid="uid://b7lrgt3hlawkv" path="res://DialogueSystem/ui/ThemeRT_Header.tres" id="8_id21u"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueHandler.gd" id="8_oha4v"]
@@ -27,9 +32,9 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_0xfu1")
+pausePanels = Array[NodePath]([NodePath("InventoryMenu")])
 
 [node name="InventoryMenu" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,6 +49,474 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_xwljy")
 
+[node name="Spell Button 0" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 96.0
+offset_right = 96.0
+offset_bottom = 144.0
+focus_neighbor_right = NodePath("../Spell Button 1")
+focus_neighbor_bottom = NodePath("../Spell Button 2")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Spell Button 2" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 192.0
+offset_right = 96.0
+offset_bottom = 240.0
+focus_neighbor_top = NodePath("../Spell Button 0")
+focus_neighbor_right = NodePath("../Spell Button 3")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+dataID = 2
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Spell Button 4" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 288.0
+offset_right = 96.0
+offset_bottom = 336.0
+focus_neighbor_top = NodePath("../Spell Button 2")
+focus_neighbor_right = NodePath("../Spell Button 5")
+focus_neighbor_bottom = NodePath("../Spell Button 6")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+dataID = 4
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Spell Button 6" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 385.0
+offset_right = 96.0
+offset_bottom = 433.0
+focus_neighbor_top = NodePath("../Spell Button 4")
+focus_neighbor_right = NodePath("../Spell Button 7")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+dataID = 6
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Spell Button 7" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 385.0
+offset_right = 192.0
+offset_bottom = 433.0
+focus_neighbor_left = NodePath("../Spell Button 6")
+focus_neighbor_top = NodePath("../Spell Button 5")
+focus_neighbor_right = NodePath("../Item Button 9")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+dataID = 7
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 7"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Spell Button 5" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 288.0
+offset_right = 192.0
+offset_bottom = 336.0
+focus_neighbor_left = NodePath("../Spell Button 4")
+focus_neighbor_top = NodePath("../Spell Button 3")
+focus_neighbor_right = NodePath("../Item Button 6")
+focus_neighbor_bottom = NodePath("../Spell Button 7")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+dataID = 5
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Spell Button 3" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 192.0
+offset_right = 192.0
+offset_bottom = 240.0
+focus_neighbor_left = NodePath("../Spell Button 2")
+focus_neighbor_top = NodePath("../Spell Button 1")
+focus_neighbor_right = NodePath("../Item Button 3")
+focus_neighbor_bottom = NodePath("../Spell Button 5")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+dataID = 3
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Spell Button 1" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 96.0
+offset_right = 192.0
+offset_bottom = 144.0
+focus_neighbor_left = NodePath("../Spell Button 0")
+focus_neighbor_right = NodePath("../Item Button 0")
+focus_neighbor_bottom = NodePath("../Spell Button 3")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+isItem = false
+dataID = 1
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Spell Button 1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 0" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 96.0
+offset_right = 288.0
+offset_bottom = 144.0
+focus_neighbor_left = NodePath("../Spell Button 1")
+focus_neighbor_right = NodePath("../Item Button 1")
+focus_neighbor_bottom = NodePath("../Item Button 3")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 0"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 3" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 192.0
+offset_right = 288.0
+offset_bottom = 240.0
+focus_neighbor_left = NodePath("../Spell Button 3")
+focus_neighbor_top = NodePath("../Item Button 0")
+focus_neighbor_right = NodePath("../Item Button 4")
+focus_neighbor_bottom = NodePath("../Item Button 6")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 3
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 6" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 288.0
+offset_right = 288.0
+offset_bottom = 336.0
+focus_neighbor_left = NodePath("../Spell Button 5")
+focus_neighbor_top = NodePath("../Item Button 3")
+focus_neighbor_right = NodePath("../Item Button 7")
+focus_neighbor_bottom = NodePath("../Item Button 9")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 6
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 9" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 387.0
+offset_right = 288.0
+offset_bottom = 435.0
+focus_neighbor_left = NodePath("../Spell Button 7")
+focus_neighbor_top = NodePath("../Item Button 6")
+focus_neighbor_right = NodePath("../Item Button 10")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 9
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 9"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 10" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 387.0
+offset_right = 384.0
+offset_bottom = 435.0
+focus_neighbor_left = NodePath("../Item Button 9")
+focus_neighbor_top = NodePath("../Spell Button 7")
+focus_neighbor_right = NodePath("../Item Button 11")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 10
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 10"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 11" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 387.0
+offset_right = 480.0
+offset_bottom = 435.0
+focus_neighbor_left = NodePath("../Item Button 10")
+focus_neighbor_top = NodePath("../Item Button 8")
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 11
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 11"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 7" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 288.0
+offset_right = 386.0
+offset_bottom = 336.0
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 7
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 7"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 8" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 288.0
+offset_right = 482.0
+offset_bottom = 336.0
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 8
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 8"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 4" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 192.0
+offset_right = 384.0
+offset_bottom = 240.0
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 4
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 5" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 192.0
+offset_right = 480.0
+offset_bottom = 240.0
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 5
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 1" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 96.0
+offset_right = 384.0
+offset_bottom = 144.0
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 1
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
+[node name="Item Button 2" type="TextureButton" parent="InventoryMenu" groups=["InventoryButton"]]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 96.0
+offset_right = 480.0
+offset_bottom = 144.0
+texture_normal = ExtResource("3_rvf32")
+texture_pressed = ExtResource("4_yjl54")
+texture_hover = ExtResource("5_j5pgy")
+texture_focused = ExtResource("5_j5pgy")
+stretch_mode = 0
+script = ExtResource("6_y4ou3")
+dataID = 2
+
+[node name="TextureRect" type="TextureRect" parent="InventoryMenu/Item Button 2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_dyhy3")
+
 [node name="BGButtons1" type="TextureRect" parent="."]
 layout_mode = 1
 offset_right = 320.0
@@ -54,10 +527,6 @@ texture = ExtResource("3_qcu7h")
 layout_mode = 1
 offset_top = -473.0
 offset_bottom = -173.0
-action_left = "move_left"
-action_right = "move_right"
-action_up = "move_up"
-action_down = "move_down"
 
 [node name="BGButtons2" type="TextureRect" parent="."]
 layout_mode = 1
@@ -218,6 +687,7 @@ stream = SubResource("AudioStreamMP3_rj4xf")
 bus = &"Sound"
 
 [node name="Fade" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -227,6 +697,26 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[connection signal="pressed" from="InventoryMenu/Spell Button 0" to="InventoryMenu/Spell Button 0" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Spell Button 2" to="InventoryMenu/Spell Button 2" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Spell Button 4" to="InventoryMenu/Spell Button 4" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Spell Button 6" to="InventoryMenu/Spell Button 6" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Spell Button 7" to="InventoryMenu/Spell Button 7" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Spell Button 5" to="InventoryMenu/Spell Button 5" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Spell Button 3" to="InventoryMenu/Spell Button 3" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Spell Button 1" to="InventoryMenu/Spell Button 1" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 0" to="InventoryMenu/Item Button 0" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 3" to="InventoryMenu/Item Button 3" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 6" to="InventoryMenu/Item Button 6" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 9" to="InventoryMenu/Item Button 9" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 10" to="InventoryMenu/Item Button 10" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 11" to="InventoryMenu/Item Button 11" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 7" to="InventoryMenu/Item Button 7" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 8" to="InventoryMenu/Item Button 8" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 4" to="InventoryMenu/Item Button 4" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 5" to="InventoryMenu/Item Button 5" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 1" to="InventoryMenu/Item Button 1" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/Item Button 2" to="InventoryMenu/Item Button 2" method="_on_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice1" to="DialogueBox" method="_on_button_choice_1_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice2" to="DialogueBox" method="_on_button_choice_2_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice3" to="DialogueBox" method="_on_button_choice_3_pressed"]

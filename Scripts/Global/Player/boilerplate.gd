@@ -33,7 +33,7 @@ func set_cc_rotation(moveVec : Vector3, delta : float):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var cc : CharacterBody3D = get_node(characterController);
-	var moveVec = Vector3(Input.get_axis("move_left", "move_right"), 0.0, Input.get_axis("move_up", "move_down"));
+	var moveVec = Vector3(Input.get_axis("ui_left", "ui_right"), 0.0, Input.get_axis("ui_up", "ui_down"));
 	
 	if DialogueHandler.IsRunning:
 		moveVec = Vector3.ZERO;
