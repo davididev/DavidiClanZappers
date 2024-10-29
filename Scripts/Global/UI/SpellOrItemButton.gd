@@ -18,4 +18,11 @@ func RedrawButton():
 
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	if isItem:
+		Avatar.AttachedItem = itemID;
+		get_tree().get_first_node_in_group("Player").call("AttachItem");
+	else:
+		Avatar.AttachedSpell = spellID;
+		get_tree().get_first_node_in_group("Player").call("AttachSpell");
+	
+	

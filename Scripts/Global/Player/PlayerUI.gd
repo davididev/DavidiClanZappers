@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		c.a = move_toward(c.a, fadeTarget.a, FADE_PER_SECOND * delta);
 		rect.color = c;
 
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") && DialogueHandler.IsRunning == false:
 		if paused:
 			SetPausePanel(-1);
 			Engine.time_scale = 1.0;

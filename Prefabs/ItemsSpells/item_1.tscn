@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://e6cxdsrsmmqt"]
+
+[ext_resource type="PackedScene" uid="uid://bnvsivpuxrft3" path="res://Graphics/Items/Item1/Item1.glb" id="1_02d8l"]
+[ext_resource type="Script" path="res://Scripts/Global/ItemScripts/itemSword.gd" id="1_ovgd6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3gouy"]
+
+[node name="Item1" type="Node3D"]
+script = ExtResource("1_ovgd6")
+refToOverlap = NodePath("Item1Model/Area3D")
+swingSoundFX = "rpg/knifeSlice2.ogg"
+
+[node name="Item1Model" parent="." instance=ExtResource("1_02d8l")]
+
+[node name="Area3D" type="Area3D" parent="Item1Model"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item1Model/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_3gouy")

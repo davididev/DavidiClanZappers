@@ -15,6 +15,15 @@ func _process(delta: float) -> void:
 	movement_animations();
 	single_play_animatuons(delta);
 
+func PlayAttackAnim():
+	lastAnimation = &"HumanoidAnim/Attack";
+	get_node(animationPlayer).play(lastAnimation);
+	attackAnimationTime = 0.8;
+
+func PlaySpellAnim():
+	lastAnimation = &"HumanoidAnim/CastSpell";
+	get_node(animationPlayer).play(lastAnimation);
+	attackAnimationTime = 0.8;
 
 func single_play_animatuons(delta : float):
 	if attackAnimationTime < 0.0:  #Playing attack or jump animation, don't play movement animations
