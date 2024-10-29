@@ -31,7 +31,7 @@ func AttachSpell():
 func AttachItem():
 	if AttachedItem == 0:  #Is nil, remove item if it's there
 		var childCount = get_node(itemAttachment).get_child_count();
-		if childCount == 1:
+		if childCount > 0:
 			get_node(itemAttachment).get_child(0).queue_free();
 	
 	if AttachedItem > 0:  #Is a valid item
