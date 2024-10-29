@@ -53,6 +53,14 @@ func _process(delta: float) -> void:
 	if gravity < -50.0:
 		gravity = -50.0;
 	
+	#Increase speed
+	if Engine.time_scale > 0.1:  #Not paused
+		if Input.is_action_just_pressed("speed"):
+			Engine.time_scale = 4.0;
+		if Input.is_action_just_released("speed"):
+			Engine.time_scale = 1.0;
+			
+	
 	if cc.is_on_floor() && gravity < 0.0:
 		gravity = 0.0;
 		if Engine.time_scale > 0.1:  #Not paused
