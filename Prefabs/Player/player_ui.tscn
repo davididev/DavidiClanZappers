@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=21 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -15,6 +15,8 @@
 [ext_resource type="Theme" uid="uid://b7lrgt3hlawkv" path="res://DialogueSystem/ui/ThemeRT_Header.tres" id="8_id21u"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueHandler.gd" id="8_oha4v"]
 [ext_resource type="Theme" uid="uid://btqtpcg0hhree" path="res://DialogueSystem/ui/ThemeRT_Body.tres" id="9_ayg6i"]
+[ext_resource type="Texture2D" uid="uid://dgojmk3o35auu" path="res://Graphics/UI/SpeedNormal.png" id="10_6wbmc"]
+[ext_resource type="Texture2D" uid="uid://bammv7f4dlxuh" path="res://Graphics/UI/SpeedHover.png" id="11_rsy8v"]
 [ext_resource type="Theme" uid="uid://g2i82i2usg33" path="res://DialogueSystem/ui/ThemeChoiceButton.tres" id="11_sm0hw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uve4q"]
@@ -527,6 +529,12 @@ texture = ExtResource("3_qcu7h")
 layout_mode = 1
 offset_top = -473.0
 offset_bottom = -173.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="BGButtons1"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("10_6wbmc")
+texture_pressed = ExtResource("11_rsy8v")
+action = "speed"
 
 [node name="BGButtons2" type="TextureRect" parent="."]
 layout_mode = 1
