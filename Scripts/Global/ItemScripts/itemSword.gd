@@ -21,7 +21,10 @@ func UseItem():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if swingTimer > 0.0:
+		get_node(refToOverlap).monitoring = true;  #Don't monitor unless it's running
 		swingTimer -= delta;
+	else:
+		get_node(refToOverlap).monitoring = false;
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

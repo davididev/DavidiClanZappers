@@ -4,6 +4,7 @@ var damageDelay : float = -1.0;
 @export var itemAttachment : NodePath;
 @export var spellAttachment : NodePath;
 @export var npcAnimatorRef : NodePath;
+static var PlayerPos : Vector3;
 static var AttachedItem = 0;
 static var AttachedSpell = 0;
 
@@ -19,6 +20,7 @@ func _enter_tree() -> void:
 	AttachSpell();
 
 func _process(delta: float) -> void:
+	PlayerPos = global_position;
 	if AttachedItem > 0:
 		#Prepare animations
 		if Input.is_action_just_pressed("item"):

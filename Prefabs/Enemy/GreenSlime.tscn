@@ -1,0 +1,109 @@
+[gd_scene load_steps=19 format=3 uid="uid://b2tquvbt1jgl"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/EnemyBase.gd" id="1_0comp"]
+[ext_resource type="PackedScene" uid="uid://dqwgqhfgunwqv" path="res://Graphics/Enemies/Slime/GreenSlime.glb" id="1_av7m0"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/BrainTransitionResource.gd" id="2_dvrgs"]
+[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="3_tednx"]
+[ext_resource type="Material" uid="uid://ct3e0e0i3og27" path="res://Graphics/Enemies/Slime/M_GreenSlime.tres" id="4_rej0u"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/BrainWaitForPlayer.gd" id="4_uge8y"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/BrainFollowPlayer.gd" id="6_malfu"]
+
+[sub_resource type="Resource" id="Resource_6bxb3"]
+script = ExtResource("2_dvrgs")
+cond = 2
+values = Array[float]([5.0])
+
+[sub_resource type="Resource" id="Resource_eu7n3"]
+script = ExtResource("2_dvrgs")
+cond = 3
+values = Array[float]([0.0])
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h5276"]
+radius = 0.9
+height = 1.8
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fr8ih"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ei6u"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvh27"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_buqwh"]
+states/Idle/node = SubResource("AnimationNodeAnimation_fr8ih")
+states/Idle/position = Vector2(375, 136)
+states/Start/position = Vector2(233, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5ei6u"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_gvh27")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1aibn"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r0knu"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1i3wy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sfuuo"]
+states/Idle/node = SubResource("AnimationNodeStateMachine_buqwh")
+states/Idle/position = Vector2(313, 127)
+states/Walk/node = SubResource("AnimationNodeAnimation_1aibn")
+states/Walk/position = Vector2(420, 126)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_r0knu"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_1i3wy")]
+
+[node name="GreenSlime" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 7
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+linear_damp_mode = 1
+linear_damp = 200.0
+angular_damp = 200.0
+script = ExtResource("1_0comp")
+renderers = Array[NodePath]([NodePath("CollisionShape3D/GreenSlime/Armature/Skeleton3D/DONOTCOPY_SlimeSprite")])
+look_at_transform = NodePath("LookAt")
+MaxHealth = 25.0
+tree = NodePath("CollisionShape3D/GreenSlime/AnimationTree")
+brains = Array[NodePath]([NodePath("Brain_WaitForPlayer"), NodePath("Brain_FollowPlayer")])
+brainTransitions = Array[ExtResource("2_dvrgs")]([SubResource("Resource_6bxb3"), SubResource("Resource_eu7n3")])
+IdleName = "Idle"
+MoveName = "Walk"
+MoveSpeed = 35.0
+MaxVelocity = 6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_h5276")
+
+[node name="GreenSlime" parent="CollisionShape3D" instance=ExtResource("1_av7m0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5, 0)
+
+[node name="Skeleton3D" parent="CollisionShape3D/GreenSlime/Armature" index="0"]
+bones/0/scale = Vector3(1.15354, 1, 1)
+bones/1/scale = Vector3(0.877166, 1, 0.877166)
+
+[node name="DONOTCOPY_SlimeSprite" parent="CollisionShape3D/GreenSlime/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("4_rej0u")
+
+[node name="AnimationTree" type="AnimationTree" parent="CollisionShape3D/GreenSlime"]
+tree_root = SubResource("AnimationNodeStateMachine_sfuuo")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="DropShadow" parent="." instance=ExtResource("3_tednx")]
+
+[node name="LookAt" type="Node3D" parent="."]
+
+[node name="Brain_WaitForPlayer" type="Node3D" parent="."]
+script = ExtResource("4_uge8y")
+root = NodePath("..")
+
+[node name="Brain_FollowPlayer" type="Node3D" parent="."]
+script = ExtResource("6_malfu")
+root = NodePath("..")
+nextBrainID = 0
+SpeedMultiplier = 2.0
+
+[connection signal="OnDamage" from="." to="." method="_on_on_damage"]
+
+[editable path="CollisionShape3D/GreenSlime"]

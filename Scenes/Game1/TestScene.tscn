@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ct2qdbf3sjnyb"]
+[gd_scene load_steps=11 format=4 uid="uid://ct2qdbf3sjnyb"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_10m80"]
 [ext_resource type="Script" path="res://Scenes/Game1/temp.gd" id="1_r81dt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dapjmqtlbaa54" path="res://DialogueSystem/output/default.res" id="2_esfrp"]
 [ext_resource type="Material" uid="uid://bns5clvnpxm5p" path="res://Graphics/Tilesets/MT_Terrain.tres" id="5_erudq"]
 [ext_resource type="LightmapGIData" uid="uid://b2cqprbbk2dkm" path="res://Scenes/Game1/TestScene.lmbake" id="6_6d71x"]
+[ext_resource type="PackedScene" uid="uid://b2tquvbt1jgl" path="res://Prefabs/Enemy/GreenSlime.tscn" id="7_1yy32"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_olphi"]
 lightmap_size_hint = Vector2i(986, 994)
@@ -68,3 +69,6 @@ environment_custom_color = Color(0.31802, 0.31802, 0.31802, 1)
 environment_custom_energy = 1.0
 camera_attributes = SubResource("CameraAttributesPractical_3mf4x")
 light_data = ExtResource("6_6d71x")
+
+[node name="GreenSlime" parent="." instance=ExtResource("7_1yy32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57917, 0.57143, -12.5372)
