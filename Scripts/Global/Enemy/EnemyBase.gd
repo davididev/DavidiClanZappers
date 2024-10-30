@@ -129,6 +129,7 @@ func PlayAttackAnimation(time : float):
 
 func _on_on_damage(Amount: int) -> void:
 	if emissionColor == Color.BLACK:
+		PopupText.PrintText(str("-", Amount, " HP"), get_tree(), Color.RED, global_position);
 		targetColor = Color.RED;
 		MinHealth -= Amount;
 		if MinHealth < 0.0:

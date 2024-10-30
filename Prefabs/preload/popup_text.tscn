@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://btekabm4mg65d"]
+
+[ext_resource type="Script" path="res://Prefabs/preload/textDisplay.gd" id="1_0pb3u"]
+[ext_resource type="FontFile" uid="uid://dqyinpbj5yjxr" path="res://Fonts/PixelOperator.ttf" id="2_f5x5t"]
+
+[node name="PopupText" type="Node3D"]
+script = ExtResource("1_0pb3u")
+textLabel = NodePath("Label3D")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
+modulate = Color(1, 0, 0, 1)
+text = "-1 HP"
+font = ExtResource("2_f5x5t")
+font_size = 100
