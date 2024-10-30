@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c3eivfpx6c3tt"]
+
+[ext_resource type="Texture2D" uid="uid://ch6ua864gc55c" path="res://Graphics/Particles/PowSpritesheet.png" id="1_p86tj"]
+
+[resource]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_p86tj")
+billboard_mode = 3
+particles_anim_h_frames = 5
+particles_anim_v_frames = 5
+particles_anim_loop = false

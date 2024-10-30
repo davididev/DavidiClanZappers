@@ -2,6 +2,8 @@ class_name EnemyBase extends RigidBody3D
 
 signal OnDamage(Amount : int);  #Enemies will need to use this
 
+static var powPart = preload("res://Prefabs/preload/enemy_pow_particle.tscn");
+
 var emissionColor : Color = Color.BLACK;
 var targetColor : Color = Color.BLACK;
 
@@ -131,6 +133,12 @@ func _on_on_damage(Amount: int) -> void:
 	if emissionColor == Color.BLACK:
 		PopupText.PrintText(str("-", Amount, " HP"), get_tree(), Color.RED, global_position);
 		targetColor = Color.RED;
+		var inst = powPart.instantiate();
+		inst.global_position = global_position;
+		get_tree().root.add_child(inst);
+		
 		MinHealth -= Amount;
 		if MinHealth < 0.0:
 			queue_free();
+		
+		
