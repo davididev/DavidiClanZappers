@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0wbbuwvdhhm"
+path="res://.godot/imported/Techno Dungeon.mp3-f12a640ec61b8d60575886c5fb2c5cae.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Techno Dungeon.mp3"
+dest_files=["res://.godot/imported/Techno Dungeon.mp3-f12a640ec61b8d60575886c5fb2c5cae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

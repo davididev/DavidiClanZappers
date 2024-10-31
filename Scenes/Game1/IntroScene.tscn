@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bn85sqgtqn525"]
+[gd_scene load_steps=15 format=4 uid="uid://bn85sqgtqn525"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_3rtrm"]
 [ext_resource type="LightmapGIData" uid="uid://c4dftj31kclap" path="res://Scenes/Game1/IntroScene.lmbake" id="1_6e05m"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="11_02bvx"]
 [ext_resource type="PackedScene" uid="uid://cytt41xsc0a8k" path="res://Prefabs/Decorations/Building Inner/bed_blue.tscn" id="11_c8yrw"]
 [ext_resource type="PackedScene" uid="uid://ch2a8yc7dfbyv" path="res://Prefabs/Decorations/Building Inner/wooden_chair.tscn" id="11_q52sy"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="12_6g746"]
 [ext_resource type="PackedScene" uid="uid://b0q61q8ghgsx1" path="res://Prefabs/Decorations/Building Inner/bookshelf.tscn" id="12_h4y71"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rtjsk"]
@@ -94,3 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
 shape = SubResource("BoxShape3D_rlqv5")
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("12_6g746")

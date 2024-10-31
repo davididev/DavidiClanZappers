@@ -5,7 +5,7 @@
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2txid"]
 emission_shape = 1
-emission_sphere_radius = 2.0
+emission_sphere_radius = 0.5
 direction = Vector3(0, 1, 0)
 gravity = Vector3(0, 1, 0)
 anim_speed_min = 1.84

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy1uohxchvxqw"]
+
+[ext_resource type="Script" path="res://Prefabs/preload/play_music.gd" id="1_av013"]
+
+[node name="PlayMusic" type="Node3D"]
+script = ExtResource("1_av013")
+AudioSource = NodePath("AudioStreamPlayer3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 200.0
+bus = &"Music"
