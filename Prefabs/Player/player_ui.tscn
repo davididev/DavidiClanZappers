@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=29 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -12,12 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://dvel03a08u4tv" path="res://Graphics/UI/Inventory/Item0.png" id="6_dyhy3"]
 [ext_resource type="Script" path="res://Scripts/Global/UI/SpellOrItemButton.gd" id="6_y4ou3"]
 [ext_resource type="Texture2D" uid="uid://d605vtldbhtp" path="res://DialogueSystem/ui/DialogueBox.png" id="7_qxomr"]
+[ext_resource type="Texture2D" uid="uid://jxq8jiogbkon" path="res://Graphics/UI/Settings/SettingsButton1.png" id="8_cgro7"]
 [ext_resource type="Theme" uid="uid://b7lrgt3hlawkv" path="res://DialogueSystem/ui/ThemeRT_Header.tres" id="8_id21u"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueHandler.gd" id="8_oha4v"]
 [ext_resource type="Theme" uid="uid://btqtpcg0hhree" path="res://DialogueSystem/ui/ThemeRT_Body.tres" id="9_ayg6i"]
+[ext_resource type="Texture2D" uid="uid://yjjhrno55nqh" path="res://Graphics/UI/Settings/SettingsButton3.png" id="9_k3od0"]
 [ext_resource type="Texture2D" uid="uid://dgojmk3o35auu" path="res://Graphics/UI/SpeedNormal.png" id="10_6wbmc"]
+[ext_resource type="Texture2D" uid="uid://bt8go6i7u1fbg" path="res://Graphics/UI/Settings/SettingsButton2.png" id="10_b08b3"]
 [ext_resource type="Texture2D" uid="uid://bammv7f4dlxuh" path="res://Graphics/UI/SpeedHover.png" id="11_rsy8v"]
 [ext_resource type="Theme" uid="uid://g2i82i2usg33" path="res://DialogueSystem/ui/ThemeChoiceButton.tres" id="11_sm0hw"]
+[ext_resource type="Texture2D" uid="uid://cxnfvaktoehj0" path="res://Graphics/UI/Settings/SettingsMenu.png" id="11_ywprm"]
+[ext_resource type="Texture2D" uid="uid://buofjvql6iasu" path="res://Graphics/UI/Inventory/ItemButton1.png" id="12_eocy7"]
+[ext_resource type="Texture2D" uid="uid://dmlm6155g80ue" path="res://Graphics/UI/Inventory/ItemButton3.png" id="13_dhkf8"]
+[ext_resource type="Texture2D" uid="uid://bxmwn4b6koknd" path="res://Graphics/UI/Inventory/ItemButton2.png" id="14_fux63"]
+[ext_resource type="Theme" uid="uid://lit8d35pdhgt" path="res://Graphics/UI/SlicedButtonTheme.tres" id="15_nurjf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uve4q"]
 font_size = 25
@@ -34,9 +42,10 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_0xfu1")
-pausePanels = Array[NodePath]([NodePath("InventoryMenu")])
+pausePanels = Array[NodePath]([NodePath("InventoryMenu"), NodePath("SettingsMenu")])
 
 [node name="InventoryMenu" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,6 +66,7 @@ offset_left = 48.0
 offset_top = 96.0
 offset_right = 96.0
 offset_bottom = 144.0
+focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../Spell Button 1")
 focus_neighbor_bottom = NodePath("../Spell Button 2")
 texture_normal = ExtResource("3_rvf32")
@@ -231,6 +241,7 @@ offset_top = 96.0
 offset_right = 192.0
 offset_bottom = 144.0
 focus_neighbor_left = NodePath("../Spell Button 0")
+focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../Item Button 0")
 focus_neighbor_bottom = NodePath("../Spell Button 3")
 texture_normal = ExtResource("3_rvf32")
@@ -256,6 +267,7 @@ offset_top = 96.0
 offset_right = 288.0
 offset_bottom = 144.0
 focus_neighbor_left = NodePath("../Spell Button 1")
+focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../Item Button 1")
 focus_neighbor_bottom = NodePath("../Item Button 3")
 texture_normal = ExtResource("3_rvf32")
@@ -504,6 +516,7 @@ offset_left = 432.0
 offset_top = 96.0
 offset_right = 480.0
 offset_bottom = 144.0
+focus_neighbor_top = NodePath("../SettingsButton")
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -518,6 +531,168 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("6_dyhy3")
+
+[node name="SettingsButton" type="TextureButton" parent="InventoryMenu"]
+layout_mode = 0
+offset_left = 437.0
+offset_right = 477.0
+offset_bottom = 40.0
+focus_neighbor_bottom = NodePath("../Item Button 2")
+texture_normal = ExtResource("8_cgro7")
+texture_pressed = ExtResource("9_k3od0")
+texture_hover = ExtResource("10_b08b3")
+texture_focused = ExtResource("10_b08b3")
+
+[node name="SettingsMenu" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ywprm")
+
+[node name="IventoryButton" type="TextureButton" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 437.0
+offset_right = 477.0
+offset_bottom = 40.0
+texture_normal = ExtResource("12_eocy7")
+texture_pressed = ExtResource("13_dhkf8")
+texture_hover = ExtResource("14_fux63")
+texture_focused = ExtResource("14_fux63")
+
+[node name="SaveButton" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 229.0
+offset_bottom = 117.0
+focus_neighbor_right = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../VolumeMasterDown")
+theme = ExtResource("15_nurjf")
+text = "Save and continue"
+
+[node name="QuitButton" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 56.0
+offset_right = 474.0
+offset_bottom = 117.0
+focus_neighbor_left = NodePath("../SaveButton")
+focus_neighbor_top = NodePath("../IventoryButton")
+focus_neighbor_right = NodePath("../VolumeMasterUp")
+theme = ExtResource("15_nurjf")
+text = "Quit"
+
+[node name="VolumeMasterDown" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 152.0
+offset_right = 81.0
+offset_bottom = 213.0
+focus_neighbor_top = NodePath("../SaveButton")
+focus_neighbor_right = NodePath("../VolumeMasterUp")
+focus_neighbor_bottom = NodePath("../VolumeSoundDown")
+theme = ExtResource("15_nurjf")
+text = "-"
+
+[node name="VolumeMasterUp" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 152.0
+offset_right = 473.0
+offset_bottom = 213.0
+focus_neighbor_left = NodePath("../VolumeMasterDown")
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../VolumeSoundUp")
+theme = ExtResource("15_nurjf")
+text = "+"
+
+[node name="VolumeMasterLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 152.0
+offset_right = 420.0
+offset_bottom = 225.0
+theme = ExtResource("9_ayg6i")
+bbcode_enabled = true
+text = "[center][font_size=36]Volume Master[/font_size]
+100%[/center]"
+
+[node name="VolumeSoundDown" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 232.0
+offset_right = 81.0
+offset_bottom = 293.0
+focus_neighbor_top = NodePath("../VolumeMasterDown")
+focus_neighbor_right = NodePath("../VolumeSoundUp")
+focus_neighbor_bottom = NodePath("../VolumeMusicDown")
+theme = ExtResource("15_nurjf")
+text = "-"
+
+[node name="VolumeSoundUp" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 232.0
+offset_right = 473.0
+offset_bottom = 293.0
+focus_neighbor_left = NodePath("../VolumeSoundDown")
+focus_neighbor_top = NodePath("../VolumeMasterUp")
+focus_neighbor_bottom = NodePath("../VolumeMusicUp")
+theme = ExtResource("15_nurjf")
+text = "+"
+
+[node name="VolumeSoundLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 232.0
+offset_right = 420.0
+offset_bottom = 305.0
+theme = ExtResource("9_ayg6i")
+bbcode_enabled = true
+text = "[center][font_size=36]Volume Sound[/font_size]
+100%[/center]"
+
+[node name="VolumeMusicDown" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 320.0
+offset_right = 81.0
+offset_bottom = 381.0
+focus_neighbor_top = NodePath("../VolumeSoundDown")
+focus_neighbor_right = NodePath("../VolumeMusicUp")
+theme = ExtResource("15_nurjf")
+text = "-"
+
+[node name="VolumeMusicUp" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 320.0
+offset_right = 473.0
+offset_bottom = 381.0
+focus_neighbor_left = NodePath("../VolumeMusicDown")
+focus_neighbor_top = NodePath("../VolumeSoundUp")
+theme = ExtResource("15_nurjf")
+text = "+"
+
+[node name="VolumeMusicLabel" type="RichTextLabel" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 320.0
+offset_right = 420.0
+offset_bottom = 393.0
+theme = ExtResource("9_ayg6i")
+bbcode_enabled = true
+text = "[center][font_size=36]Volume Music[/font_size]
+100%[/center]"
 
 [node name="BGButtons1" type="TextureRect" parent="."]
 layout_mode = 1
@@ -725,6 +900,8 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="InventoryMenu/Item Button 5" to="InventoryMenu/Item Button 5" method="_on_pressed"]
 [connection signal="pressed" from="InventoryMenu/Item Button 1" to="InventoryMenu/Item Button 1" method="_on_pressed"]
 [connection signal="pressed" from="InventoryMenu/Item Button 2" to="InventoryMenu/Item Button 2" method="_on_pressed"]
+[connection signal="pressed" from="InventoryMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SettingsMenu/IventoryButton" to="." method="_on_iventory_button_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice1" to="DialogueBox" method="_on_button_choice_1_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice2" to="DialogueBox" method="_on_button_choice_2_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice3" to="DialogueBox" method="_on_button_choice_3_pressed"]

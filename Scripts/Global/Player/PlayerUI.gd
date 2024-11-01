@@ -36,6 +36,8 @@ func SetPausePanel(id : int):
 		#Now we set default button
 		if id == 0:
 			get_node("InventoryMenu/Spell Button 0").grab_focus();
+		if id == 1:
+			get_node("SettingsMenu/SaveButton").grab_focus();
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -72,16 +74,21 @@ func _process(delta: float) -> void:
 		
 func UpdatePlayerHUD():  #TODO: Update HUD
 	var rt = get_node("HUD");
-	var h1 = GameDataHolder.Instance.data.MinHealth;
-	var h2 = GameDataHolder.Instance.data.MaxHealth;
-	var str = GameDataHolder.Instance.data.Str;
-	var mag = GameDataHolder.Instance.data.Mag;
-	rt.text = str("[color=red]Health: [b]", h1, "/",h2, "[/b][/color]\n[color=blue]Strength: [b]", str, "[/b] [/color]\n[color=green]Magic: [b]", mag, "[/b][/color]\n")
+	if GameDataHolder.Instance.data != null:
+		var h1 = GameDataHolder.Instance.data.MinHealth;
+		var h2 = GameDataHolder.Instance.data.MaxHealth;
+		var str = GameDataHolder.Instance.data.Str;
+		var mag = GameDataHolder.Instance.data.Mag;
+		rt.text = str("[color=red]Health: [b]", h1, "/",h2, "[/b][/color]\n[color=blue]Strength: [b]", str, "[/b] [/color]\n[color=green]Magic: [b]", mag, "[/b][/color]\n")
 	
-	print(str("VarName test 1: ", GameDataHolder.Instance.VarMeta.IntNames[0]));
+		print(str("VarName test 1: ", GameDataHolder.Instance.VarMeta.IntNames[0]));
 	UpdateHUD = false;
 	pass;
 
 
-func _on_item_button_pressed() -> void:
-	pass # Replace with function body.
+func _on_settings_button_pressed() -> void:
+	SetPausePanel(1);
+
+
+func _on_iventory_button_pressed() -> void:
+	SetPausePanel(0);
