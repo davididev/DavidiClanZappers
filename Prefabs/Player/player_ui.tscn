@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=30 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dmlm6155g80ue" path="res://Graphics/UI/Inventory/ItemButton3.png" id="13_dhkf8"]
 [ext_resource type="Texture2D" uid="uid://bxmwn4b6koknd" path="res://Graphics/UI/Inventory/ItemButton2.png" id="14_fux63"]
 [ext_resource type="Theme" uid="uid://lit8d35pdhgt" path="res://Graphics/UI/SlicedButtonTheme.tres" id="15_nurjf"]
+[ext_resource type="Texture2D" uid="uid://defu7vymxg2xv" path="res://Graphics/UI/Settings/ConfirmMenu.png" id="17_w7kuc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uve4q"]
 font_size = 25
@@ -42,7 +43,7 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_0xfu1")
-pausePanels = Array[NodePath]([NodePath("InventoryMenu"), NodePath("SettingsMenu")])
+pausePanels = Array[NodePath]([NodePath("InventoryMenu"), NodePath("SettingsMenu"), NodePath("ConfirmQuit Menu")])
 
 [node name="InventoryMenu" type="TextureRect" parent="."]
 visible = false
@@ -694,6 +695,51 @@ bbcode_enabled = true
 text = "[center][font_size=36]Volume Music[/font_size]
 100%[/center]"
 
+[node name="ConfirmQuit Menu" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_w7kuc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmQuit Menu"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 48.0
+offset_right = 490.0
+offset_bottom = 132.0
+theme = ExtResource("9_ayg6i")
+bbcode_enabled = true
+text = "[color=red]Warning.  [/color]If you don't save, quitting will erase your progress."
+
+[node name="ConfirmQuitButton" type="Button" parent="ConfirmQuit Menu"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 288.0
+offset_right = 240.0
+offset_bottom = 349.0
+focus_neighbor_right = NodePath("../CancelQuit")
+theme = ExtResource("15_nurjf")
+text = "Yes, quit"
+
+[node name="CancelQuit" type="Button" parent="ConfirmQuit Menu"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 288.0
+offset_right = 480.0
+offset_bottom = 349.0
+focus_neighbor_left = NodePath("../ConfirmQuitButton")
+theme = ExtResource("15_nurjf")
+text = "Go back to game"
+
 [node name="BGButtons1" type="TextureRect" parent="."]
 layout_mode = 1
 offset_right = 320.0
@@ -903,6 +949,9 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="InventoryMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/IventoryButton" to="." method="_on_iventory_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="SettingsMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ConfirmQuit Menu/ConfirmQuitButton" to="." method="_on_confirm_quit_button_pressed"]
+[connection signal="pressed" from="ConfirmQuit Menu/CancelQuit" to="." method="_on_iventory_button_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice1" to="DialogueBox" method="_on_button_choice_1_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice2" to="DialogueBox" method="_on_button_choice_2_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice3" to="DialogueBox" method="_on_button_choice_3_pressed"]

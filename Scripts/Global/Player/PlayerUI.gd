@@ -38,6 +38,9 @@ func SetPausePanel(id : int):
 			get_node("InventoryMenu/Spell Button 0").grab_focus();
 		if id == 1:
 			get_node("SettingsMenu/SaveButton").grab_focus();
+		if id == 2:
+			LastPausePanel = 0;
+			get_node("ConfirmQuit Menu/CancelQuit").grab_focus();
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -103,3 +106,11 @@ func _on_save_button_pressed() -> void:
 		
 	await get_tree().create_timer(1.0, true, true, true).timeout;
 	get_node("SettingsMenu/SaveButton").text = "Save and continue";
+
+
+func _on_confirm_quit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Global/TitleScreen.tscn");	
+
+
+func _on_quit_button_pressed() -> void:
+	SetPausePanel(2);
