@@ -21,6 +21,7 @@ func _on_pressed() -> void:
 	if isItem:
 		Avatar.AttachedItem = itemID;
 		get_tree().get_first_node_in_group("Player").call("AttachItem");
+		SoundFXPlayer.PlaySound("interface/confirmation_002.ogg", get_tree(), Avatar.PlayerPos);
 	else:
 		Avatar.AttachedSpell = spellID;
 		get_tree().get_first_node_in_group("Player").call("AttachSpell");

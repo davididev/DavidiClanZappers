@@ -18,6 +18,7 @@ func _enter_tree() -> void:
 		GameDataHolder.Instance.LoadFile();
 	UpdateUI();
 	#Assuming attached items / spells aren't nil, carry from previous maps
+	await get_tree().create_timer(0.1).timeout;
 	AttachItem();
 	AttachSpell();
 

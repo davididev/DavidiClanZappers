@@ -34,6 +34,8 @@ func _ready() -> void:
 	GameDataHolder.Instance.GetGameData();
 	
 	if First: #Load nodes
+		Avatar.AttachedItem = 0;
+		Avatar.AttachedSpell = 0;
 		var current = get_tree().current_scene.scene_file_path;
 		var compare = str("res://Scenes/", GameDataHolder.Instance.data.ScenePath, ".tscn")
 		if current == compare:

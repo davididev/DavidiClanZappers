@@ -100,8 +100,10 @@ func _on_iventory_button_pressed() -> void:
 func _on_save_button_pressed() -> void:
 	var success = GameDataHolder.Instance.SaveFile(get_tree());
 	if success:
+		SoundFXPlayer.PlaySound("interface/confirmation_001.ogg", get_tree(), Avatar.PlayerPos);
 		get_node("SettingsMenu/SaveButton").text = "Saved game!";
 	else:
+		SoundFXPlayer.PlaySound("interface/error_003.ogg", get_tree(), Avatar.PlayerPos);
 		get_node("SettingsMenu/SaveButton").text = "Failed; try again";
 		
 	await get_tree().create_timer(1.0, true, true, true).timeout;
