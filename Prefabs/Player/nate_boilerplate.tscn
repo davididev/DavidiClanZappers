@@ -13,7 +13,7 @@
 custom_solver_bias = 0.5
 height = 2.5
 
-[node name="NateBoilerplate" type="Node3D"]
+[node name="NateBoilerplate" type="Node3D" groups=["SerializedNode"]]
 script = ExtResource("1_s37ou")
 playerRoot = NodePath("CharacterBody3D/CollisionShape3D/NateRiggedFinal")
 characterController = NodePath("CharacterBody3D")

@@ -11,6 +11,8 @@ static var AttachedSpell = 0;
 var idLeft = 0;
 var idRight = 0;
 
+
+
 func _enter_tree() -> void:
 	if GameDataHolder.Instance == null:
 		GameDataHolder.Instance.LoadFile();

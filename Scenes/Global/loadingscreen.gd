@@ -7,6 +7,7 @@ var scaleY = 0.001;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#get_node("CanvasLayer/Header").text = str("[center]Loading:\n", );
+	GameDataHolder.Instance.data.ScenePath = SceneToLoad;
 	resource_name = str("res://Scenes/", SceneToLoad, ".tscn")
 	ResourceLoader.load_threaded_request(resource_name);
 	get_node("Camera2D/CanvasGroup/RichTextLabel").scale = Vector2(1.0, scaleY);

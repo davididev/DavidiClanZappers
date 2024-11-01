@@ -92,3 +92,14 @@ func _on_settings_button_pressed() -> void:
 
 func _on_iventory_button_pressed() -> void:
 	SetPausePanel(0);
+
+
+func _on_save_button_pressed() -> void:
+	var success = GameDataHolder.Instance.SaveFile(get_tree());
+	if success:
+		get_node("SettingsMenu/SaveButton").text = "Saved game!";
+	else:
+		get_node("SettingsMenu/SaveButton").text = "Failed; try again";
+		
+	await get_tree().create_timer(1.0, true, true, true).timeout;
+	get_node("SettingsMenu/SaveButton").text = "Save and continue";

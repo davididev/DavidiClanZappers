@@ -31,10 +31,36 @@ var moveTimer = 0.0;
 var attackTimer = 0.0;
 var currentBrainTime = 0.0;
 
+func SaveNode() -> SerializedNode:
+	var newNode = SerializedNode.new();
+	newNode.path = get_path();
+	newNode.MiscFloat1 = MinHealth;
+	newNode.MiscInt1 = currentBrainID;
+	newNode.position = position;
+	newNode.rotation = rotation_degrees;
+	return newNode;
+
+var loadFile = false;
+
+func LoadNode(load : SerializedNode) -> void:
+	loadFile = true;
+	position = load.position;
+	rotation_degrees = load.rotation;
+	MinHealth = load.MiscFloat1;
+	SetCurrentBrain(load.MiscInt1);
+	if MinHealth < 0.0:
+		Die();
+		
+func Die():
+	visible = false;
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	MinHealth = MaxHealth;
-	SetCurrentBrain(0);
+	await get_tree().create_timer(0.05).timeout;
+	if loadFile == false:  #This was not loaded from data, init enemy
+		MinHealth = MaxHealth;
+		SetCurrentBrain(0);
 	pass # Replace with function body.
 
 func SetCurrentBrain(id : int):
@@ -139,6 +165,6 @@ func _on_on_damage(Amount: int) -> void:
 		
 		MinHealth -= Amount;
 		if MinHealth < 0.0:
-			queue_free();
+			Die();
 		
 		

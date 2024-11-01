@@ -14,7 +14,7 @@ func RedrawButton():
 		get_node("TextureRect").texture = load(str("res://Graphics/UI/Inventory/Item", itemID, ".png"))
 	else:
 		spellID = GameDataHolder.Instance.data.Spells[dataID];
-		get_node("TextureRect").texture = load(str("res://Graphics/UI/Inventory/Spell", itemID, ".png"))
+		get_node("TextureRect").texture = load(str("res://Graphics/UI/Inventory/Spell", spellID, ".png"))
 
 
 func _on_pressed() -> void:

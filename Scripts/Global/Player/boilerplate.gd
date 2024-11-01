@@ -14,11 +14,32 @@ const ROTATE_PER_SECOND = 4.0;
 
 var gravity = 0.0;
 var targetAngle : float = 0.0;
+static var First = true;
+
+
+func SaveNode() -> SerializedNode:
+	var newNode = SerializedNode.new();
+	newNode.path = get_path();
+	newNode.position = get_child(0).position;
+	newNode.rotation = get_child(0).rotation_degrees;
+	return newNode;
+	
+func LoadNode(load : SerializedNode) -> void:
+	
+	get_child(0).position = load.position;
+	get_child(0).rotation_degrees = load.rotation;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameDataHolder.Instance.GetGameData();
-	get_node(playerRoot).position = StartingPosition;
+	
+	if First: #Load nodes
+		var current = get_tree().current_scene.scene_file_path;
+		var compare = str("res://Scenes/", GameDataHolder.Instance.data.ScenePath, ".tscn")
+		if current == compare:
+			GameDataHolder.Instance.data.Load(get_tree());
+	else:
+		get_node(playerRoot).position = StartingPosition;
 	
 
 func set_cc_rotation(moveVec : Vector3, delta : float):
