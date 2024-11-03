@@ -42,7 +42,7 @@ func _ready() -> void:
 			GameDataHolder.Instance.data.Load(get_tree());
 		First = false;
 	else:
-		get_node(playerRoot).position = StartingPosition;
+		get_child(0).global_position = StartingPosition;
 	
 
 func set_cc_rotation(moveVec : Vector3, delta : float):
