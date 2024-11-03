@@ -63,10 +63,10 @@ linear_damp = 200.0
 angular_damp = 200.0
 script = ExtResource("1_0comp")
 renderers = Array[NodePath]([NodePath("CollisionShape3D/GreenSlime/Armature/Skeleton3D/DONOTCOPY_SlimeSprite")])
-look_at_transform = NodePath("LookAt")
+look_at_transform = NodePath("CollisionShape3D/LookAt")
 MaxHealth = 25.0
 tree = NodePath("CollisionShape3D/GreenSlime/AnimationTree")
-brains = Array[NodePath]([NodePath("Brain_WaitForPlayer"), NodePath("Brain_FollowPlayer")])
+brains = Array[NodePath]([NodePath("CollisionShape3D/Brain_WaitForPlayer"), NodePath("CollisionShape3D/Brain_FollowPlayer")])
 brainTransitions = Array[ExtResource("2_dvrgs")]([SubResource("Resource_6bxb3"), SubResource("Resource_eu7n3")])
 IdleName = "Idle"
 MoveName = "Walk"
@@ -80,8 +80,8 @@ shape = SubResource("CapsuleShape3D_h5276")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5, 0)
 
 [node name="Skeleton3D" parent="CollisionShape3D/GreenSlime/Armature" index="0"]
-bones/0/scale = Vector3(1.1162, 1, 1)
-bones/1/scale = Vector3(0.907036, 1, 0.907036)
+bones/0/scale = Vector3(1.07494, 1, 1)
+bones/1/scale = Vector3(0.940051, 1, 0.940051)
 
 [node name="DONOTCOPY_SlimeSprite" parent="CollisionShape3D/GreenSlime/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rej0u")
@@ -90,17 +90,17 @@ surface_material_override/0 = ExtResource("4_rej0u")
 tree_root = SubResource("AnimationNodeStateMachine_sfuuo")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="DropShadow" parent="." instance=ExtResource("3_tednx")]
+[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("3_tednx")]
 
-[node name="LookAt" type="Node3D" parent="."]
+[node name="LookAt" type="Node3D" parent="CollisionShape3D"]
 
-[node name="Brain_WaitForPlayer" type="Node3D" parent="."]
+[node name="Brain_WaitForPlayer" type="Node3D" parent="CollisionShape3D"]
 script = ExtResource("4_uge8y")
-root = NodePath("..")
+root = NodePath("../..")
 
-[node name="Brain_FollowPlayer" type="Node3D" parent="."]
+[node name="Brain_FollowPlayer" type="Node3D" parent="CollisionShape3D"]
 script = ExtResource("6_malfu")
-root = NodePath("..")
+root = NodePath("../..")
 nextBrainID = 0
 SpeedMultiplier = 2.0
 

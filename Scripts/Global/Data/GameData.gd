@@ -31,8 +31,9 @@ func Save(t : SceneTree):  #Mostly this is about saving the savedNodes
 func Load(t : SceneTree): #Mostly this is about loading the savedNodes
 	#Load the persistent nodes
 	for node in savedNodes:
-		if t.root.get_node(node.path).has_method("LoadNode"):
-			t.root.get_node(node.path).call("LoadNode", node);
+		if t.root.get_node(node.path) != null:
+			if t.root.get_node(node.path).has_method("LoadNode"):
+				t.root.get_node(node.path).call("LoadNode", node);
 		
 	
 	
