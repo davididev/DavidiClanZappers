@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://rcdg300s8fnw"]
+
+[ext_resource type="PackedScene" uid="uid://t83a8cee6ce5" path="res://Graphics/Interactable/Coin/YellowCoin.glb" id="1_fwlw8"]
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/coin.gd" id="1_tng0t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7x71"]
+size = Vector3(0.7, 0.7, 0.2)
+
+[node name="SmallCoin" type="Area3D"]
+top_level = true
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_tng0t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_x7x71")
+
+[node name="YellowCoin" parent="CollisionShape3D" instance=ExtResource("1_fwlw8")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b3gc2y6rfbfbo"]
+
+[ext_resource type="Texture2D" uid="uid://cta0o64r2ljh4" path="res://Graphics/Interactable/Coin/YellowCoinPalette.png" id="1_jcqex"]
+
+[resource]
+albedo_texture = ExtResource("1_jcqex")
+roughness = 0.4
+roughness_texture_channel = 4
+rim = 0.0

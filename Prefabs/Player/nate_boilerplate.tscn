@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq5e2at6m5qp"]
+[gd_scene load_steps=12 format=3 uid="uid://cq5e2at6m5qp"]
 
 [ext_resource type="PackedScene" uid="uid://dhimtq0lw3r1d" path="res://Graphics/Characters/Nate/NateRiggedFinal.glb" id="1_k1dg4"]
 [ext_resource type="Script" path="res://Scripts/Global/Player/boilerplate.gd" id="1_s37ou"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="4_87t5j"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="5_k1b6g"]
 [ext_resource type="Script" path="res://Scripts/Global/Character/NPCAnimator.gd" id="6_t1vot"]
+[ext_resource type="Script" path="res://Scripts/Global/Player/Node3DPool.gd" id="9_kfgf6"]
+[ext_resource type="PackedScene" uid="uid://rcdg300s8fnw" path="res://Prefabs/Enemy/SmallCoin.tscn" id="10_k2yut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jsdx4"]
 custom_solver_bias = 0.5
@@ -284,5 +286,11 @@ character_controller_path = NodePath("../CharacterBody3D")
 script = ExtResource("6_t1vot")
 characterController = NodePath("../CharacterBody3D")
 animationPlayer = NodePath("../CharacterBody3D/CollisionShape3D/NateRiggedFinal/AnimationPlayer2")
+
+[node name="Node3DPool" type="Node" parent="."]
+script = ExtResource("9_kfgf6")
+starting_keys = Array[String](["small_coin"])
+starting_prefabs = Array[PackedScene]([ExtResource("10_k2yut")])
+starting_size = Array[int]([25])
 
 [editable path="CharacterBody3D/CollisionShape3D/NateRiggedFinal"]

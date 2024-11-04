@@ -22,6 +22,8 @@ var currentBrainID = 0;
 @export var MoveSpeed : float = 50.0;
 @export var MaxVelocity : float = 10.0;
 @export var JumpTowardsTarget = false;
+@export var coinsOnDeath = 1;
+@export var chanceOfHeart = 50;
 var MinHealth = 6.0;
 
 var SpeedMultiplier = 1.0;
@@ -54,6 +56,12 @@ func LoadNode(load : SerializedNode) -> void:
 func Die():
 	visible = false;
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED;
+	var remainingCoins = coinsOnDeath;
+	while remainingCoins > 0:
+		remainingCoins -= 1;
+		var entry = Node3DPool.GetInstance("small_coin");
+		if entry != null:
+			entry.global_position = global_position + Vector3(randf_range(-1.5, 1.5), 0.0, randf_range(-1.5, 1.5));
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
