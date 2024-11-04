@@ -89,7 +89,7 @@ func UpdatePlayerHUD():  #TODO: Update HUD
 		var str = GameDataHolder.Instance.data.Str;
 		var mag = GameDataHolder.Instance.data.Mag;
 		rt.text = str("[color=red]Health: [b]", h1, "/",h2, "[/b][/color]\n[color=blue]Strength: [b]", str, "[/b] [/color]\n[color=green]Magic: [b]", mag, "[/b][/color]\n")
-	
+		get_node("Gold").text = str("[right]Gold: [color=yellow]", GameDataHolder.Instance.data.Gold);
 		print(str("VarName test 1: ", GameDataHolder.Instance.VarMeta.IntNames[0]));
 	UpdateHUD = false;
 	pass;

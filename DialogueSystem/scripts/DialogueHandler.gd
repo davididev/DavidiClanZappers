@@ -36,12 +36,29 @@ static func GetVariable(vname : String):
 		#print(str("Get Var ", vname, "; Variable exists; value is", variables[vname]));
 		return variables[vname];
 
+func InitDialogueVars():
+	var varNames = GameDataHolder.Instance.VarMeta.IntNames;
+	for i in range(0, varNames.size()):
+		SetVariable(varNames[i], GameDataHolder.Instance.data.IntVars[i]);
+	
+	SetVariable("%gold", GameDataHolder.Instance.data.Gold);
+
+func CloseDialogueVars():
+	var varNames = GameDataHolder.Instance.VarMeta.IntNames;
+	for i in range(0, varNames.size()):
+		GameDataHolder.Instance.data.IntVars[i] = GetVariable(varNames[i]);
+	
+	GameDataHolder.Instance.data.Gold = GetVariable("%gold");	
+	PlayerUI.UpdateHUD = true;
+
 func StartDialogue(runThis : DialogueGrid):
 	CurrentX = 0;
 	CurrentY = 0;
 	IsRunning = true;
 	dialogueThread = runThis;
+	InitDialogueVars();
 	ObtainDialogue();
+
 
 #Using CurrentX and CurrentY, get the DialogueEntry node and start up the function
 func ObtainDialogue():
@@ -310,6 +327,7 @@ func StreamChoiceBox(args : Array[String]):
 func EndDialogue():
 	dialogueThread = null;
 	IsRunning = false;
+	CloseDialogueVars();
 
 var textboxsoundrunning = false;
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -545,6 +545,7 @@ texture_hover = ExtResource("10_b08b3")
 texture_focused = ExtResource("10_b08b3")
 
 [node name="SettingsMenu" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -836,6 +837,15 @@ grow_horizontal = 2
 theme = ExtResource("8_id21u")
 bbcode_enabled = true
 text = "..."
+
+[node name="Gold" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_left = 544.0
+offset_right = 826.0
+offset_bottom = 143.0
+theme = ExtResource("8_id21u")
+bbcode_enabled = true
+text = "[right]Gold: [color=yellow]0"
 
 [node name="DialogueBox" type="TextureRect" parent="."]
 visible = false
