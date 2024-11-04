@@ -37,6 +37,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Graphics/Interactable/Heart/HeartMat.tres"
 }
+},
+"nodes": {
+"PATH:DONOTCOPY_HeartSprite": {
+"mesh_instance/cast_shadow": 0
+}
 }
 }
 gltf/naming_version=1
