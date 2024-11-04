@@ -23,7 +23,7 @@ var currentBrainID = 0;
 @export var MaxVelocity : float = 10.0;
 @export var JumpTowardsTarget = false;
 @export var coinsOnDeath = 1;
-@export var chanceOfHeart = 50;
+@export var chanceOfHeart = 100;
 var MinHealth = 6.0;
 
 var SpeedMultiplier = 1.0;
@@ -62,7 +62,12 @@ func Die():
 		var entry = Node3DPool.GetInstance("small_coin");
 		if entry != null:
 			entry.global_position = global_position + Vector3(randf_range(-1.5, 1.5), 0.0, randf_range(-1.5, 1.5));
-
+	
+	var chance = randi_range(0, 101);
+	if chance <= chanceOfHeart:
+		var entry = Node3DPool.GetInstance("small_heart");
+		if entry != null:
+			entry.global_position = global_position;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.05).timeout;

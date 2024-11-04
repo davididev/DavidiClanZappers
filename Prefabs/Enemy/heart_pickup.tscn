@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcb18u2e38mf"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/coin.gd" id="1_d8no8"]
+[ext_resource type="PackedScene" uid="uid://b26w3ji8phqik" path="res://Graphics/Interactable/Heart/Heart.glb" id="2_bb418"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dm5wx"]
+size = Vector3(0.7, 0.7, 0.25)
+
+[node name="HeartPickup" type="Area3D"]
+top_level = true
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_d8no8")
+goldAmount = 0
+healPercentage = 20
+soundFX = "interface/confirmation_001.ogg"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dm5wx")
+
+[node name="Heart" parent="CollisionShape3D" instance=ExtResource("2_bb418")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, -0.3, 0.141)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

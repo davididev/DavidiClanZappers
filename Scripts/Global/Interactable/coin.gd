@@ -1,6 +1,7 @@
 extends Area3D
 
 @export var goldAmount = 1;
+@export var healPercentage = 0;
 @export var soundFX : String = "rpg/handleCoins.ogg";
 
 # Called when the node enters the scene tree for the first time.
@@ -14,8 +15,13 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
-		GameDataHolder.Instance.data.Gold += goldAmount;
-		PlayerUI.UpdateHUD = true;
-		SoundFXPlayer.PlaySound(soundFX, get_tree(), global_position);
-		Node3DPool.SetActive(self, false);
+	if visible == true:
+		if body.is_in_group("Player"):
+			GameDataHolder.Instance.data.Gold += goldAmount;
+			var amt = GameDataHolder.Instance.data.MaxHealth * healPercentage / 100;
+			if amt > 0:
+				if(body.has_method("Heal")):
+					body.call("Heal", amt);
+			PlayerUI.UpdateHUD = true;
+			SoundFXPlayer.PlaySound(soundFX, get_tree(), global_position);
+			Node3DPool.SetActive(self, false);

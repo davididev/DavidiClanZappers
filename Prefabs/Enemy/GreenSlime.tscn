@@ -82,8 +82,8 @@ shape = SubResource("CapsuleShape3D_h5276")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5, 0)
 
 [node name="Skeleton3D" parent="CollisionShape3D/GreenSlime/Armature" index="0"]
-bones/0/scale = Vector3(1.00598, 1, 1)
-bones/1/scale = Vector3(0.995217, 1, 0.995217)
+bones/0/scale = Vector3(1.02034, 1, 1)
+bones/1/scale = Vector3(0.98373, 1, 0.98373)
 
 [node name="DONOTCOPY_SlimeSprite" parent="CollisionShape3D/GreenSlime/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rej0u")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cq5e2at6m5qp"]
+[gd_scene load_steps=14 format=3 uid="uid://cq5e2at6m5qp"]
 
 [ext_resource type="PackedScene" uid="uid://dhimtq0lw3r1d" path="res://Graphics/Characters/Nate/NateRiggedFinal.glb" id="1_k1dg4"]
 [ext_resource type="Script" path="res://Scripts/Global/Player/boilerplate.gd" id="1_s37ou"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/Global/Character/NPCAnimator.gd" id="6_t1vot"]
 [ext_resource type="Script" path="res://Scripts/Global/Player/Node3DPool.gd" id="9_kfgf6"]
 [ext_resource type="PackedScene" uid="uid://rcdg300s8fnw" path="res://Prefabs/Enemy/SmallCoin.tscn" id="10_k2yut"]
+[ext_resource type="PackedScene" uid="uid://dcb18u2e38mf" path="res://Prefabs/Enemy/heart_pickup.tscn" id="12_jk2dd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jsdx4"]
 custom_solver_bias = 0.5
@@ -294,9 +295,9 @@ animationPlayer = NodePath("../CharacterBody3D/CollisionShape3D/NateRiggedFinal/
 
 [node name="Node3DPool" type="Node" parent="."]
 script = ExtResource("9_kfgf6")
-starting_keys = Array[String](["small_coin"])
-starting_prefabs = Array[PackedScene]([ExtResource("10_k2yut")])
-starting_size = Array[int]([25])
+starting_keys = Array[String](["small_coin", "small_heart"])
+starting_prefabs = Array[PackedScene]([ExtResource("10_k2yut"), ExtResource("12_jk2dd")])
+starting_size = Array[int]([25, 5])
 
 [connection signal="OnDamage" from="CharacterBody3D" to="CharacterBody3D" method="Damage"]
 

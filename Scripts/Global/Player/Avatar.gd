@@ -74,7 +74,20 @@ func DamageOverride(amt : int):
 	targetColor = Color.RED;
 	damageDelay = 5.0;
 	UpdateUI();
+
+func Heal(amt : int):
 	
+	var min = GameDataHolder.Instance.data.MinHealth;
+	var max = GameDataHolder.Instance.data.MaxHealth;
+	min += amt;
+	if min > max:
+		min = max;
+	GameDataHolder.Instance.data.MinHealth = min;
+	
+	PopupText.PrintText(str("+", amt, " HP"), get_tree(), Color.GREEN, global_position);
+	targetColor = Color.GREEN;
+	PlayerUI.UpdateHUD = true;	
+
 func UpdateUI():  
 	#show health bar, gold, etc
 	PlayerUI.UpdateHUD = true;
