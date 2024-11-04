@@ -58,6 +58,8 @@ collision_layer = 16
 collision_mask = 7
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+contact_monitor = true
+max_contacts_reported = 2
 linear_damp_mode = 1
 linear_damp = 200.0
 angular_damp = 200.0
@@ -80,8 +82,8 @@ shape = SubResource("CapsuleShape3D_h5276")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5, 0)
 
 [node name="Skeleton3D" parent="CollisionShape3D/GreenSlime/Armature" index="0"]
-bones/0/scale = Vector3(1.15676, 1, 1)
-bones/1/scale = Vector3(0.874594, 1, 0.874594)
+bones/0/scale = Vector3(1.00598, 1, 1)
+bones/1/scale = Vector3(0.995217, 1, 0.995217)
 
 [node name="DONOTCOPY_SlimeSprite" parent="CollisionShape3D/GreenSlime/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rej0u")
@@ -105,5 +107,6 @@ nextBrainID = 0
 SpeedMultiplier = 2.0
 
 [connection signal="OnDamage" from="." to="." method="_on_on_damage"]
+[connection signal="body_entered" from="." to="." method="OnTouchDamage"]
 
 [editable path="CollisionShape3D/GreenSlime"]

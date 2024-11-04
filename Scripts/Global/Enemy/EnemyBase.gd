@@ -176,3 +176,9 @@ func _on_on_damage(Amount: int) -> void:
 			Die();
 		
 		
+
+
+func OnTouchDamage(body: Node) -> void:
+	print(str("Slime colliding with ", body.name));
+	if body.is_in_group("Player"):
+		body.emit_signal("OnDamage", TouchDamage);

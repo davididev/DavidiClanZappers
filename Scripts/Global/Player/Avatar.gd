@@ -1,16 +1,20 @@
 class_name Avatar extends CharacterBody3D
 
+signal OnDamage(Amount : int);  #Enemies will need to use this
+
 var damageDelay : float = -1.0;
 @export var itemAttachment : NodePath;
 @export var spellAttachment : NodePath;
 @export var npcAnimatorRef : NodePath;
+@export var rendNode : NodePath;
 static var PlayerPos : Vector3;
 static var AttachedItem = 0;
 static var AttachedSpell = 0;
 
 var idLeft = 0;
 var idRight = 0;
-
+var emissionColor : Color = Color.BLACK;
+var targetColor : Color = Color.BLACK;
 
 
 func _enter_tree() -> void:
@@ -29,7 +33,22 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("item"):
 			get_node(npcAnimatorRef).PlayAttackAnim();
 			get_node(itemAttachment).get_child(0).call("UseItem");
-
+	
+	
+	emissionColor.r = move_toward(emissionColor.r, targetColor.r, 4.0 * delta);
+	emissionColor.g = move_toward(emissionColor.g, targetColor.g, 4.0 * delta);
+	emissionColor.b = move_toward(emissionColor.b, targetColor.b, 4.0 * delta);
+	var mat = get_node(rendNode).get_surface_override_material(0);
+	var standard = mat as StandardMaterial3D;
+	standard.emission = emissionColor;
+	get_node(rendNode).set_surface_override_material(0, standard);
+	if damageDelay > -1.0:
+		damageDelay -= delta;
+	
+	if emissionColor == targetColor:  #End of flash
+		if targetColor != Color.BLACK:
+			targetColor = Color.BLACK;
+			
 func AttachSpell():
 	pass;
 
@@ -45,11 +64,15 @@ func AttachItem():
 		get_node(itemAttachment).add_child(instance);
 
 func Damage(amt : int) -> void:
+	print(str("Damaging player for ", amt));
 	if damageDelay <= 0.0:
 		DamageOverride(amt);
 
 func DamageOverride(amt : int):
-	GameDataHolder.Instance.MinHealth -= amt;
+	GameDataHolder.Instance.data.MinHealth -= amt;
+	PopupText.PrintText(str("-", amt, " HP"), get_tree(), Color.RED, global_position);
+	targetColor = Color.RED;
+	damageDelay = 5.0;
 	UpdateUI();
 	
 func UpdateUI():  

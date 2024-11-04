@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cq5e2at6m5qp"]
+[gd_scene load_steps=13 format=3 uid="uid://cq5e2at6m5qp"]
 
 [ext_resource type="PackedScene" uid="uid://dhimtq0lw3r1d" path="res://Graphics/Characters/Nate/NateRiggedFinal.glb" id="1_k1dg4"]
 [ext_resource type="Script" path="res://Scripts/Global/Player/boilerplate.gd" id="1_s37ou"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Global/Player/Avatar.gd" id="2_7qsrn"]
 [ext_resource type="PackedScene" uid="uid://dvirhrprjhmnw" path="res://Prefabs/Player/player_ui.tscn" id="3_nnjor"]
 [ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="4_87t5j"]
+[ext_resource type="Material" uid="uid://ddtdw2fpkck3h" path="res://Graphics/Characters/Nate/NateMat.tres" id="4_eb4lq"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="5_k1b6g"]
 [ext_resource type="Script" path="res://Scripts/Global/Character/NPCAnimator.gd" id="6_t1vot"]
 [ext_resource type="Script" path="res://Scripts/Global/Player/Node3DPool.gd" id="9_kfgf6"]
@@ -28,6 +29,7 @@ script = ExtResource("2_7qsrn")
 itemAttachment = NodePath("CollisionShape3D/NateRiggedFinal/godot_rig/GeneralSkeleton/ItemAttachment")
 spellAttachment = NodePath("CollisionShape3D/NateRiggedFinal/godot_rig/GeneralSkeleton/SpellAttachment")
 npcAnimatorRef = NodePath("../NPCAnimator")
+rendNode = NodePath("CollisionShape3D/NateRiggedFinal/godot_rig/GeneralSkeleton/DONOTCOPY_NateMesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
@@ -256,6 +258,9 @@ bones/278/position = Vector3(-3.06864e-09, -9.22843e-09, -2.55677e-08)
 bones/280/rotation = Quaternion(-4.07453e-10, 1.42109e-14, 1, 2.91038e-11)
 bones/281/position = Vector3(-0.119, 0.1946, 0.287)
 
+[node name="DONOTCOPY_NateMesh" parent="CharacterBody3D/CollisionShape3D/NateRiggedFinal/godot_rig/GeneralSkeleton" index="0"]
+surface_material_override/0 = ExtResource("4_eb4lq")
+
 [node name="ItemAttachment" type="BoneAttachment3D" parent="CharacterBody3D/CollisionShape3D/NateRiggedFinal/godot_rig/GeneralSkeleton" index="1"]
 transform = Transform3D(3.95034e-07, -1, 5.21541e-08, 1, 3.66985e-07, 7.73929e-07, -8.27946e-07, -9.31323e-08, 1, -0.53298, 1.09616, -0.0639624)
 bone_name = "DEF-hand.R"
@@ -292,5 +297,7 @@ script = ExtResource("9_kfgf6")
 starting_keys = Array[String](["small_coin"])
 starting_prefabs = Array[PackedScene]([ExtResource("10_k2yut")])
 starting_size = Array[int]([25])
+
+[connection signal="OnDamage" from="CharacterBody3D" to="CharacterBody3D" method="Damage"]
 
 [editable path="CharacterBody3D/CollisionShape3D/NateRiggedFinal"]
