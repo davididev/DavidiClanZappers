@@ -42,3 +42,7 @@ func NewOrContinueFile():
 func _on_button_continue_pressed() -> void:
 	GameDataHolder.Instance.LoadFile();
 	NewOrContinueFile();	
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit();
