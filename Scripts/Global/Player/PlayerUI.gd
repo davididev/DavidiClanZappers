@@ -1,5 +1,6 @@
 class_name PlayerUI extends Control
-
+const VOLUME_STEP = 0.05;
+const VOLUME_MAX = 2.0;
 static var UpdateHUD = false;
 var lastJumpStr = true;  #Jump/Interact button last set to jump
 
@@ -10,12 +11,17 @@ const FADE_PER_SECOND = 2.0;
 static var LastPausePanel = 0;
 var paused = false;
 
+@onready var _bus1 := AudioServer.get_bus_index(&"Master")
+@onready var _bus2 := AudioServer.get_bus_index(&"Sound")
+@onready var _bus3 := AudioServer.get_bus_index(&"Music")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.05).timeout;
 	UpdateHUD = true;
 	fadeTarget = Color(0.0, 0.0, 0.0, 0.0);
 	SetPausePanel(-1);
+	UpdateSoundBus();
 	pass # Replace with function body.
 
 
@@ -116,3 +122,70 @@ func _on_confirm_quit_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	SetPausePanel(2);
+
+func UpdateSoundBus():
+	AudioServer.set_bus_volume_db(_bus1, linear_to_db(GameDataHolder.Instance.data.VolumeGlobal));
+	AudioServer.set_bus_volume_db(_bus2, linear_to_db(GameDataHolder.Instance.data.VolumeSound));
+	AudioServer.set_bus_volume_db(_bus3, linear_to_db(GameDataHolder.Instance.data.VolumeMusic));
+
+func RefreshVolumeText():
+	var v1 = ceil(GameDataHolder.Instance.data.VolumeGlobal * 100.0);
+	var v2 = ceil(GameDataHolder.Instance.data.VolumeSound * 100.0);
+	var v3 = ceil(GameDataHolder.Instance.data.VolumeMusic * 100.0);
+	get_node("SettingsMenu/VolumeMasterLabel").text = str("[center][font_size=36]Volume Master[/font_size]\n", v1, "%[/center]");
+	get_node("SettingsMenu/VolumeSoundLabel").text = str("[center][font_size=36]Volume Sound[/font_size]\n", v2, "%[/center]");
+	get_node("SettingsMenu/VolumeMusicLabel").text = str("[center][font_size=36]Volume Music[/font_size]\n", v3, "%[/center]");
+	UpdateSoundBus();
+
+func _on_volume_master_down_pressed() -> void:
+	var v = GameDataHolder.Instance.data.VolumeGlobal;
+	v -= VOLUME_STEP;
+	if v < 0.0:
+		v = 0.0;
+	GameDataHolder.Instance.data.VolumeGlobal = v;
+	RefreshVolumeText();
+
+
+func _on_volume_master_up_pressed() -> void:
+	var v = GameDataHolder.Instance.data.VolumeGlobal;
+	v += VOLUME_STEP;
+	if v > VOLUME_MAX:
+		v = VOLUME_MAX;
+	GameDataHolder.Instance.data.VolumeGlobal = v;
+	RefreshVolumeText();
+
+
+func _on_volume_sound_down_pressed() -> void:
+	var v = GameDataHolder.Instance.data.VolumeSound;
+	v -= VOLUME_STEP;
+	if v < 0.0:
+		v = 0.0;
+	GameDataHolder.Instance.data.VolumeSound = v;
+	RefreshVolumeText();
+
+
+func _on_volume_sound_up_pressed() -> void:
+	var v = GameDataHolder.Instance.data.VolumeSound;
+	v += VOLUME_STEP;
+	if v > VOLUME_MAX:
+		v = VOLUME_MAX;
+	GameDataHolder.Instance.data.VolumeSound = v;
+	RefreshVolumeText();
+
+
+func _on_volume_music_down_pressed() -> void:
+	var v = GameDataHolder.Instance.data.VolumeMusic;
+	v -= VOLUME_STEP;
+	if v < 0.0:
+		v = 0.0;
+	GameDataHolder.Instance.data.VolumeMusic = v;
+	RefreshVolumeText();
+
+
+func _on_volume_music_up_pressed() -> void:
+	var v = GameDataHolder.Instance.data.VolumeMusic;
+	v += VOLUME_STEP;
+	if v > VOLUME_MAX:
+		v = VOLUME_MAX;
+	GameDataHolder.Instance.data.VolumeMusic = v;
+	RefreshVolumeText();

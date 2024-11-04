@@ -696,6 +696,7 @@ text = "[center][font_size=36]Volume Music[/font_size]
 100%[/center]"
 
 [node name="ConfirmQuit Menu" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -950,6 +951,12 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="SettingsMenu/IventoryButton" to="." method="_on_iventory_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SettingsMenu/VolumeMasterDown" to="." method="_on_volume_master_down_pressed"]
+[connection signal="pressed" from="SettingsMenu/VolumeMasterUp" to="." method="_on_volume_master_up_pressed"]
+[connection signal="pressed" from="SettingsMenu/VolumeSoundDown" to="." method="_on_volume_sound_down_pressed"]
+[connection signal="pressed" from="SettingsMenu/VolumeSoundUp" to="." method="_on_volume_sound_up_pressed"]
+[connection signal="pressed" from="SettingsMenu/VolumeMusicDown" to="." method="_on_volume_music_down_pressed"]
+[connection signal="pressed" from="SettingsMenu/VolumeMusicUp" to="." method="_on_volume_music_up_pressed"]
 [connection signal="pressed" from="ConfirmQuit Menu/ConfirmQuitButton" to="." method="_on_confirm_quit_button_pressed"]
 [connection signal="pressed" from="ConfirmQuit Menu/CancelQuit" to="." method="_on_iventory_button_pressed"]
 [connection signal="pressed" from="DialogueBox/Button Choice1" to="DialogueBox" method="_on_button_choice_1_pressed"]
