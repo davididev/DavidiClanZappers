@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7wyjmoca8kql"
 path.s3tc="res://.godot/imported/GreenSlimePalette.png-4ac605207e4fa5e4676352fc919f55ca.s3tc.ctex"
+path.etc2="res://.godot/imported/GreenSlimePalette.png-4ac605207e4fa5e4676352fc919f55ca.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Enemies/Slime/GreenSlimePalette.png"
-dest_files=["res://.godot/imported/GreenSlimePalette.png-4ac605207e4fa5e4676352fc919f55ca.s3tc.ctex"]
+dest_files=["res://.godot/imported/GreenSlimePalette.png-4ac605207e4fa5e4676352fc919f55ca.s3tc.ctex", "res://.godot/imported/GreenSlimePalette.png-4ac605207e4fa5e4676352fc919f55ca.etc2.ctex"]
 
 [params]
 

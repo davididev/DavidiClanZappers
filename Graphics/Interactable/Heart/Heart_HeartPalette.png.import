@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://n1vtl218l0ck"
 path.s3tc="res://.godot/imported/Heart_HeartPalette.png-0244b5e0425ec1fb1fbd0e01c0cc12db.s3tc.ctex"
+path.etc2="res://.godot/imported/Heart_HeartPalette.png-0244b5e0425ec1fb1fbd0e01c0cc12db.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Graphics/Interactable/Heart/Heart_HeartPalette.png"
-dest_files=["res://.godot/imported/Heart_HeartPalette.png-0244b5e0425ec1fb1fbd0e01c0cc12db.s3tc.ctex"]
+dest_files=["res://.godot/imported/Heart_HeartPalette.png-0244b5e0425ec1fb1fbd0e01c0cc12db.s3tc.ctex", "res://.godot/imported/Heart_HeartPalette.png-0244b5e0425ec1fb1fbd0e01c0cc12db.etc2.ctex"]
 
 [params]
 

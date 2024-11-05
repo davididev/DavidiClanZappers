@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwwryhix0qk2k"
 path.s3tc="res://.godot/imported/crystalpalace.png-955a65a1054bf68eb1bced3a18d9e0e5.s3tc.ctex"
+path.etc2="res://.godot/imported/crystalpalace.png-955a65a1054bf68eb1bced3a18d9e0e5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Tilesets/crystalpalace.png"
-dest_files=["res://.godot/imported/crystalpalace.png-955a65a1054bf68eb1bced3a18d9e0e5.s3tc.ctex"]
+dest_files=["res://.godot/imported/crystalpalace.png-955a65a1054bf68eb1bced3a18d9e0e5.s3tc.ctex", "res://.godot/imported/crystalpalace.png-955a65a1054bf68eb1bced3a18d9e0e5.etc2.ctex"]
 
 [params]
 

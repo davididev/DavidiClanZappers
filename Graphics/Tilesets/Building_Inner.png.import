@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bb1e5w1eoyjnc"
 path.s3tc="res://.godot/imported/Building_Inner.png-c83301ba791a4be9ee2cdacfd5ba65bc.s3tc.ctex"
+path.etc2="res://.godot/imported/Building_Inner.png-c83301ba791a4be9ee2cdacfd5ba65bc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Tilesets/Building_Inner.png"
-dest_files=["res://.godot/imported/Building_Inner.png-c83301ba791a4be9ee2cdacfd5ba65bc.s3tc.ctex"]
+dest_files=["res://.godot/imported/Building_Inner.png-c83301ba791a4be9ee2cdacfd5ba65bc.s3tc.ctex", "res://.godot/imported/Building_Inner.png-c83301ba791a4be9ee2cdacfd5ba65bc.etc2.ctex"]
 
 [params]
 

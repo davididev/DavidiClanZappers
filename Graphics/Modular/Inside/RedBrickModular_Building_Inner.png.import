@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cukd00cmnq35n"
 path.s3tc="res://.godot/imported/RedBrickModular_Building_Inner.png-5690b47bdff21a920e10b89f4080fd10.s3tc.ctex"
+path.etc2="res://.godot/imported/RedBrickModular_Building_Inner.png-5690b47bdff21a920e10b89f4080fd10.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Graphics/Modular/Inside/RedBrickModular_Building_Inner.png"
-dest_files=["res://.godot/imported/RedBrickModular_Building_Inner.png-5690b47bdff21a920e10b89f4080fd10.s3tc.ctex"]
+dest_files=["res://.godot/imported/RedBrickModular_Building_Inner.png-5690b47bdff21a920e10b89f4080fd10.s3tc.ctex", "res://.godot/imported/RedBrickModular_Building_Inner.png-5690b47bdff21a920e10b89f4080fd10.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch2ocl474tf6d"
 path.s3tc="res://.godot/imported/city_road_voxel.png-9a8437550e4a907578668700293e0ac8.s3tc.ctex"
+path.etc2="res://.godot/imported/city_road_voxel.png-9a8437550e4a907578668700293e0ac8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Tilesets/city_road_voxel.png"
-dest_files=["res://.godot/imported/city_road_voxel.png-9a8437550e4a907578668700293e0ac8.s3tc.ctex"]
+dest_files=["res://.godot/imported/city_road_voxel.png-9a8437550e4a907578668700293e0ac8.s3tc.ctex", "res://.godot/imported/city_road_voxel.png-9a8437550e4a907578668700293e0ac8.etc2.ctex"]
 
 [params]
 

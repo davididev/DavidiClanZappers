@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c763q1e1dl20s"
 path.s3tc="res://.godot/imported/NatePalette.png-9c5c9d7fc57afead97c4e91fee694b32.s3tc.ctex"
+path.etc2="res://.godot/imported/NatePalette.png-9c5c9d7fc57afead97c4e91fee694b32.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Characters/Nate/NatePalette.png"
-dest_files=["res://.godot/imported/NatePalette.png-9c5c9d7fc57afead97c4e91fee694b32.s3tc.ctex"]
+dest_files=["res://.godot/imported/NatePalette.png-9c5c9d7fc57afead97c4e91fee694b32.s3tc.ctex", "res://.godot/imported/NatePalette.png-9c5c9d7fc57afead97c4e91fee694b32.etc2.ctex"]
 
 [params]
 

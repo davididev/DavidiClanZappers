@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://sxg4muoc1hix"
 path.s3tc="res://.godot/imported/HeartPalette.png-b25e87d11d8981dea55b40a23e0949a4.s3tc.ctex"
+path.etc2="res://.godot/imported/HeartPalette.png-b25e87d11d8981dea55b40a23e0949a4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Interactable/Heart/HeartPalette.png"
-dest_files=["res://.godot/imported/HeartPalette.png-b25e87d11d8981dea55b40a23e0949a4.s3tc.ctex"]
+dest_files=["res://.godot/imported/HeartPalette.png-b25e87d11d8981dea55b40a23e0949a4.s3tc.ctex", "res://.godot/imported/HeartPalette.png-b25e87d11d8981dea55b40a23e0949a4.etc2.ctex"]
 
 [params]
 

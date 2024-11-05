@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dira3egndbn7"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/TouchTeleport.gd" id="1_roysd"]
+[ext_resource type="Texture2D" uid="uid://b3akplp4ge6x2" path="res://Graphics/Decals/CaveOpening1.png" id="2_88cw3"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/TeleportEvent.res" id="2_d0mxo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2lq0j"]
+size = Vector3(2, 2, 1)
+
+[node name="InstantTeleport_Cave1" type="Area3D"]
+collision_mask = 4
+script = ExtResource("1_roysd")
+DialogueBase = ExtResource("2_d0mxo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2lq0j")
+
+[node name="Decal" type="Decal" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0, 0, -0.8)
+size = Vector3(4, 1, 4)
+texture_albedo = ExtResource("2_88cw3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

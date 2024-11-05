@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl15hho6trjqv"
 path.s3tc="res://.godot/imported/terrain.png-ebde180d1016c54724b77e30553874f5.s3tc.ctex"
+path.etc2="res://.godot/imported/terrain.png-ebde180d1016c54724b77e30553874f5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Tilesets/terrain.png"
-dest_files=["res://.godot/imported/terrain.png-ebde180d1016c54724b77e30553874f5.s3tc.ctex"]
+dest_files=["res://.godot/imported/terrain.png-ebde180d1016c54724b77e30553874f5.s3tc.ctex", "res://.godot/imported/terrain.png-ebde180d1016c54724b77e30553874f5.etc2.ctex"]
 
 [params]
 

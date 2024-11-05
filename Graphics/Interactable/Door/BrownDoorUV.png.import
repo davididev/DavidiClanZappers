@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://drn3bnla5fvtr"
 path.s3tc="res://.godot/imported/BrownDoorUV.png-ad12e1d8e5a764e3004591a10761d7ef.s3tc.ctex"
+path.etc2="res://.godot/imported/BrownDoorUV.png-ad12e1d8e5a764e3004591a10761d7ef.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Interactable/Door/BrownDoorUV.png"
-dest_files=["res://.godot/imported/BrownDoorUV.png-ad12e1d8e5a764e3004591a10761d7ef.s3tc.ctex"]
+dest_files=["res://.godot/imported/BrownDoorUV.png-ad12e1d8e5a764e3004591a10761d7ef.s3tc.ctex", "res://.godot/imported/BrownDoorUV.png-ad12e1d8e5a764e3004591a10761d7ef.etc2.ctex"]
 
 [params]
 

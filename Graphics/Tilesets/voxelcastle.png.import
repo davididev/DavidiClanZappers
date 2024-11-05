@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cui0da6xm6qdp"
 path.s3tc="res://.godot/imported/voxelcastle.png-19000b7f01646a52a25e6e77e56052d2.s3tc.ctex"
+path.etc2="res://.godot/imported/voxelcastle.png-19000b7f01646a52a25e6e77e56052d2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Tilesets/voxelcastle.png"
-dest_files=["res://.godot/imported/voxelcastle.png-19000b7f01646a52a25e6e77e56052d2.s3tc.ctex"]
+dest_files=["res://.godot/imported/voxelcastle.png-19000b7f01646a52a25e6e77e56052d2.s3tc.ctex", "res://.godot/imported/voxelcastle.png-19000b7f01646a52a25e6e77e56052d2.etc2.ctex"]
 
 [params]
 

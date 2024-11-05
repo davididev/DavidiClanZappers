@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci7t5bmpr6ggc"
 path.s3tc="res://.godot/imported/HannahPalette.png-f080e1f0b670495a591ab8aebf4706c7.s3tc.ctex"
+path.etc2="res://.godot/imported/HannahPalette.png-f080e1f0b670495a591ab8aebf4706c7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Characters/Hannah/HannahPalette.png"
-dest_files=["res://.godot/imported/HannahPalette.png-f080e1f0b670495a591ab8aebf4706c7.s3tc.ctex"]
+dest_files=["res://.godot/imported/HannahPalette.png-f080e1f0b670495a591ab8aebf4706c7.s3tc.ctex", "res://.godot/imported/HannahPalette.png-f080e1f0b670495a591ab8aebf4706c7.etc2.ctex"]
 
 [params]
 

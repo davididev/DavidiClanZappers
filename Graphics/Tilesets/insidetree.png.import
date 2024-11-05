@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfu2cdjyt13li"
 path.s3tc="res://.godot/imported/insidetree.png-97b1be86b1048561cc591ceb17ac6749.s3tc.ctex"
+path.etc2="res://.godot/imported/insidetree.png-97b1be86b1048561cc591ceb17ac6749.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Graphics/Tilesets/insidetree.png"
-dest_files=["res://.godot/imported/insidetree.png-97b1be86b1048561cc591ceb17ac6749.s3tc.ctex"]
+dest_files=["res://.godot/imported/insidetree.png-97b1be86b1048561cc591ceb17ac6749.s3tc.ctex", "res://.godot/imported/insidetree.png-97b1be86b1048561cc591ceb17ac6749.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wo523on13lq7"
 path.s3tc="res://.godot/imported/BedGreen_Building_Inner.png-be4f449a743d256dae679c857afe71f7.s3tc.ctex"
+path.etc2="res://.godot/imported/BedGreen_Building_Inner.png-be4f449a743d256dae679c857afe71f7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Graphics/Decorations/BuildingInner/BedGreen_Building_Inner.png"
-dest_files=["res://.godot/imported/BedGreen_Building_Inner.png-be4f449a743d256dae679c857afe71f7.s3tc.ctex"]
+dest_files=["res://.godot/imported/BedGreen_Building_Inner.png-be4f449a743d256dae679c857afe71f7.s3tc.ctex", "res://.godot/imported/BedGreen_Building_Inner.png-be4f449a743d256dae679c857afe71f7.etc2.ctex"]
 
 [params]
 
