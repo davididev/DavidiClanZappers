@@ -41,6 +41,5 @@ static func GetInstance(key : String):
 			if entry.visible == false:
 				SetActive(entry, true);
 				return entry;
-				break;
 		
 	return null;

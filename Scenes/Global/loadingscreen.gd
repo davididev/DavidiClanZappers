@@ -12,7 +12,7 @@ func _ready():
 	GameDataHolder.Instance.data.ScenePath = SceneToLoad;
 	resource_name = str("res://Scenes/", SceneToLoad, ".tscn")
 	firstLoadStep = false;
-	ResourceLoader.load_threaded_request(resource_name);
+	ResourceLoader.load_threaded_request(resource_name, "", false, ResourceLoader.CACHE_MODE_IGNORE_DEEP);
 	get_node("Camera2D/CanvasGroup/RichTextLabel").scale = Vector2(1.0, scaleY);
 
 var firstLoadStep = false;
@@ -30,3 +30,4 @@ func _process(delta):
 		get_node("Camera2D/CanvasGroup/RichTextLabel").text = str("[center]Loading ", percentage, "%[/center]\n",resource_name);
 	if status == ResourceLoader.THREAD_LOAD_LOADED:
 		get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(resource_name));
+		

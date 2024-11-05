@@ -44,12 +44,12 @@ func SaveNode() -> SerializedNode:
 
 var loadFile = false;
 
-func LoadNode(load : SerializedNode) -> void:
+func LoadNode(load2 : SerializedNode) -> void:
 	loadFile = true;
-	position = load.position;
-	rotation_degrees = load.rotation;
-	MinHealth = load.MiscFloat1;
-	SetCurrentBrain(load.MiscInt1);
+	position = load2.position;
+	rotation_degrees = load2.rotation;
+	MinHealth = load2.MiscFloat1;
+	SetCurrentBrain(load2.MiscInt1);
 	if MinHealth < 0.0:
 		Die();
 		
@@ -133,9 +133,9 @@ func CheckBrainTransition(delta : float):
 	var moveNext = false;
 	if cur.cond == BrainTransition.Condition.HEALTH_PERCENTAGE:
 		var perc = MinHealth / MaxHealth;
-		var min = cur.values[0];
-		var max = cur.values[1];
-		if perc >= min && perc <= max:
+		var min1 = cur.values[0];
+		var max1 = cur.values[1];
+		if perc >= min1 && perc <= max1:
 			moveNext = true;
 	if cur.cond == BrainTransition.Condition.TIME_ELAPSED:
 		currentBrainTime += delta;
@@ -173,8 +173,8 @@ func _on_on_damage(Amount: int) -> void:
 		PopupText.PrintText(str("-", Amount, " HP"), get_tree(), Color.RED, position);
 		targetColor = Color.RED;
 		var inst = powPart.instantiate();
-		inst.position = position;
 		get_tree().root.add_child(inst);
+		inst.position = position;
 		
 		MinHealth -= Amount;
 		if MinHealth < 0.0:
