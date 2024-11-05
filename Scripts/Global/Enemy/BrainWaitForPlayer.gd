@@ -13,7 +13,7 @@ var targetPos : Vector3;
 # These are common functions that should be called by the EnemyBase.
 func TurnOn() -> void:
 	isRunning = true;
-	startingPos = get_node(root).global_position;
+	startingPos = get_node(root).position;
 
 # These are common functions that should be called by the EnemyBase.	
 func TurnOff() -> void:

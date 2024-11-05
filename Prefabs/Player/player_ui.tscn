@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=35 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -28,8 +28,23 @@
 [ext_resource type="Theme" uid="uid://lit8d35pdhgt" path="res://Graphics/UI/SlicedButtonTheme.tres" id="15_nurjf"]
 [ext_resource type="Texture2D" uid="uid://defu7vymxg2xv" path="res://Graphics/UI/Settings/ConfirmMenu.png" id="17_w7kuc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us4xw"]
+size = Vector2(60, 60)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opu8n"]
+radius = 64.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_uve4q"]
 font_size = 25
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6wal"]
+radius = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6lem"]
+radius = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8hqaj"]
+radius = 64.0
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_rj4xf"]
 
@@ -70,6 +85,7 @@ offset_bottom = 144.0
 focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../Spell Button 1")
 focus_neighbor_bottom = NodePath("../Spell Button 2")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -93,6 +109,7 @@ offset_right = 96.0
 offset_bottom = 240.0
 focus_neighbor_top = NodePath("../Spell Button 0")
 focus_neighbor_right = NodePath("../Spell Button 3")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -118,6 +135,7 @@ offset_bottom = 336.0
 focus_neighbor_top = NodePath("../Spell Button 2")
 focus_neighbor_right = NodePath("../Spell Button 5")
 focus_neighbor_bottom = NodePath("../Spell Button 6")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -142,6 +160,7 @@ offset_right = 96.0
 offset_bottom = 433.0
 focus_neighbor_top = NodePath("../Spell Button 4")
 focus_neighbor_right = NodePath("../Spell Button 7")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -167,6 +186,7 @@ offset_bottom = 433.0
 focus_neighbor_left = NodePath("../Spell Button 6")
 focus_neighbor_top = NodePath("../Spell Button 5")
 focus_neighbor_right = NodePath("../Item Button 9")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -193,6 +213,7 @@ focus_neighbor_left = NodePath("../Spell Button 4")
 focus_neighbor_top = NodePath("../Spell Button 3")
 focus_neighbor_right = NodePath("../Item Button 6")
 focus_neighbor_bottom = NodePath("../Spell Button 7")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -219,6 +240,7 @@ focus_neighbor_left = NodePath("../Spell Button 2")
 focus_neighbor_top = NodePath("../Spell Button 1")
 focus_neighbor_right = NodePath("../Item Button 3")
 focus_neighbor_bottom = NodePath("../Spell Button 5")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -245,6 +267,7 @@ focus_neighbor_left = NodePath("../Spell Button 0")
 focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../Item Button 0")
 focus_neighbor_bottom = NodePath("../Spell Button 3")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -271,6 +294,7 @@ focus_neighbor_left = NodePath("../Spell Button 1")
 focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../Item Button 1")
 focus_neighbor_bottom = NodePath("../Item Button 3")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -295,6 +319,7 @@ focus_neighbor_left = NodePath("../Spell Button 3")
 focus_neighbor_top = NodePath("../Item Button 0")
 focus_neighbor_right = NodePath("../Item Button 4")
 focus_neighbor_bottom = NodePath("../Item Button 6")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -320,6 +345,7 @@ focus_neighbor_left = NodePath("../Spell Button 5")
 focus_neighbor_top = NodePath("../Item Button 3")
 focus_neighbor_right = NodePath("../Item Button 7")
 focus_neighbor_bottom = NodePath("../Item Button 9")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -344,6 +370,7 @@ offset_bottom = 435.0
 focus_neighbor_left = NodePath("../Spell Button 7")
 focus_neighbor_top = NodePath("../Item Button 6")
 focus_neighbor_right = NodePath("../Item Button 10")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -368,6 +395,7 @@ offset_bottom = 435.0
 focus_neighbor_left = NodePath("../Item Button 9")
 focus_neighbor_top = NodePath("../Item Button 7")
 focus_neighbor_right = NodePath("../Item Button 11")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -391,6 +419,7 @@ offset_right = 480.0
 offset_bottom = 435.0
 focus_neighbor_left = NodePath("../Item Button 10")
 focus_neighbor_top = NodePath("../Item Button 8")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -412,6 +441,7 @@ offset_left = 338.0
 offset_top = 288.0
 offset_right = 386.0
 offset_bottom = 336.0
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -433,6 +463,7 @@ offset_left = 434.0
 offset_top = 288.0
 offset_right = 482.0
 offset_bottom = 336.0
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -454,6 +485,7 @@ offset_left = 336.0
 offset_top = 192.0
 offset_right = 384.0
 offset_bottom = 240.0
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -475,6 +507,7 @@ offset_left = 432.0
 offset_top = 192.0
 offset_right = 480.0
 offset_bottom = 240.0
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -496,6 +529,7 @@ offset_left = 336.0
 offset_top = 96.0
 offset_right = 384.0
 offset_bottom = 144.0
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -518,6 +552,7 @@ offset_top = 96.0
 offset_right = 480.0
 offset_bottom = 144.0
 focus_neighbor_top = NodePath("../SettingsButton")
+mouse_filter = 1
 texture_normal = ExtResource("3_rvf32")
 texture_pressed = ExtResource("4_yjl54")
 texture_hover = ExtResource("5_j5pgy")
@@ -539,6 +574,7 @@ offset_left = 437.0
 offset_right = 477.0
 offset_bottom = 40.0
 focus_neighbor_bottom = NodePath("../Item Button 2")
+mouse_filter = 1
 texture_normal = ExtResource("8_cgro7")
 texture_pressed = ExtResource("9_k3od0")
 texture_hover = ExtResource("10_b08b3")
@@ -565,6 +601,7 @@ layout_mode = 0
 offset_left = 437.0
 offset_right = 477.0
 offset_bottom = 40.0
+mouse_filter = 1
 texture_normal = ExtResource("12_eocy7")
 texture_pressed = ExtResource("13_dhkf8")
 texture_hover = ExtResource("14_fux63")
@@ -578,6 +615,7 @@ offset_right = 229.0
 offset_bottom = 117.0
 focus_neighbor_right = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../VolumeMasterDown")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "Save and continue"
 
@@ -590,6 +628,7 @@ offset_bottom = 117.0
 focus_neighbor_left = NodePath("../SaveButton")
 focus_neighbor_top = NodePath("../IventoryButton")
 focus_neighbor_right = NodePath("../VolumeMasterUp")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "Quit"
 
@@ -602,6 +641,7 @@ offset_bottom = 213.0
 focus_neighbor_top = NodePath("../SaveButton")
 focus_neighbor_right = NodePath("../VolumeMasterUp")
 focus_neighbor_bottom = NodePath("../VolumeSoundDown")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "-"
 
@@ -614,6 +654,7 @@ offset_bottom = 213.0
 focus_neighbor_left = NodePath("../VolumeMasterDown")
 focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../VolumeSoundUp")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "+"
 
@@ -637,6 +678,7 @@ offset_bottom = 293.0
 focus_neighbor_top = NodePath("../VolumeMasterDown")
 focus_neighbor_right = NodePath("../VolumeSoundUp")
 focus_neighbor_bottom = NodePath("../VolumeMusicDown")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "-"
 
@@ -649,6 +691,7 @@ offset_bottom = 293.0
 focus_neighbor_left = NodePath("../VolumeSoundDown")
 focus_neighbor_top = NodePath("../VolumeMasterUp")
 focus_neighbor_bottom = NodePath("../VolumeMusicUp")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "+"
 
@@ -671,6 +714,7 @@ offset_right = 81.0
 offset_bottom = 381.0
 focus_neighbor_top = NodePath("../VolumeSoundDown")
 focus_neighbor_right = NodePath("../VolumeMusicUp")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "-"
 
@@ -682,6 +726,7 @@ offset_right = 473.0
 offset_bottom = 381.0
 focus_neighbor_left = NodePath("../VolumeMusicDown")
 focus_neighbor_top = NodePath("../VolumeSoundUp")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "+"
 
@@ -729,6 +774,7 @@ offset_top = 288.0
 offset_right = 240.0
 offset_bottom = 349.0
 focus_neighbor_right = NodePath("../CancelQuit")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "Yes, quit"
 
@@ -739,6 +785,7 @@ offset_top = 288.0
 offset_right = 480.0
 offset_bottom = 349.0
 focus_neighbor_left = NodePath("../ConfirmQuitButton")
+mouse_filter = 1
 theme = ExtResource("15_nurjf")
 text = "Go back to game"
 
@@ -750,13 +797,14 @@ texture = ExtResource("3_qcu7h")
 
 [node name="Virtual Joystick" parent="BGButtons1" instance=ExtResource("4_k8smy")]
 layout_mode = 1
-offset_top = -473.0
-offset_bottom = -173.0
+offset_top = -300.0
+offset_bottom = 0.0
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="BGButtons1"]
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_6wbmc")
 texture_pressed = ExtResource("11_rsy8v")
+shape = SubResource("RectangleShape2D_us4xw")
 action = "speed"
 
 [node name="BGButtons2" type="TextureRect" parent="."]
@@ -770,9 +818,10 @@ grow_horizontal = 0
 texture = ExtResource("3_qcu7h")
 
 [node name="JumpButton" type="TouchScreenButton" parent="BGButtons2"]
-position = Vector2(80, 433)
+position = Vector2(80, 438)
 texture_normal = ExtResource("5_1ibi7")
 texture_pressed = ExtResource("6_672h6")
+shape = SubResource("CircleShape2D_opu8n")
 action = "jump"
 
 [node name="Label" type="Label" parent="BGButtons2/JumpButton"]
@@ -787,6 +836,7 @@ vertical_alignment = 1
 position = Vector2(80, 129)
 texture_normal = ExtResource("5_1ibi7")
 texture_pressed = ExtResource("6_672h6")
+shape = SubResource("CircleShape2D_x6wal")
 action = "pause"
 
 [node name="Label" type="Label" parent="BGButtons2/PauseButton"]
@@ -801,6 +851,7 @@ vertical_alignment = 1
 position = Vector2(8, 281)
 texture_normal = ExtResource("5_1ibi7")
 texture_pressed = ExtResource("6_672h6")
+shape = SubResource("CircleShape2D_g6lem")
 action = "item"
 
 [node name="Label" type="Label" parent="BGButtons2/ItemButton"]
@@ -815,6 +866,7 @@ vertical_alignment = 1
 position = Vector2(160, 281)
 texture_normal = ExtResource("5_1ibi7")
 texture_pressed = ExtResource("6_672h6")
+shape = SubResource("CircleShape2D_8hqaj")
 action = "magic"
 
 [node name="Label" type="Label" parent="BGButtons2/SpellButton"]
@@ -834,6 +886,7 @@ offset_left = -262.0
 offset_right = 20.0
 offset_bottom = 143.0
 grow_horizontal = 2
+mouse_filter = 2
 theme = ExtResource("8_id21u")
 bbcode_enabled = true
 text = "..."
@@ -843,6 +896,7 @@ layout_mode = 1
 offset_left = 544.0
 offset_right = 826.0
 offset_bottom = 143.0
+mouse_filter = 2
 theme = ExtResource("8_id21u")
 bbcode_enabled = true
 text = "[right]Gold: [color=yellow]0"

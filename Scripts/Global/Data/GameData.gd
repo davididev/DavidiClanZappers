@@ -12,11 +12,12 @@ class_name GameData extends Resource
 @export var VolumeSound = 1.0;
 @export var VolumeMusic = 1.0;
 @export var VolumeGlobal = 1.0;
-@export var ScenePath : String;
+@export var ScenePath : String = "";
 
 @export var savedNodes : Array[SerializedNode];
 
 func Save(t : SceneTree):  #Mostly this is about saving the savedNodes
+	self.resource_local_to_scene = true;
 	var save_nodes = t.get_nodes_in_group("SerializedNode")
 	print(str("Count of save nodes:", save_nodes.size()));
 	savedNodes.clear();

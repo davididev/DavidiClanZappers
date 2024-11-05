@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://ct2qdbf3sjnyb"]
+[gd_scene load_steps=22 format=4 uid="uid://ct2qdbf3sjnyb"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_10m80"]
 [ext_resource type="Script" path="res://Scenes/Game1/temp.gd" id="1_r81dt"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cktxrko3dn71x" path="res://Prefabs/Decorations/Building Inner/red_house.tscn" id="12_53obq"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="12_83se1"]
 [ext_resource type="PackedScene" uid="uid://dksgng6tjxoe3" path="res://Prefabs/TeleportDecals/instant_teleport_cave_1.tscn" id="13_wc1md"]
-[ext_resource type="Resource" path="res://DialogueSystem/output/TeleportEvent.res" id="14_cvgqx"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_olphi"]
 lightmap_size_hint = Vector2i(986, 994)
@@ -203,5 +202,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
 [node name="InstantTeleport_Cave1" parent="." instance=ExtResource("13_wc1md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.647, -35.741)
-DialogueBase = ExtResource("14_cvgqx")
 SceneToGoTo = "Game1/Cave1"

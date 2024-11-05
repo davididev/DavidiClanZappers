@@ -1,12 +1,12 @@
 class_name PopupText extends Node3D
 
 @export var textLabel : NodePath;
-static var ref_instance = preload("res://Prefabs/Preload/popup_text.tscn");
+#static var ref_instance = preload("res://Prefabs/Preload/popup_text.tscn");
 
 static func PrintText(textToDisplay : String, t : SceneTree, color : Color, pos : Vector3):
-	var instance : PopupText = ref_instance.instantiate(); 
-	instance.global_position = pos + Vector3(0.0, 2.0, 0.0);
+	var instance : PopupText = ResourceLoader.load("res://Prefabs/preload/popup_text.tscn").instantiate(); 
 	t.root.add_child(instance);
+	instance.global_position = pos + Vector3(0.0, 2.0, 0.0);
 	
 	instance.RunRoutine(textToDisplay, color, t);
 	

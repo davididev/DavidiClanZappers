@@ -61,13 +61,13 @@ func Die():
 		remainingCoins -= 1;
 		var entry = Node3DPool.GetInstance("small_coin");
 		if entry != null:
-			entry.global_position = global_position + Vector3(randf_range(-1.5, 1.5), 0.0, randf_range(-1.5, 1.5));
+			entry.position = position + Vector3(randf_range(-1.5, 1.5), 0.0, randf_range(-1.5, 1.5));
 	
 	var chance = randi_range(0, 101);
 	if chance <= chanceOfHeart:
 		var entry = Node3DPool.GetInstance("small_heart");
 		if entry != null:
-			entry.global_position = global_position;
+			entry.position = position;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.05).timeout;
@@ -86,7 +86,7 @@ func SetCurrentBrain(id : int):
 			get_node(brains[i]).call("TurnOff");
 	
 func MoveTowardsPosition(pos : Vector3):
-	var rel = (pos - global_position);
+	var rel = (pos - position);
 	var force = rel.normalized() * MoveSpeed * SpeedMultiplier;
 	var isClose = false;
 	if rel.length_squared() < 1.0:  #If close, slow it down
@@ -99,12 +99,12 @@ func MoveTowardsPosition(pos : Vector3):
 		apply_force(force);
 	moveTimer = 0.1;
 	get_node(look_at_transform).look_at(pos, Vector3(0.0, 1.0, 0.0), true);
-	var targetAngle = get_node(look_at_transform).global_rotation_degrees.y;
-	var currentAngle = get_child(0).global_rotation_degrees;
+	var targetAngle = get_node(look_at_transform).rotation_degrees.y;
+	var currentAngle = get_child(0).rotation_degrees;
 	currentAngle.y = move_toward(currentAngle.y, targetAngle, 360.0 * lastDelta);
 	#print(str("Target angle: ", targetAngle, "; currently at ", currentAngle.y));
 	
-	get_child(0).global_rotation_degrees = currentAngle;
+	get_child(0).rotation_degrees = currentAngle;
 	return isClose;
 
 var lastDelta = 0.0;
@@ -144,7 +144,7 @@ func CheckBrainTransition(delta : float):
 	
 	if cur.cond == BrainTransition.Condition.PLAYER_WITHIN_DISTANCE:
 		var distCheck = cur.values[0];
-		var dist = global_position.distance_to(Avatar.PlayerPos);
+		var dist = position.distance_to(Avatar.PlayerPos);
 		if dist <= distCheck:
 			moveNext = true;
 	
@@ -170,10 +170,10 @@ func PlayAttackAnimation(time : float):
 
 func _on_on_damage(Amount: int) -> void:
 	if emissionColor == Color.BLACK:
-		PopupText.PrintText(str("-", Amount, " HP"), get_tree(), Color.RED, global_position);
+		PopupText.PrintText(str("-", Amount, " HP"), get_tree(), Color.RED, position);
 		targetColor = Color.RED;
 		var inst = powPart.instantiate();
-		inst.global_position = global_position;
+		inst.position = position;
 		get_tree().root.add_child(inst);
 		
 		MinHealth -= Amount;

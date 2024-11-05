@@ -19,6 +19,7 @@ var paused = false;
 func _ready() -> void:
 	await get_tree().create_timer(0.05).timeout;
 	UpdateHUD = true;
+	paused = false;
 	fadeTarget = Color(0.0, 0.0, 0.0, 0.0);
 	SetPausePanel(-1);
 	UpdateSoundBus();
@@ -68,7 +69,7 @@ func _process(delta: float) -> void:
 			SetPausePanel(-1);
 			Engine.time_scale = 1.0;
 		else:
-			SetPausePanel(LastPausePanel);
+			SetPausePanel(0);
 			Engine.time_scale = 1.0 / 360.0;
 	
 	if currentJumpStr != lastJumpStr:  #UI Changed

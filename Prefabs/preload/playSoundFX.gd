@@ -2,16 +2,17 @@ class_name SoundFXPlayer extends Node3D;
 
 
 @export var ref : NodePath;
-static var ref_instance = preload("res://Prefabs/Preload/play_sound_fx.tscn");
+#static var ref_instance = preload("res://Prefabs/Preload/play_sound_fx.tscn");
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-"ref"
+
+
 static func PlaySound(file_name : String, t : SceneTree, pos : Vector3):
-	var instance : SoundFXPlayer = ref_instance.instantiate(); 
-	instance.global_position = pos;
+	var instance : SoundFXPlayer = ResourceLoader.load("res://Prefabs/preload/play_sound_fx.tscn").instantiate(); 
 	t.root.add_child(instance);
+	instance.global_position = pos;
 	var asset_name : String = str("res://Audio/Sound/", file_name);
 	instance.get_node(instance.ref).stream = load(asset_name);
 	instance.get_node(instance.ref).play();
