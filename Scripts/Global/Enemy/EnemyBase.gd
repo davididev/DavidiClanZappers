@@ -70,6 +70,12 @@ func Die():
 			entry.position = position;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	jumpTimer = 0.0;
+	moveTimer = 0.0;
+	attackTimer = 0.0;
+	currentBrainTime = 0.0;
+	emissionColor = Color.BLACK;
+	targetColor = Color.BLACK;
 	await get_tree().create_timer(0.05).timeout;
 	if loadFile == false:  #This was not loaded from data, init enemy
 		MinHealth = MaxHealth;

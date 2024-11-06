@@ -293,7 +293,7 @@ script = ExtResource("6_t1vot")
 characterController = NodePath("../CharacterBody3D")
 animationPlayer = NodePath("../CharacterBody3D/CollisionShape3D/NateRiggedFinal/AnimationPlayer2")
 
-[node name="Node3DPool" type="Node" parent="."]
+[node name="Node3DPool" type="Node3D" parent="."]
 script = ExtResource("9_kfgf6")
 starting_keys = Array[String](["small_coin", "small_heart"])
 starting_prefabs = Array[PackedScene]([ExtResource("10_k2yut"), ExtResource("12_jk2dd")])

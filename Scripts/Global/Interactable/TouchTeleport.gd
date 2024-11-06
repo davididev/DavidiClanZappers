@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
-		if SoundOnOpen != null:
+		if SoundOnOpen != "":
 			SoundFXPlayer.PlaySound(SoundOnOpen, get_tree(), global_position);
 		var newDiaInstance = DialogueBase.duplicate(true);
 		var args : Array[String] = ["", ""];
