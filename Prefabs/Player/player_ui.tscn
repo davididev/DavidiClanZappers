@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=38 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -27,6 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://bxmwn4b6koknd" path="res://Graphics/UI/Inventory/ItemButton2.png" id="14_fux63"]
 [ext_resource type="Theme" uid="uid://lit8d35pdhgt" path="res://Graphics/UI/SlicedButtonTheme.tres" id="15_nurjf"]
 [ext_resource type="Texture2D" uid="uid://defu7vymxg2xv" path="res://Graphics/UI/Settings/ConfirmMenu.png" id="17_w7kuc"]
+[ext_resource type="Texture2D" uid="uid://bgh1ijb5q68nt" path="res://Graphics/UI/SpellBack.png" id="28_ysaby"]
+[ext_resource type="Texture2D" uid="uid://b2akwjmwkeqnq" path="res://Graphics/UI/Spell-Top.png" id="29_8w5eo"]
+[ext_resource type="Texture2D" uid="uid://b1b08psbak0gv" path="res://Graphics/UI/Inventory/Spell1.png" id="30_48fwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us4xw"]
 size = Vector2(60, 60)
@@ -59,6 +62,24 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_0xfu1")
 pausePanels = Array[NodePath]([NodePath("InventoryMenu"), NodePath("SettingsMenu"), NodePath("ConfirmQuit Menu")])
+
+[node name="SpellBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 755.0
+offset_top = 34.0
+offset_right = 827.0
+offset_bottom = 106.0
+fill_mode = 4
+texture_under = ExtResource("28_ysaby")
+texture_progress = ExtResource("29_8w5eo")
+
+[node name="TextureRect" type="TextureRect" parent="SpellBar"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("30_48fwu")
 
 [node name="InventoryMenu" type="TextureRect" parent="."]
 visible = false
@@ -981,6 +1002,7 @@ stream = SubResource("AudioStreamMP3_rj4xf")
 bus = &"Sound"
 
 [node name="Fade" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

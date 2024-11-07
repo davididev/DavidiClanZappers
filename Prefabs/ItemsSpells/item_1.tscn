@@ -10,7 +10,8 @@ height = 3.0
 [node name="Item1" type="Node3D"]
 script = ExtResource("1_ovgd6")
 refToOverlap = NodePath("Item1Model/Area3D")
-swingSoundFX = "rpg/knifeSlice2.ogg"
+swingSoundFX = "rpg/swingSword.mp3"
+hitSoundFX = "rpg/knifeSlice2.ogg"
 
 [node name="Item1Model" parent="." instance=ExtResource("1_02d8l")]
 

@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctm4dcpsof84c"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Character/talking_npc.gd" id="1_b3qdg"]
+[ext_resource type="PackedScene" uid="uid://cmh3ytaep2gay" path="res://Graphics/Characters/Wizard/WizardNPC.glb" id="2_f5wj2"]
+[ext_resource type="AnimationLibrary" uid="uid://b6duaeanku1a2" path="res://Graphics/Characters/HumanoidAnim.res" id="3_ekudp"]
+[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="4_koep5"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="5_0nrhw"]
+[ext_resource type="Resource" uid="uid://d15q2nn1upgcj" path="res://DialogueSystem/output/Hannah1.res" id="6_3keub"]
+[ext_resource type="Script" path="res://Scripts/Global/Character/NPCAnimator.gd" id="7_ofqwy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3yap0"]
+radius = 0.3
+height = 2.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cj4vv"]
+radius = 3.0
+
+[node name="TalkingNPC" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_b3qdg")
+NPCPath = NodePath("CollisionShape3D/NPC")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_3yap0")
+
+[node name="WizardNPC" parent="CollisionShape3D" instance=ExtResource("2_f5wj2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222891, -0.756832, 0.366547)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/WizardNPC"]
+libraries = {
+"HumanoidAnim": ExtResource("3_ekudp")
+}
+
+[node name="Area3D" type="Area3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D/Area3D"]
+shape = SubResource("SphereShape3D_cj4vv")
+
+[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("4_koep5")]
+
+[node name="NPC" type="Node3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("5_0nrhw")
+character_controller_path = NodePath("../..")
+DialogueOnInteract = ExtResource("6_3keub")
+
+[node name="NPCAnimator" type="Node3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("7_ofqwy")
+characterController = NodePath("../..")
+animationPlayer = NodePath("../WizardNPC/AnimationPlayer")
+
+[connection signal="body_entered" from="CollisionShape3D/Area3D" to="CollisionShape3D/NPC" method="PlayerEnteredField"]
+[connection signal="body_exited" from="CollisionShape3D/Area3D" to="CollisionShape3D/NPC" method="PlayerExitedField"]

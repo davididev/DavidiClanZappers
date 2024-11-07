@@ -17,6 +17,8 @@ var paused = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if minTimerMagic < 0.0:
+		minTimerMagic = 0.0;
 	await get_tree().create_timer(0.05).timeout;
 	UpdateHUD = true;
 	paused = false;
@@ -49,11 +51,21 @@ func SetPausePanel(id : int):
 			LastPausePanel = 0;
 			get_node("ConfirmQuit Menu/CancelQuit").grab_focus();
 	
+static var SpellReady = false;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var currentJumpStr : bool = true;
 	if NPC.NPCsOverlapped.size() > 0:
 		currentJumpStr = false;
+	
+	if Avatar.AttachedSpell > 0:
+		minTimerMagic += delta;
+		if minTimerMagic > maxTimerMagic:
+			SpellReady = true;
+			minTimerMagic = maxTimerMagic;
+		else:
+			SpellReady = false;
+		get_node("SpellBar").value = minTimerMagic / maxTimerMagic * 100.0;
 	
 	var rect : ColorRect = get_node("Fade");
 	if rect.color != fadeTarget:
@@ -81,7 +93,11 @@ func _process(delta: float) -> void:
 
 	if UpdateHUD:
 		UpdatePlayerHUD();
-		
+
+var maxTimerMagic = 0.0;
+static var minTimerMagic = 0.0;
+static var SpellPrefab : PackedScene;
+
 func UpdatePlayerHUD():  #TODO: Update HUD
 	var rt = get_node("HUD");
 	if GameDataHolder.Instance.data != null:
@@ -92,6 +108,11 @@ func UpdatePlayerHUD():  #TODO: Update HUD
 		rt.text = str("[color=red]Health: [b]", h1, "/",h2, "[/b][/color]\n[color=blue]Strength: [b]", str, "[/b] [/color]\n[color=green]Magic: [b]", mag, "[/b][/color]\n")
 		get_node("Gold").text = str("[right]Gold: [color=yellow]", GameDataHolder.Instance.data.Gold);
 		print(str("VarName test 1: ", GameDataHolder.Instance.VarMeta.IntNames[0]));
+	get_node("SpellBar").visible = Avatar.AttachedSpell > 0;
+	if Avatar.AttachedSpell > 0:
+		get_node("SpellBar/TextureRect").texture = load(str("res://Graphics/UI/Inventory/Spell", Avatar.AttachedSpell, ".png"));
+		var meta : SpellMetaData = load(str("res://Scripts/Global/SpellScripts/Spell", Avatar.AttachedSpell, ".tres"));
+		maxTimerMagic = meta.ChargeTime;
 	UpdateHUD = false;
 	pass;
 

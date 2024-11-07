@@ -2,6 +2,7 @@ extends Node3D
 
 @export var refToOverlap : NodePath;
 @export var swingSoundFX : String;
+@export var hitSoundFX : String;
 @export var BaseAttackPower = 4;
 var swingTimer = 0.0;
 
@@ -31,3 +32,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if swingTimer > 0.0:  #Only if swing animation is playing
 		var dmg = BaseAttackPower * GameDataHolder.Instance.data.Str;
 		body.emit_signal("OnDamage", dmg);
+		if body.has_signal("OnDamage"):
+			SoundFXPlayer.PlaySound(hitSoundFX, get_tree(), global_position);
