@@ -19,6 +19,8 @@ var paused = false;
 func _ready() -> void:
 	if minTimerMagic < 0.0:
 		minTimerMagic = 0.0;
+	if maxTimerMagic < 0.0:
+		maxTimerMagic = 0.0;
 	await get_tree().create_timer(0.05).timeout;
 	UpdateHUD = true;
 	paused = false;
@@ -94,7 +96,7 @@ func _process(delta: float) -> void:
 	if UpdateHUD:
 		UpdatePlayerHUD();
 
-var maxTimerMagic = 0.0;
+static var maxTimerMagic = 0.0;
 static var minTimerMagic = 0.0;
 static var SpellPrefab : PackedScene;
 
