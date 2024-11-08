@@ -27,7 +27,7 @@ func _ready() -> void:
 	fadeTarget = Color(0.0, 0.0, 0.0, 0.0);
 	SetPausePanel(-1);
 	UpdateSoundBus();
-	pass # Replace with function body.
+	InitSpellPool();
 
 
 
@@ -100,6 +100,11 @@ static var maxTimerMagic = 0.0;
 static var minTimerMagic = 0.0;
 static var SpellPrefab : PackedScene;
 
+func InitSpellPool():
+	if SpellPrefab != null:
+		var key = str("Spell", Avatar.AttachedSpell);
+		Node3DPool.InitPoolItem(get_tree(), key, SpellPrefab, 5);
+
 func UpdatePlayerHUD():  #TODO: Update HUD
 	var rt = get_node("HUD");
 	if GameDataHolder.Instance.data != null:
@@ -115,6 +120,8 @@ func UpdatePlayerHUD():  #TODO: Update HUD
 		get_node("SpellBar/TextureRect").texture = load(str("res://Graphics/UI/Inventory/Spell", Avatar.AttachedSpell, ".png"));
 		var meta : SpellMetaData = load(str("res://Scripts/Global/SpellScripts/Spell", Avatar.AttachedSpell, ".tres"));
 		maxTimerMagic = meta.ChargeTime;
+		SpellPrefab = meta.FirePrefab;
+		InitSpellPool();
 	UpdateHUD = false;
 	pass;
 
