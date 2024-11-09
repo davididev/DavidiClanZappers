@@ -29,6 +29,7 @@ size = Vector2(0.25, 0.25)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_cgcbe")
+AttackPower = 6
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 amount = 50
