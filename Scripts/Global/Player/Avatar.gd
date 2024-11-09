@@ -2,6 +2,7 @@ class_name Avatar extends CharacterBody3D
 
 signal OnDamage(Amount : int);  #Enemies will need to use this
 
+static var AttackAnimTime = -1.0;
 var damageDelay : float = -1.0;
 @export var itemAttachment : NodePath;
 @export var spellAttachment : NodePath;
@@ -28,17 +29,22 @@ func _enter_tree() -> void:
 
 func _process(delta: float) -> void:
 	PlayerPos = global_position;
+	if AttackAnimTime > -1.0:
+		AttackAnimTime -= delta;
+		
 	if AttachedItem > 0:
 		#Prepare animations
 		if Input.is_action_just_pressed("item"):
 			get_node(npcAnimatorRef).PlayAttackAnim();
 			get_node(itemAttachment).get_child(0).call("UseItem");
+			AttackAnimTime = 0.6;
 	if AttachedSpell > 0:
 		if Input.is_action_just_pressed("magic"):
 			if PlayerUI.minTimerMagic >= PlayerUI.maxTimerMagic:
 				get_node(npcAnimatorRef). PlaySpellAnim();
 				PlayerUI.minTimerMagic = 0.0;
 				get_node(spellAttachment).get_child(0).call("UseSpell");
+				AttackAnimTime = 0.6;
 	
 	
 	emissionColor.r = move_toward(emissionColor.r, targetColor.r, 4.0 * delta);

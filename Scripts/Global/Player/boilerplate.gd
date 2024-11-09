@@ -61,6 +61,8 @@ func _process(delta: float) -> void:
 	
 	if DialogueHandler.IsRunning:
 		moveVec = Vector3.ZERO;
+	if Avatar.AttackAnimTime > 0.0:
+		moveVec = Vector3.ZERO;
 	
 	if moveVec.x == 0.0:
 		moveSpeed.x = move_toward(moveSpeed.x, 0.0, MOVE_PER_SECOND * delta);
