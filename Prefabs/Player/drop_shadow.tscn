@@ -10,4 +10,5 @@ script = ExtResource("1_oojeg")
 layers = 3
 size = Vector3(1.5, 1, 1.5)
 texture_albedo = ExtResource("2_lssh4")
+distance_fade_enabled = true
 cull_mask = 1047555

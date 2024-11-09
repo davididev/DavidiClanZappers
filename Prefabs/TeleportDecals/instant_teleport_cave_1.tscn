@@ -19,5 +19,7 @@ shape = SubResource("BoxShape3D_2lq0j")
 transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0, 0, -0.8)
 size = Vector3(4, 1, 4)
 texture_albedo = ExtResource("2_xt0t1")
+distance_fade_enabled = true
+cull_mask = 1048545
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

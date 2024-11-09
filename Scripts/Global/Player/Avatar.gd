@@ -33,6 +33,12 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("item"):
 			get_node(npcAnimatorRef).PlayAttackAnim();
 			get_node(itemAttachment).get_child(0).call("UseItem");
+	if AttachedSpell > 0:
+		if Input.is_action_just_pressed("magic"):
+			if PlayerUI.minTimerMagic >= PlayerUI.maxTimerMagic:
+				get_node(npcAnimatorRef). PlaySpellAnim();
+				PlayerUI.minTimerMagic = 0.0;
+				get_node(spellAttachment).get_child(0).call("UseSpell");
 	
 	
 	emissionColor.r = move_toward(emissionColor.r, targetColor.r, 4.0 * delta);
@@ -50,7 +56,15 @@ func _process(delta: float) -> void:
 			targetColor = Color.BLACK;
 			
 func AttachSpell():
-	pass;
+	if AttachedSpell == 0:  #Is nil, remove item if it's there
+		var childCount = get_node(spellAttachment).get_child_count();
+		if childCount > 0:
+			get_node(spellAttachment).get_child(0).queue_free();
+	
+	if AttachedSpell > 0:  #Is a valid item
+		var refToItem = load(str("res://Prefabs/ItemsSpells/spell_", AttachedSpell, ".tscn"));
+		var instance = refToItem.instantiate();
+		get_node(spellAttachment).add_child(instance);
 
 func AttachItem():
 	if AttachedItem == 0:  #Is nil, remove item if it's there

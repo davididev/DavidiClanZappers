@@ -141,11 +141,13 @@ pointing/emulate_touch_from_mouse=true
 3d_render/layer_3="Player"
 3d_render/layer_4="NPC"
 3d_render/layer_5="Enemy"
+3d_render/layer_6="Bullet"
 3d_physics/layer_1="Geometry"
 3d_physics/layer_2="Decoration"
 3d_physics/layer_3="Player"
 3d_physics/layer_4="NPC"
 3d_physics/layer_5="Enemy"
+3d_physics/layer_6="Bullet"
 
 [physics]
 

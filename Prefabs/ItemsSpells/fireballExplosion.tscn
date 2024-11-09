@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://5oyb5udegmr0"]
+
+[ext_resource type="Script" path="res://Scripts/Global/playparticlesonce.gd" id="1_aprrj"]
+[ext_resource type="Material" uid="uid://4iwpiixj00ei" path="res://Graphics/Particles/Particle Smoke Cloud.tres" id="2_8u2we"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_56rc0"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+anim_speed_min = 0.2
+anim_speed_max = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_i3xkt"]
+material = ExtResource("2_8u2we")
+size = Vector2(2, 2)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_aprrj")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_56rc0")
+draw_pass_1 = SubResource("QuadMesh_i3xkt")

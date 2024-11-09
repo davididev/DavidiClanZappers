@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://da6uagstt6f4"]
+
+[ext_resource type="Script" path="res://Scripts/Global/SpellScripts/bullet.gd" id="1_2wg0d"]
+[ext_resource type="Material" uid="uid://c0rh7vt3u1lwx" path="res://Graphics/Particles/Fireball Alpha Part.tres" id="1_l6bdd"]
+[ext_resource type="PackedScene" uid="uid://5oyb5udegmr0" path="res://Prefabs/ItemsSpells/fireballExplosion.tscn" id="2_fcng1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e8lfg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1qics"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 0.5
+anim_speed_max = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_81n5b"]
+material = ExtResource("1_l6bdd")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 32
+collision_mask = 19
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_2wg0d")
+MOVE_SPEED = 7
+DeathParticle = ExtResource("2_fcng1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_e8lfg")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CollisionShape3D"]
+amount = 16
+lifetime = 0.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_1qics")
+draw_pass_1 = SubResource("PlaneMesh_81n5b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

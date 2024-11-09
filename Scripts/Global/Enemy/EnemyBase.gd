@@ -51,7 +51,8 @@ func LoadNode(load2 : SerializedNode) -> void:
 	MinHealth = load2.MiscFloat1;
 	SetCurrentBrain(load2.MiscInt1);
 	if MinHealth < 0.0:
-		Die();
+		visible = false;
+		process_mode = ProcessMode.PROCESS_MODE_DISABLED;
 		
 func Die():
 	visible = false;
@@ -190,6 +191,6 @@ func _on_on_damage(Amount: int) -> void:
 
 
 func OnTouchDamage(body: Node) -> void:
-	print(str("Slime colliding with ", body.name));
+	#print(str("Slime colliding with ", body.name));
 	if body.is_in_group("Player"):
 		body.emit_signal("OnDamage", TouchDamage);
