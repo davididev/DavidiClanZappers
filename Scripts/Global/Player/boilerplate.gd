@@ -3,6 +3,7 @@ class_name BoilerPlate extends Node3D
 @export var playerRoot : NodePath;
 @export var characterController : NodePath;
 @export var camera : NodePath;
+@export var springArm : NodePath;
 
 
 
@@ -119,5 +120,6 @@ func _process(delta: float) -> void:
 	
 	
 	
-	get_node(camera).position = cc.position + Vector3(0.0, 10.0, 3.0);
+	get_node(springArm).position = cc.position;
+	#get_node(camera).position = cc.position + Vector3(0.0, 10.0, 3.0);
 	

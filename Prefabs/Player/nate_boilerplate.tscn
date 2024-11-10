@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cq5e2at6m5qp"]
+[gd_scene load_steps=15 format=3 uid="uid://cq5e2at6m5qp"]
 
 [ext_resource type="PackedScene" uid="uid://dhimtq0lw3r1d" path="res://Graphics/Characters/Nate/NateRiggedFinal.glb" id="1_k1dg4"]
 [ext_resource type="Script" path="res://Scripts/Global/Player/boilerplate.gd" id="1_s37ou"]
@@ -17,11 +17,15 @@
 custom_solver_bias = 0.5
 height = 2.5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ier6u"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [node name="NateBoilerplate" type="Node3D" groups=["SerializedNode"]]
 script = ExtResource("1_s37ou")
 playerRoot = NodePath("CharacterBody3D/CollisionShape3D/NateRiggedFinal")
 characterController = NodePath("CharacterBody3D")
-camera = NodePath("Camera3D")
+camera = NodePath("SpringArm3D/Camera3D")
+springArm = NodePath("SpringArm3D")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["Player"]]
 collision_layer = 4
@@ -279,9 +283,6 @@ libraries = {
 
 [node name="DropShadow" parent="CharacterBody3D" instance=ExtResource("4_87t5j")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 2)
-
 [node name="PlayerUI" parent="." instance=ExtResource("3_nnjor")]
 
 [node name="NPC" type="Node3D" parent="."]
@@ -298,6 +299,14 @@ script = ExtResource("9_kfgf6")
 starting_keys = Array[String](["small_coin", "small_heart"])
 starting_prefabs = Array[PackedScene]([ExtResource("10_k2yut"), ExtResource("12_jk2dd")])
 starting_size = Array[int]([25, 5])
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0)
+collision_mask = 3
+shape = SubResource("BoxShape3D_ier6u")
+spring_length = 10.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
 [connection signal="OnDamage" from="CharacterBody3D" to="CharacterBody3D" method="Damage"]
 
