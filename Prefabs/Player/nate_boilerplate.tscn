@@ -18,7 +18,7 @@ custom_solver_bias = 0.5
 height = 2.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ier6u"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="NateBoilerplate" type="Node3D" groups=["SerializedNode"]]
 script = ExtResource("1_s37ou")
@@ -301,7 +301,7 @@ starting_prefabs = Array[PackedScene]([ExtResource("10_k2yut"), ExtResource("12_
 starting_size = Array[int]([25, 5])
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.0871558, 0.996195, 0, -0.996195, 0.0871558, 0, 0, 0)
 collision_mask = 3
 shape = SubResource("BoxShape3D_ier6u")
 spring_length = 10.0
