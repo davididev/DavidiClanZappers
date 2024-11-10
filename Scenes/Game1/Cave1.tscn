@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b2iq8ttrqxxku"]
+[gd_scene load_steps=18 format=4 uid="uid://b2iq8ttrqxxku"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_1s14y"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_8wxpv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://cjy1pb071f3jl" path="res://Graphics/Tilesets/MT_insidetree.tres" id="9_2be6l"]
 [ext_resource type="PackedScene" uid="uid://ctm4dcpsof84c" path="res://Prefabs/NPC/WizardNPC.tscn" id="10_p4eda"]
 [ext_resource type="Resource" uid="uid://byqx48shfhryn" path="res://DialogueSystem/output/Game1-Wizard.res" id="11_hfnb2"]
+[ext_resource type="PackedScene" uid="uid://bd5u4ioji43fl" path="res://Prefabs/Enemy/Spikes5x5.tscn" id="12_trqrr"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ffw7t"]
 lightmap_size_hint = Vector2i(1430, 1430)
@@ -125,3 +126,27 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 [node name="TalkingNPC" parent="." instance=ExtResource("10_p4eda")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.6673, -0.5, -5.25737)
 DialogueOnInteract = ExtResource("11_hfnb2")
+
+[node name="Spikes5x5" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, -5)
+
+[node name="Spikes5x6" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -4, -5)
+
+[node name="Spikes5x7" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, -10)
+
+[node name="Spikes5x8" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -4, -10)
+
+[node name="Spikes5x9" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, -15)
+
+[node name="Spikes5x10" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -4, -15)
+
+[node name="Spikes5x11" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, -20)
+
+[node name="Spikes5x12" parent="." instance=ExtResource("12_trqrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -4, -20)

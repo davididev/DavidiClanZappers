@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd5u4ioji43fl"]
+
+[ext_resource type="PackedScene" uid="uid://brved53im7q14" path="res://Graphics/Enemies/Spikes/Spkes5x5.glb" id="1_8b7iq"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/Spikes.gd" id="1_bky63"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqpyj"]
+size = Vector3(5, 1, 5)
+
+[node name="Spikes5x5" type="Area3D"]
+collision_mask = 4
+script = ExtResource("1_bky63")
+
+[node name="ShapeCast3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tqpyj")
+
+[node name="Spkes5x5" parent="ShapeCast3D" instance=ExtResource("1_8b7iq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -1, -2.5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

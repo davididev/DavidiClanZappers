@@ -2,6 +2,8 @@ class_name Avatar extends CharacterBody3D
 
 signal OnDamage(Amount : int);  #Enemies will need to use this
 
+var CheckpointPosition = Vector3.ZERO;
+
 static var AttackAnimTime = -1.0;
 var damageDelay : float = -1.0;
 @export var itemAttachment : NodePath;
@@ -17,8 +19,11 @@ var idRight = 0;
 var emissionColor : Color = Color.BLACK;
 var targetColor : Color = Color.BLACK;
 
+func TeleportToCheckpoint():
+	global_position = CheckpointPosition;
 
 func _enter_tree() -> void:
+	CheckpointPosition = global_position;
 	if GameDataHolder.Instance == null:
 		GameDataHolder.Instance.LoadFile();
 	UpdateUI();
