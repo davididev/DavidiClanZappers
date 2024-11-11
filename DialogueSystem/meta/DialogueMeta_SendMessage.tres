@@ -7,3 +7,6 @@ script = ExtResource("1_k8n2l")
 command_name = "msg"
 arguments = Array[String](["Actor Name", "Signal name", "Next node"])
 defaultValues = Array[String](["Player", "Damage", "1,0"])
+StartingHealth = 100
+StartingStr = 3
+StartingMag = 1

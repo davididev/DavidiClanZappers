@@ -96,7 +96,6 @@ func ObtainDialogue():
 			StreamCountItem(args);
 		if command == "ifthen":
 			StreamIfThen(args);
-
 func StreamIfThen(args : Array[String]):
 	var variableName = args[0];
 	var operatorStr = args[1];
@@ -186,7 +185,7 @@ func StreamSendMessage(args : Array[String]):
 	var actorName = args[0];
 	var signalName = args[1];
 	var nextNodeStr = args[2];
-	NPC.npcList[actorName].emit_signal(signalName);
+	NPC.npcList[actorName].SendSignal(signalName);
 	DialogueArgsUtility.SetNextNodeFromStr(nextNodeStr);
 
 func SteamTeleport(args : Array[String]):

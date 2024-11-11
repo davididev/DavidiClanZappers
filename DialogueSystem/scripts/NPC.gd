@@ -4,6 +4,7 @@ static var npcList : Dictionary;
 @export var actor_name = "Player";
 @export var character_controller_path : NodePath;
 @export var DialogueOnInteract : DialogueGrid;
+@export var send_message_path : NodePath;
 var cc : CharacterBody3D;
 @export var usesCC = true;
 
@@ -15,6 +16,8 @@ var TargetPosition : Vector3;
 var CurrentTargetMode : TargetMode = TargetMode.INACTIVE;
 enum TargetMode { INACTIVE, MOVE_IGNORE_Y, MOVE_FLY_Y};
 
+func SendSignal(signalName : String):
+	get_node(send_message_path).emit_signal(signalName);
 
 func _enter_tree() -> void:
 	npcList[actor_name] = self;
