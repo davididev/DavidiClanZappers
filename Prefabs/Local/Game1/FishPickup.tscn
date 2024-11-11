@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://btukuqtugku8l"]
+
+[ext_resource type="Script" path="res://Scripts/Local/NPC/npc_pickup.gd" id="1_lgcc1"]
+[ext_resource type="Resource" uid="uid://bmyubm4w0qfrf" path="res://DialogueSystem/output/Game1-GetFish.res" id="2_38v2t"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="2_f2yyf"]
+[ext_resource type="PackedScene" uid="uid://csin0ochqfhvr" path="res://Graphics/Characters/Fish/Fish.glb" id="3_2ol15"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eoqi2"]
+radius = 2.0
+
+[node name="FishRoot" type="Node3D"]
+script = ExtResource("1_lgcc1")
+ItemID = 2
+
+[node name="NPC" type="Node3D" parent="."]
+script = ExtResource("2_f2yyf")
+actor_name = "Fish"
+DialogueOnInteract = ExtResource("2_38v2t")
+send_message_path = NodePath("..")
+usesCC = false
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_eoqi2")
+
+[node name="Fish" parent="." instance=ExtResource("3_2ol15")]
+
+[connection signal="Hide" from="." to="." method="_on_hide"]
+[connection signal="body_entered" from="Area3D" to="NPC" method="PlayerEnteredField"]
+[connection signal="body_exited" from="Area3D" to="NPC" method="PlayerExitedField"]

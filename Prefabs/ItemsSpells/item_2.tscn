@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk6567qskojvq"]
+
+[ext_resource type="Script" path="res://Scripts/Local/Item/item_use_dialogue.gd" id="1_4inl5"]
+[ext_resource type="PackedScene" uid="uid://csin0ochqfhvr" path="res://Graphics/Characters/Fish/Fish.glb" id="2_klfqg"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Game1-UseFish.res" id="2_sc7lq"]
+
+[node name="Item2" type="Node3D"]
+script = ExtResource("1_4inl5")
+myEntry = ExtResource("2_sc7lq")
+
+[node name="Fish" parent="." instance=ExtResource("2_klfqg")]

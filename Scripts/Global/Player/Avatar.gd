@@ -75,10 +75,10 @@ func _process(delta: float) -> void:
 			targetColor = Color.BLACK;
 			
 func AttachSpell():
-	if AttachedSpell == 0:  #Is nil, remove item if it's there
-		var childCount = get_node(spellAttachment).get_child_count();
-		if childCount > 0:
-			get_node(spellAttachment).get_child(0).queue_free();
+	#Remove spell regardless
+	var childCount = get_node(spellAttachment).get_child_count();
+	if childCount > 0:
+		get_node(spellAttachment).get_child(0).queue_free();
 	
 	if AttachedSpell > 0:  #Is a valid item
 		var refToItem = load(str("res://Prefabs/ItemsSpells/spell_", AttachedSpell, ".tscn"));
@@ -86,10 +86,10 @@ func AttachSpell():
 		get_node(spellAttachment).add_child(instance);
 
 func AttachItem():
-	if AttachedItem == 0:  #Is nil, remove item if it's there
-		var childCount = get_node(itemAttachment).get_child_count();
-		if childCount > 0:
-			get_node(itemAttachment).get_child(0).queue_free();
+	#Remove item regardless
+	var childCount = get_node(itemAttachment).get_child_count();
+	if childCount > 0:
+		get_node(itemAttachment).get_child(0).queue_free();
 	
 	if AttachedItem > 0:  #Is a valid item
 		var refToItem = load(str("res://Prefabs/ItemsSpells/item_", AttachedItem, ".tscn"));

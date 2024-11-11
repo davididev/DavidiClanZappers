@@ -1,5 +1,19 @@
 class_name DialogueArgsUtility extends Node
 
+static func GetItemCount(id : int):
+	var count = 0;
+	for i in range(0, 12):
+		if GameDataHolder.Instance.data.Items[i] == id:
+			count += 1;
+	return count;
+	
+static func GetSpellCount(id : int):
+	var count = 0;
+	for i in range(0, 8):
+		if GameDataHolder.Instance.data.Spells[i] == id:
+			count += 1;
+	return count;
+
 static func FilterRichText(s : String):
 	if s.contains("\\c"):
 		s = s.replace("\\c[0]", "[/color]");  #Close color tag

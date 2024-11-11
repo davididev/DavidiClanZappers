@@ -140,13 +140,9 @@ func StreamCountItem(args : Array[String]):
 	var nextNodeStr = args[3];
 	var count = 0;
 	if isItem:
-		for i in range(0, 12):
-			if GameDataHolder.Instance.data.Items[i] == itemOrSpell:
-				count += 1;
+		count = DialogueArgsUtility.GetItemCount(itemOrSpell);
 	if isItem == false:
-		for i in range(0, 8):
-			if GameDataHolder.Instance.data.Spells[i] == itemOrSpell:
-				count += 1;
+		count = DialogueArgsUtility.GetSpellCount(itemOrSpell);
 	
 	
 	SetVariable(varNameToSet, count);

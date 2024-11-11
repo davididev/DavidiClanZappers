@@ -26,7 +26,7 @@ func UseSpell():
 			SoundFXPlayer.PlaySound(LaunchSoundFX, get_tree(), global_position)
 		inst.call("SetPower", AttackPower * GameDataHolder.Instance.data.Str);
 		inst.global_position = global_position;
-		inst.rotation = get_parent().global_rotation;
+		inst.rotation = get_parent().get_parent().global_rotation;
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

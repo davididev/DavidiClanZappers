@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b2iq8ttrqxxku"]
+[gd_scene load_steps=26 format=4 uid="uid://b2iq8ttrqxxku"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_1s14y"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_8wxpv"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://25f5nfbb6jna" path="res://Prefabs/Interactable/BluePlatform.tscn" id="14_togeh"]
 [ext_resource type="PackedScene" uid="uid://moog8su6ils1" path="res://Prefabs/Interactable/StarPowerupAll.tscn" id="15_li06l"]
 [ext_resource type="PackedScene" uid="uid://bm4cylv46sggo" path="res://Prefabs/Interactable/StarPowerupMag.tscn" id="16_uqdii"]
+[ext_resource type="PackedScene" uid="uid://btukuqtugku8l" path="res://Prefabs/Local/Game1/FishPickup.tscn" id="17_bih76"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iyn3d"]
 lightmap_size_hint = Vector2i(1658, 1654)
@@ -224,3 +225,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2864, 0.141351, -16.913)
 
 [node name="GreenSlime4" parent="." instance=ExtResource("7_17ahb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2864, 0.141351, -10.913)
+
+[node name="FishRoot" parent="." instance=ExtResource("17_bih76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9608, -0.5, -29.2648)
