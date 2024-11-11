@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm4cylv46sggo"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/star_powerup.gd" id="1_1xjro"]
+[ext_resource type="Material" uid="uid://clubyfj63ad0q" path="res://Graphics/Particles/Particle Powerup Star.tres" id="2_jfgvj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ofhq4"]
+radius = 1.0
+
+[sub_resource type="Gradient" id="Gradient_ss03s"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dh8wm"]
+gradient = SubResource("Gradient_ss03s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iimkw"]
+emission_shape = 1
+emission_sphere_radius = 0.25
+spread = 180.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.4
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_dh8wm")
+anim_speed_min = 4.0
+anim_speed_max = 7.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_e7c66"]
+material = ExtResource("2_jfgvj")
+
+[node name="StarPowerupMag" type="Area3D"]
+collision_mask = 4
+script = ExtResource("1_1xjro")
+myType = 2
+particleRef = NodePath("CollisionShape3D/GPUParticles3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ofhq4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CollisionShape3D"]
+amount = 12
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_iimkw")
+draw_pass_1 = SubResource("QuadMesh_e7c66")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

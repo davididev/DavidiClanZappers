@@ -13,6 +13,27 @@ const MinIntensity = 0.5;
 const MaxIntensity = 2.0;
 var goingTowardsMin = true;
 
+func SaveNode() -> SerializedNode:
+	var newNode = SerializedNode.new();
+	newNode.path = get_path();
+	newNode.position = position;
+	newNode.rotation = rotation_degrees;
+	if IsTurnedOn:
+		newNode.MiscInt1 = 1;
+	else:
+		newNode.MiscInt1 = 0;
+	return newNode;
+
+
+func LoadNode(load2 : SerializedNode) -> void:
+	position = load2.position;
+	rotation_degrees = load2.rotation;
+	if load2.MiscInt1 == 1:
+		IsTurnedOn = true;
+	if load2.MiscInt1 == 0:
+		IsTurnedOn = false;
+		SwitchStatus();
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SwitchStatus();

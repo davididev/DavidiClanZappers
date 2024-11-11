@@ -40,13 +40,16 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
+	if GameDataHolder.Instance.data.BoolVars[SwitchID] == true:  #Don't do it on load
+		return;
+		
 	SoundFXPlayer.PlaySound("retro/powerUp_000.ogg", get_tree(), global_position);
 	
 	if myType == StarType.Str || myType == StarType.All: 
-		PopupText.PrintText(str("Str + 1"), get_tree(), Color.BLUE, global_position);
+		PopupText.PrintText(str("Str + 1"), get_tree(), Color.BLUE, global_position + Vector3(0.0, 0.0, 0.5));
 		GameDataHolder.Instance.data.Str += 1;
 	if myType == StarType.Mag || myType == StarType.All: 
-		PopupText.PrintText(str("Mag + 1"), get_tree(), Color.GREEN, global_position);
+		PopupText.PrintText(str("Mag + 1"), get_tree(), Color.GREEN, global_position + Vector3(0.0, 0.0, -0.5));
 		GameDataHolder.Instance.data.Mag += 1;
 	if myType == StarType.HP || myType == StarType.All:
 		PopupText.PrintText(str("HP + 1"), get_tree(), Color.RED, global_position);

@@ -22,7 +22,8 @@ var currentBrainID = 0;
 @export var MoveSpeed : float = 50.0;
 @export var MaxVelocity : float = 10.0;
 @export var JumpTowardsTarget = false;
-@export var coinsOnDeath = 1;
+@export var minCoinsOnDeath = 1;
+@export var maxCoinsOnDeath = 1;
 @export var chanceOfHeart = 100;
 var MinHealth = 6.0;
 
@@ -57,7 +58,7 @@ func LoadNode(load2 : SerializedNode) -> void:
 func Die():
 	visible = false;
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED;
-	var remainingCoins = coinsOnDeath;
+	var remainingCoins = randi_range(minCoinsOnDeath, maxCoinsOnDeath);
 	while remainingCoins > 0:
 		remainingCoins -= 1;
 		var entry = Node3DPool.GetInstance("small_coin");

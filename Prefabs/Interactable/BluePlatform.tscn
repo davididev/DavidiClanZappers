@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_i41wt"]
 size = Vector3(4, 1, 4)
 
-[node name="BluePlatform" type="RigidBody3D"]
+[node name="BluePlatform" type="RigidBody3D" groups=["SerializedNode"]]
 gravity_scale = 0.0
 center_of_mass_mode = 1
 can_sleep = false
