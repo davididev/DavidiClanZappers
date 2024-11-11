@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=39 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bgh1ijb5q68nt" path="res://Graphics/UI/SpellBack.png" id="28_ysaby"]
 [ext_resource type="Texture2D" uid="uid://b2akwjmwkeqnq" path="res://Graphics/UI/Spell-Top.png" id="29_8w5eo"]
 [ext_resource type="Texture2D" uid="uid://b1b08psbak0gv" path="res://Graphics/UI/Inventory/Spell1.png" id="30_48fwu"]
+[ext_resource type="Texture2D" uid="uid://bbnmpp3y5srv3" path="res://Graphics/UI/GameOver.png" id="31_bii71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us4xw"]
 size = Vector2(60, 60)
@@ -1002,6 +1003,7 @@ stream = SubResource("AudioStreamMP3_rj4xf")
 bus = &"Sound"
 
 [node name="Fade" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1010,6 +1012,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="GameOverTeture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 310.0
+offset_right = 830.0
+offset_bottom = 650.0
+scale = Vector2(1, 1e-05)
+pivot_offset = Vector2(260, 325)
+texture = ExtResource("31_bii71")
 
 [connection signal="pressed" from="InventoryMenu/Spell Button 0" to="InventoryMenu/Spell Button 0" method="_on_pressed"]
 [connection signal="pressed" from="InventoryMenu/Spell Button 2" to="InventoryMenu/Spell Button 2" method="_on_pressed"]

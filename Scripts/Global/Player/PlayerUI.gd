@@ -4,6 +4,8 @@ const VOLUME_MAX = 2.0;
 static var UpdateHUD = false;
 var lastJumpStr = true;  #Jump/Interact button last set to jump
 
+var gameOverScale = 0.0;
+
 static var fadeTarget : Color;
 const FADE_PER_SECOND = 2.0;
 
@@ -92,6 +94,15 @@ func _process(delta: float) -> void:
 			get_node("BGButtons2/JumpButton/Label").text = "Jump";
 		else:
 			get_node("BGButtons2/JumpButton/Label").text = "Interact";
+	if is_equal_approx(gameOverScale, 0.0) && GameDataHolder.Instance.data.MinHealth <= 0:
+		gameOverScale = 0.01;
+
+	if gameOverScale > 0.0 && gameOverScale < 1.0:
+		gameOverScale = move_toward(gameOverScale, 1.0, 2.0 * delta);
+		get_node("GameOverTeture").scale = Vector2(1.0, gameOverScale);
+		if is_equal_approx(gameOverScale, 1.0):
+			await get_tree().create_timer(2.0, true, true, true).timeout;
+			get_tree().change_scene_to_file("res://Scenes/Global/TitleScreen.tscn");	
 
 	if UpdateHUD:
 		UpdatePlayerHUD();
