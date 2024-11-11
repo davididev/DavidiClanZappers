@@ -39,12 +39,12 @@ func _process(delta: float) -> void:
 		
 	if AttachedItem > 0:
 		#Prepare animations
-		if Input.is_action_just_pressed("item"):
+		if Input.is_action_just_pressed("item") && is_on_floor():
 			get_node(npcAnimatorRef).PlayAttackAnim();
 			get_node(itemAttachment).get_child(0).call("UseItem");
 			AttackAnimTime = 0.6;
 	if AttachedSpell > 0:
-		if Input.is_action_just_pressed("magic"):
+		if Input.is_action_just_pressed("magic") && is_on_floor():
 			if PlayerUI.minTimerMagic >= PlayerUI.maxTimerMagic:
 				get_node(npcAnimatorRef). PlaySpellAnim();
 				PlayerUI.minTimerMagic = 0.0;

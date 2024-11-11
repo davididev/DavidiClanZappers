@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b2iq8ttrqxxku"]
+[gd_scene load_steps=19 format=4 uid="uid://b2iq8ttrqxxku"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_1s14y"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_8wxpv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ctm4dcpsof84c" path="res://Prefabs/NPC/WizardNPC.tscn" id="10_p4eda"]
 [ext_resource type="Resource" uid="uid://byqx48shfhryn" path="res://DialogueSystem/output/Game1-Wizard.res" id="11_hfnb2"]
 [ext_resource type="PackedScene" uid="uid://bd5u4ioji43fl" path="res://Prefabs/Enemy/Spikes5x5.tscn" id="12_trqrr"]
+[ext_resource type="PackedScene" uid="uid://dfqv7eva5purh" path="res://Prefabs/Interactable/Switch.tscn" id="13_iope4"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ffw7t"]
 lightmap_size_hint = Vector2i(1430, 1430)
@@ -150,3 +151,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, -20)
 
 [node name="Spikes5x12" parent="." instance=ExtResource("12_trqrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -4, -20)
+
+[node name="RedBlueSwitch" parent="." instance=ExtResource("13_iope4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -4.496)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjk3k0ty0ke7"]
+
+[ext_resource type="PackedScene" uid="uid://22cu2cy15ai7" path="res://Graphics/Interactable/Switch/ShootSwitch.glb" id="1_0o0tr"]
+
+[node name="ShootSwitch" instance=ExtResource("1_0o0tr")]

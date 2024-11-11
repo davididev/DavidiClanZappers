@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfqv7eva5purh"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/ShootSwitch.gd" id="1_hpf7p"]
+[ext_resource type="PackedScene" uid="uid://ckjk3k0ty0ke7" path="res://Graphics/Interactable/Switch/shoot_switchOutside.tscn" id="1_pn1ur"]
+[ext_resource type="Material" uid="uid://drh8t6dflaxov" path="res://Graphics/Interactable/Switch/RedSwitch.tres" id="2_crw1y"]
+[ext_resource type="Material" uid="uid://d0renbui11s0e" path="res://Graphics/Interactable/Switch/BlueSwitch.tres" id="3_gltbk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehm42"]
+size = Vector3(1, 2, 1)
+
+[node name="RedBlueSwitch" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 52
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_hpf7p")
+turnedOffMat = ExtResource("2_crw1y")
+turnedOnMat = ExtResource("3_gltbk")
+MeshRend = NodePath("CollisionShape3D/ShootSwitch/DONOTCOPY_SwitchSprite")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_ehm42")
+
+[node name="ShootSwitch" parent="CollisionShape3D" instance=ExtResource("1_pn1ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="DONOTCOPY_SwitchSprite" parent="CollisionShape3D/ShootSwitch" index="0"]
+surface_material_override/0 = ExtResource("2_crw1y")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1271, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+light_size = 10.0
+light_bake_mode = 0
+
+[connection signal="OnDamage" from="." to="." method="_on_on_damage"]
+
+[editable path="CollisionShape3D/ShootSwitch"]
