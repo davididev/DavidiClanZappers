@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 		currentJumpStr = false;
 	
 	if Avatar.AttachedSpell > 0:
-		minTimerMagic += delta;
+		minTimerMagic += delta * GameDataHolder.Instance.data.Mag;
 		if minTimerMagic > maxTimerMagic:
 			SpellReady = true;
 			minTimerMagic = maxTimerMagic;

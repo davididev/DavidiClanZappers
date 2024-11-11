@@ -14,15 +14,20 @@ static var PlayerPos : Vector3;
 static var AttachedItem = 0;
 static var AttachedSpell = 0;
 
+static var MoveAndSlideOffTime = 0.0;
+
 var idLeft = 0;
 var idRight = 0;
 var emissionColor : Color = Color.BLACK;
 var targetColor : Color = Color.BLACK;
 
 func TeleportToCheckpoint():
+	MoveAndSlideOffTime = 0.10;
+	await get_tree().create_timer(0.05).timeout;
 	global_position = CheckpointPosition;
 
 func _enter_tree() -> void:
+	MoveAndSlideOffTime = 0.0;
 	CheckpointPosition = global_position;
 	if GameDataHolder.Instance == null:
 		GameDataHolder.Instance.LoadFile();
@@ -36,7 +41,10 @@ func _process(delta: float) -> void:
 	PlayerPos = global_position;
 	if AttackAnimTime > -1.0:
 		AttackAnimTime -= delta;
-		
+	
+	if MoveAndSlideOffTime > 0.0:
+		MoveAndSlideOffTime -= delta;
+	
 	if AttachedItem > 0:
 		#Prepare animations
 		if Input.is_action_just_pressed("item") && is_on_floor():

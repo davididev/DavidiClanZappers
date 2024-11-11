@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b2iq8ttrqxxku"]
+[gd_scene load_steps=24 format=4 uid="uid://b2iq8ttrqxxku"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_1s14y"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_8wxpv"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bd5u4ioji43fl" path="res://Prefabs/Enemy/Spikes5x5.tscn" id="12_trqrr"]
 [ext_resource type="PackedScene" uid="uid://dfqv7eva5purh" path="res://Prefabs/Interactable/Switch.tscn" id="13_iope4"]
 [ext_resource type="PackedScene" uid="uid://25f5nfbb6jna" path="res://Prefabs/Interactable/BluePlatform.tscn" id="14_togeh"]
+[ext_resource type="PackedScene" uid="uid://moog8su6ils1" path="res://Prefabs/Interactable/StarPowerupAll.tscn" id="15_li06l"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ffw7t"]
 lightmap_size_hint = Vector2i(1430, 1430)
@@ -203,6 +204,8 @@ shape = SubResource("ConvexPolygonShape3D_643wo")
 
 [node name="BluePlatform" parent="." instance=ExtResource("14_togeh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1, -20.5)
-gravity_scale = 0.0
 TargetOffset = Vector3(0, 0, 15)
 VelocityPerSecond = 3.0
+
+[node name="StarPowerupAll" parent="." instance=ExtResource("15_li06l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.18928, 0.3895, -3.34385)

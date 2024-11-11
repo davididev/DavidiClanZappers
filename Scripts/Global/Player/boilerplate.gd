@@ -116,7 +116,8 @@ func _process(delta: float) -> void:
 	moveSpeed.y = gravity;
 	
 	cc.velocity = moveSpeed;
-	cc.move_and_slide();
+	if Avatar.MoveAndSlideOffTime <= 0.0:
+		cc.move_and_slide();
 	
 	
 	
