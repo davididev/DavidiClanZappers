@@ -67,7 +67,6 @@ func ObtainDialogue():
 	visible = false;
 	for c in ChoiceButtons:
 		get_node(c).visible = false;
-	
 	var currentNode : DialogueEntry = dialogueThread.GetEntry(CurrentX, CurrentY);
 	if currentNode == null:
 		EndDialogue();
@@ -105,6 +104,7 @@ func StreamIfThen(args : Array[String]):
 	
 	var valueLeft = DialogueArgsUtility.FilterDialogueVariables(variableName).to_float();
 	var valueRight = DialogueArgsUtility.FilterDialogueVariables(valueStr).to_float();
+	
 	
 	var isTrue = false;
 	if operatorStr == "==":

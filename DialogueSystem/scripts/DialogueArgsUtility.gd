@@ -5,14 +5,14 @@ static func GetItemCount(id : int):
 	for i in range(0, 12):
 		if GameDataHolder.Instance.data.Items[i] == id:
 			count += 1;
-	return count;
+	return float(count);
 	
 static func GetSpellCount(id : int):
 	var count = 0;
 	for i in range(0, 8):
 		if GameDataHolder.Instance.data.Spells[i] == id:
 			count += 1;
-	return count;
+	return float(count);
 
 static func FilterRichText(s : String):
 	if s.contains("\\c"):
@@ -36,8 +36,9 @@ static func ConvertStringToVector3(s : String):
 static func FilterDialogueVariables(s : String):
 	if s.contains("%"):
 		for vkey in DialogueHandler.variables.keys():
-			var vvalue = DialogueHandler.variables[vkey];
-			s = s.replace(vkey, str(vvalue));
+			if vkey == s:  #Only copy value if the key is equal to the variable we're putting in
+				var vvalue = DialogueHandler.variables[vkey];
+				s = s.replace(vkey, str(vvalue));
 	return s;
 
 static func ConvertStringToFloat(s : String):

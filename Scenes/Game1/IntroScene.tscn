@@ -5,7 +5,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cgnvnd6ph36ti" path="res://Graphics/Modular/Inside/BuildingInner.tres" id="2_nuyh1"]
 [ext_resource type="PackedScene" uid="uid://bavm5frnbt8qm" path="res://Prefabs/NPC/HannahNPC.tscn" id="3_h1rph"]
 [ext_resource type="Material" uid="uid://djse7ur78mlf6" path="res://Graphics/Tilesets/MT_BuildingInner.tres" id="4_w61o4"]
-[ext_resource type="Resource" uid="uid://d15q2nn1upgcj" path="res://DialogueSystem/output/Hannah1.res" id="5_35fw4"]
+[ext_resource type="Resource" uid="uid://dmnkdqaxad3ca" path="res://DialogueSystem/output/Game1-Hannah1.res" id="6_ibegd"]
 [ext_resource type="PackedScene" uid="uid://bi1sngihgc1ro" path="res://Prefabs/Decorations/Building Inner/table.tscn" id="10_o76uw"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="11_02bvx"]
 [ext_resource type="PackedScene" uid="uid://cytt41xsc0a8k" path="res://Prefabs/Decorations/Building Inner/bed_blue.tscn" id="11_c8yrw"]
@@ -56,7 +56,7 @@ metadata/_editor_floor_ = Vector3(0, -2, 0)
 
 [node name="TalkingNPC" parent="." groups=["SerializedNode"] instance=ExtResource("3_h1rph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0663, -0.500359, -0.545669)
-DialogueOnInteract = ExtResource("5_35fw4")
+DialogueOnInteract = ExtResource("6_ibegd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
