@@ -1013,10 +1013,18 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="GameOverTeture" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 310.0
-offset_right = 830.0
-offset_bottom = 650.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -325.0
+offset_right = 260.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1, 1e-05)
 pivot_offset = Vector2(260, 325)
 texture = ExtResource("31_bii71")

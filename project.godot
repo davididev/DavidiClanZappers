@@ -13,7 +13,9 @@ config_version=5
 config/name="Davidi Clan Adventures"
 run/main_scene="res://Scenes/Global/TitleScreen.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
 
 [audio]
 
