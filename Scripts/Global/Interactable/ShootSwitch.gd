@@ -25,6 +25,8 @@ func SwitchStatus():
 		get_node(MeshRend).set_surface_override_material(0, turnedOffMat);
 		get_node("CollisionShape3D/OmniLight3D").light_color = Color.RED;
 	
+	for np in ToggleSwitches:
+		get_node(np).emit_signal("ToggleSwitch", IsTurnedOn);
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,3 +47,4 @@ func _process(delta: float) -> void:
 func _on_on_damage(Amount: int) -> void:
 	IsTurnedOn = !IsTurnedOn;
 	SwitchStatus();
+	SoundFXPlayer.PlaySound("interface/confirmation_004.ogg", get_tree(), global_position);
