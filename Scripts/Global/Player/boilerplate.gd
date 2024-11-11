@@ -32,6 +32,7 @@ func LoadNode(load : SerializedNode) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	NPC.npcList.clear();
 	GameDataHolder.Instance.GetGameData();
 	
 	if First: #Load nodes

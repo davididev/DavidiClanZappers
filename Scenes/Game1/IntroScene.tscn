@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bn85sqgtqn525"]
+[gd_scene load_steps=17 format=4 uid="uid://bn85sqgtqn525"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_3rtrm"]
 [ext_resource type="LightmapGIData" uid="uid://c4dftj31kclap" path="res://Scenes/Game1/IntroScene.lmbake" id="1_6e05m"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="12_6g746"]
 [ext_resource type="PackedScene" uid="uid://b0q61q8ghgsx1" path="res://Prefabs/Decorations/Building Inner/bookshelf.tscn" id="12_h4y71"]
 [ext_resource type="PackedScene" uid="uid://dcb18u2e38mf" path="res://Prefabs/Enemy/heart_pickup.tscn" id="13_ql6j2"]
+[ext_resource type="PackedScene" uid="uid://b1tohpnmn5r7b" path="res://Graphics/Modular/Water/WaterPlane.tscn" id="14_hb3or"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rtjsk"]
 lightmap_size_hint = Vector2i(1090, 1094)
@@ -103,3 +104,8 @@ script = ExtResource("12_6g746")
 
 [node name="HeartPickup" parent="." instance=ExtResource("13_ql6j2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93205, -0.0270045, -2.12611)
+
+[node name="WaterPlane" parent="." instance=ExtResource("14_hb3or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+TargetY = 4.0
+AllowSwimming = false

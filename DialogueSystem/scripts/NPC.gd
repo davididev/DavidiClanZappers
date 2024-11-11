@@ -19,8 +19,10 @@ enum TargetMode { INACTIVE, MOVE_IGNORE_Y, MOVE_FLY_Y};
 func SendSignal(signalName : String):
 	get_node(send_message_path).emit_signal(signalName);
 
-func _enter_tree() -> void:
-	npcList[actor_name] = self;
+func _ready() -> void:
+	await get_tree().create_timer(0.05).timeout;
+	npcList.get_or_add(actor_name, self);
+
 
 func _process(delta: float) -> void:
 	if usesCC && cc == null:
@@ -32,7 +34,8 @@ func TeleportActor(pos : Vector3):
 	cc.global_position = pos;
 
 func RunEvent():
-	PreDialogueEvent.emit();
+	if PreDialogueEvent.is_null() == false:
+		PreDialogueEvent.emit();
 	DialogueHandler.Instance.StartDialogue(DialogueOnInteract);
 
 func PlayerEnteredField(node: Node) -> void:

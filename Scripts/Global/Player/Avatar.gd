@@ -1,6 +1,7 @@
 class_name Avatar extends CharacterBody3D
 
 signal OnDamage(Amount : int);  #Enemies will need to use this
+signal GameOver();
 
 var CheckpointPosition = Vector3.ZERO;
 
@@ -125,3 +126,7 @@ func UpdateUI():
 	#show health bar, gold, etc
 	PlayerUI.UpdateHUD = true;
 	
+
+
+func _on_game_over() -> void:
+	GameDataHolder.Instance.data.MinHealth = 0;

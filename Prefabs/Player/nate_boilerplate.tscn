@@ -288,6 +288,7 @@ libraries = {
 [node name="NPC" type="Node3D" parent="."]
 script = ExtResource("5_k1b6g")
 character_controller_path = NodePath("../CharacterBody3D")
+send_message_path = NodePath("../CharacterBody3D")
 
 [node name="NPCAnimator" type="Node3D" parent="."]
 script = ExtResource("6_t1vot")
@@ -308,6 +309,7 @@ spring_length = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
+[connection signal="GameOver" from="CharacterBody3D" to="CharacterBody3D" method="_on_game_over"]
 [connection signal="OnDamage" from="CharacterBody3D" to="CharacterBody3D" method="Damage"]
 
 [editable path="CharacterBody3D/CollisionShape3D/NateRiggedFinal"]

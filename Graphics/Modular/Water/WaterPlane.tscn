@@ -1,0 +1,36 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1tohpnmn5r7b"]
+
+[ext_resource type="PackedScene" uid="uid://dk1uxecbpp4cc" path="res://Graphics/Modular/Water/WaterPlane.glb" id="1_ritwo"]
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/water_plane.gd" id="2_ktnyl"]
+[ext_resource type="Material" uid="uid://bpust28ygodwu" path="res://Graphics/Modular/Water/WaterMat.tres" id="2_w6agk"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="3_xoqse"]
+[ext_resource type="Script" path="res://Scripts/Global/Misc/CycleTextures.gd" id="4_a7oey"]
+[ext_resource type="Script" path="res://Scripts/Global/Misc/CycleTextureList.gd" id="5_akfkn"]
+[ext_resource type="Texture2D" uid="uid://cdyxf4ka0s6wn" path="res://Graphics/Modular/Water/WaterFrame1.png" id="6_a27ic"]
+[ext_resource type="Texture2D" uid="uid://cr6n6jpt7dqnv" path="res://Graphics/Modular/Water/WaterFrame2.png" id="7_oxnvm"]
+[ext_resource type="Texture2D" uid="uid://clwixs4j7f3rq" path="res://Graphics/Modular/Water/WaterFrame3.png" id="8_r32dj"]
+[ext_resource type="Texture2D" uid="uid://cdngyxgcantc6" path="res://Graphics/Modular/Water/WaterFrame4.png" id="9_5twm6"]
+
+[sub_resource type="Resource" id="Resource_44kew"]
+script = ExtResource("5_akfkn")
+Frames = Array[Texture2D]([ExtResource("6_a27ic"), ExtResource("7_oxnvm"), ExtResource("8_r32dj"), ExtResource("9_5twm6"), ExtResource("8_r32dj"), ExtResource("7_oxnvm")])
+DelayPerFrame = 0.2
+
+[node name="WaterPlane" instance=ExtResource("1_ritwo")]
+script = ExtResource("2_ktnyl")
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_w6agk")
+
+[node name="CycleTexturesNode" type="Node3D" parent="Plane" index="0"]
+script = ExtResource("4_a7oey")
+lists = Array[ExtResource("5_akfkn")]([SubResource("Resource_44kew")])
+meshPath = NodePath("..")
+
+[node name="NPC" type="Node3D" parent="." index="1"]
+script = ExtResource("3_xoqse")
+actor_name = "WaterPlane"
+send_message_path = NodePath("..")
+usesCC = false
+
+[connection signal="UpdateTargetY" from="." to="." method="_on_update_target_y"]

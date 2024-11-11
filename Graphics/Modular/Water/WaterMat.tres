@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bpust28ygodwu"]
+
+[ext_resource type="Texture2D" uid="uid://cdyxf4ka0s6wn" path="res://Graphics/Modular/Water/WaterFrame1.png" id="1_20rf2"]
+
+[resource]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.784314)
+albedo_texture = ExtResource("1_20rf2")
