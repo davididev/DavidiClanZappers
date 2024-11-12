@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://btkmq6jcj6ieu"]
+
+[ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_ygccu"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_ry2ep"]
+
+[node name="IntroScene" type="Node3D"]
+
+[node name="NateBoilerplate" parent="." instance=ExtResource("1_ygccu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.357847, 0, 0.593427)
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("2_ry2ep")
+MusicForScene = "Dungeon 1.mp3"

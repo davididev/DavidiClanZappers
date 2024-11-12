@@ -170,6 +170,9 @@ theme = ExtResource("2_lf73o")
 text = "Cancel"
 
 [connection signal="pressed" from="Control/Panel SelectGame/Game Selecter Button" to="Control" method="_on_game_selecter_button_pressed"]
+[connection signal="pressed" from="Control/Panel SelectGame/Prev Button" to="Control" method="_on_prev_button_pressed"]
+[connection signal="pressed" from="Control/Panel SelectGame/Next Button" to="Control" method="_on_next_button_pressed"]
 [connection signal="pressed" from="Control/Panel SelectGame/Quit Button" to="Control" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Control/Panel PlayGame/Button Start" to="Control" method="_on_button_start_pressed"]
 [connection signal="pressed" from="Control/Panel PlayGame/Button Continue" to="Control" method="_on_button_continue_pressed"]
+[connection signal="pressed" from="Control/Panel PlayGame/Button Cancel" to="Control" method="_on_button_cancel_pressed"]

@@ -1,7 +1,8 @@
 extends Control
 @export var panels : Array[NodePath];
 
-const MAX_GAMES = 1;
+const MAX_GAMES = 2;
+var GameID = 1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +10,19 @@ func _ready() -> void:
 	BoilerPlate.First = true;
 	SetPanel(0);
 	PlayMusic.PlaySong("Title.mp3");
+	GameID = MAX_GAMES;
+	CycleQuests(0);
+	
+func CycleQuests(dir : int):
+	GameID += dir;
+	if GameID < 1:
+		GameID = MAX_GAMES;
+	if GameID > MAX_GAMES:
+		GameID = 1;
+	
+	var imagePath = str("res://Graphics/UI/Covers/Game", GameID, ".png");
+	get_node("Panel SelectGame/Game Selecter Button/TextureRect").texture = load(imagePath);
+	get_node("Panel PlayGame/TextureRect").texture = load(imagePath);
 	
 func SetPanel(id : int):
 	for i in range(0, panels.size()):
@@ -26,6 +40,7 @@ func _process(delta: float) -> void:
 
 
 func _on_game_selecter_button_pressed() -> void:
+	GameDataHolder.Instance.GameID = GameID;
 	SetPanel(1);
 
 
@@ -46,3 +61,15 @@ func _on_button_continue_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit();
+
+
+func _on_prev_button_pressed() -> void:
+	CycleQuests(-1);
+
+
+func _on_next_button_pressed() -> void:
+	CycleQuests(1);
+
+
+func _on_button_cancel_pressed() -> void:
+	SetPanel(0);
