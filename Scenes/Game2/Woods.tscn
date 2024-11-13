@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://be12waubxaahs"]
+
+[ext_resource type="PackedScene" uid="uid://bsygillv7wel8" path="res://Prefabs/Player/becky_boilerplate.tscn" id="1_4w3el"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_7lxq6"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="NateBoilerplate" parent="." instance=ExtResource("1_4w3el")]
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("2_7lxq6")
+MusicForScene = "Forest.mp3"
