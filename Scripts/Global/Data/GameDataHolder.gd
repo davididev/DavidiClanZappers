@@ -1,7 +1,7 @@
 class_name GameDataHolder extends Node
 
 static var Instance : GameDataHolder = GameDataHolder.new();
-static var GameID : int = 1;
+static var GameID : int = 2;
 static var VarMeta : GameVarNames;
 
 var data : GameData = null;
@@ -34,7 +34,11 @@ func LoadFile(isNew : bool = false):
 			data.Str = VarMeta.StartingStr;
 			data.Mag = VarMeta.StartingMag;
 			data.ScenePath = VarMeta.StartingScene;
-	
+			data.VolumeGlobal = PlayerPrefs.Current.VolumeMaster;
+			data.VolumeMusic = PlayerPrefs.Current.VolumeMusic;
+			data.VolumeSound = PlayerPrefs.Current.VolumeSound;
+			
+			
 func SaveFile(t : SceneTree):
 	var path = str("user://savegame", GameID, ".res");
 	data.Save(t);

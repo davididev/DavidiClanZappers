@@ -41,7 +41,8 @@ func SetPausePanel(id : int):
 		var invButtons = get_tree().get_nodes_in_group(&"InventoryButton");
 		for but in invButtons:
 			but.call("RedrawButton");
-
+	if id == 1:
+		RefreshVolumeText();
 	paused = id > -1;
 
 	if id > -1:
