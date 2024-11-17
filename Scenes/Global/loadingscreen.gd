@@ -3,6 +3,7 @@ class_name LoadingUI extends Node2D
 static var SceneToLoad = "";
 var resource_name = "";
 var scaleY = 0.001;
+@export var tips : Array[String];
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +15,11 @@ func _ready():
 	firstLoadStep = false;
 	ResourceLoader.load_threaded_request(resource_name, "", false, ResourceLoader.CACHE_MODE_REUSE);
 	get_node("Camera2D/CanvasGroup/RichTextLabel").scale = Vector2(1.0, scaleY);
+	
+	var id = randi_range(0, tips.size()-1)
+	var myTip = tips[id];
+	var tipText = str("[center]Tip: \n", myTip, "[/center]");
+	get_node("Camera2D/CanvasGroup/RichTextLabelTip").text = tipText;
 
 var firstLoadStep = false;
 

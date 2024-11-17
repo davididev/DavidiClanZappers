@@ -20,7 +20,6 @@ script = ExtResource("1_mfamt")
 panels = Array[NodePath]([NodePath("Panel SelectGame"), NodePath("Panel PlayGame")])
 
 [node name="Panel SelectGame" type="TextureRect" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,6 +100,7 @@ theme = ExtResource("2_lf73o")
 text = "Quit"
 
 [node name="Panel PlayGame" type="TextureRect" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

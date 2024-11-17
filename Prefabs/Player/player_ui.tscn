@@ -83,7 +83,6 @@ offset_bottom = 60.0
 texture = ExtResource("30_48fwu")
 
 [node name="InventoryMenu" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -593,8 +592,9 @@ texture = ExtResource("6_dyhy3")
 [node name="SettingsButton" type="TextureButton" parent="InventoryMenu"]
 layout_mode = 0
 offset_left = 437.0
-offset_right = 477.0
-offset_bottom = 40.0
+offset_top = 8.0
+offset_right = 501.0
+offset_bottom = 72.0
 focus_neighbor_bottom = NodePath("../Item Button 2")
 mouse_filter = 1
 texture_normal = ExtResource("8_cgro7")
@@ -1003,6 +1003,7 @@ stream = SubResource("AudioStreamMP3_rj4xf")
 bus = &"Sound"
 
 [node name="Fade" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
