@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://da6uagstt6f4"]
+[gd_scene load_steps=11 format=3 uid="uid://da6uagstt6f4"]
 
 [ext_resource type="Script" path="res://Scripts/Global/SpellScripts/bullet.gd" id="1_2wg0d"]
 [ext_resource type="Material" uid="uid://c0rh7vt3u1lwx" path="res://Graphics/Particles/Fireball Alpha Part.tres" id="1_l6bdd"]
 [ext_resource type="PackedScene" uid="uid://5oyb5udegmr0" path="res://Prefabs/ItemsSpells/fireballExplosion.tscn" id="2_fcng1"]
 [ext_resource type="Material" uid="uid://4iwpiixj00ei" path="res://Graphics/Particles/Particle Smoke Cloud.tres" id="4_ifkkv"]
+[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="5_owlx5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e8lfg"]
 
@@ -56,5 +57,8 @@ draw_pass_1 = SubResource("PlaneMesh_81n5b")
 [node name="GPUParticles3DTrail" type="GPUParticles3D" parent="CollisionShape3D"]
 process_material = SubResource("ParticleProcessMaterial_28paa")
 draw_pass_1 = SubResource("QuadMesh_ty245")
+
+[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("5_owlx5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
