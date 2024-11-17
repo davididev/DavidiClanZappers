@@ -287,6 +287,7 @@ libraries = {
 }
 
 [node name="DropShadow" parent="CharacterBody3D" instance=ExtResource("6_samtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="PlayerUI" parent="." instance=ExtResource("7_lo58n")]
 
