@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxskkctw8op0w"]
+
+[ext_resource type="MeshLibrary" uid="uid://cgnvnd6ph36ti" path="res://Graphics/Modular/Inside/BuildingInner.tres" id="1_cyklg"]
+[ext_resource type="LightmapGIData" uid="uid://rghxckw5vnpt" path="res://Scenes/Game2/BeckyHome.lmbake" id="1_rsee1"]
+[ext_resource type="PackedScene" uid="uid://bsygillv7wel8" path="res://Prefabs/Player/becky_boilerplate.tscn" id="2_mp30r"]
+[ext_resource type="PackedScene" uid="uid://i0utfcfesruo" path="res://Prefabs/Decorations/Building Inner/bed_green.tscn" id="3_vobej"]
+[ext_resource type="PackedScene" uid="uid://cytt41xsc0a8k" path="res://Prefabs/Decorations/Building Inner/bed_blue.tscn" id="4_ydeqk"]
+[ext_resource type="PackedScene" uid="uid://b0q61q8ghgsx1" path="res://Prefabs/Decorations/Building Inner/bookshelf.tscn" id="5_epj3d"]
+[ext_resource type="PackedScene" uid="uid://bi1sngihgc1ro" path="res://Prefabs/Decorations/Building Inner/table.tscn" id="6_ifuds"]
+[ext_resource type="PackedScene" uid="uid://ch2a8yc7dfbyv" path="res://Prefabs/Decorations/Building Inner/wooden_chair.tscn" id="7_iyymr"]
+[ext_resource type="PackedScene" uid="uid://d37vecvpa3ixm" path="res://Prefabs/Interactable/StarPowerupStr.tscn" id="9_gbwti"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="10_0d10j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyeqy"]
+size = Vector3(100, 1, 100)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+environment_mode = 3
+environment_custom_color = Color(0.352941, 0.352941, 0.352941, 1)
+environment_custom_energy = 1.0
+light_data = ExtResource("1_rsee1")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh_library = ExtResource("1_cyklg")
+cell_size = Vector3(5, 1, 5)
+data = {
+"cells": PackedInt32Array(0, 0, 0, 2, 0, 3, 65535, 65535, 8, 65535, 0, 12, 65535, 1, 12, 65535, 2, 10, 0, 65535, 13, 1, 65535, 14, 2, 65535, 13, 3, 2, 7, 3, 65535, 9, 3, 0, 2, 3, 1, 2, 2, 2, 1, 1, 2, 1, 0, 2, 1, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65538, 1, 17, 65537, 1, 16, 65537, 2, 19, 65539, 1, 18, 65536, 1, 17, 131071, 1, 18, 327678, 2, 11, 327678, 1, 11, 327678, 0, 11, 327678, 65535, 11, 327678, 65534, 11, 327678, 65533, 11, 327679, 65533, 11, 327679, 65534, 11, 262144, 65534, 11, 262145, 65534, 11, 262145, 65533, 11, 262144, 65533, 11, 262146, 65533, 11, 262146, 65534, 11, 262147, 65533, 11, 262147, 65534, 11, 327677, 2, 11, 327677, 1, 11, 327677, 0, 11, 327676, 0, 11, 327676, 65535, 11, 327676, 65534, 11, 327677, 65534, 11, 327677, 65533, 11, 327675, 65534, 11, 327675, 65533, 11, 327677, 65535, 11, 327675, 65532, 11, 327676, 65533, 11, 327674, 65534, 11, 327674, 65535, 11, 327675, 65535, 11, 327674, 0, 11, 327675, 0, 11, 327675, 1, 11, 327676, 1, 11, 327675, 2, 11, 327676, 2, 11, 262148, 65533, 11, 262149, 65533, 11, 262150, 65533, 11, 262150, 65534, 11, 262149, 65534, 11, 262148, 65534, 11, 262149, 65535, 11, 262150, 65535, 11, 262148, 65535, 11, 262149, 0, 11, 262150, 0, 11, 262148, 0, 11, 262148, 1, 11, 262149, 1, 11, 262150, 1, 11, 262148, 2, 11, 262149, 2, 11, 262150, 2, 11, 262149, 3, 11, 262150, 3, 11, 262148, 3, 11, 262147, 3, 11, 262146, 3, 11, 262145, 3, 11, 262144, 3, 11, 327679, 3, 11, 327678, 3, 11, 327677, 3, 11, 327676, 3, 11, 327675, 3, 11, 327675, 4, 11, 327674, 4, 11, 327676, 4, 11, 327677, 4, 11, 327678, 4, 11, 327679, 4, 11, 262146, 4, 11, 262147, 4, 11, 262148, 4, 11, 262149, 4, 11, 262150, 4, 11, 262145, 4, 11, 262144, 4, 11)
+}
+metadata/_editor_floor_ = Vector3(0, 4, 0)
+
+[node name="NateBoilerplate" parent="." instance=ExtResource("2_mp30r")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.965926, 0.0669873, -0.25, 2.26267e-08, 0.965926, 0.258819, 0.258819, 0.25, -0.933013, 0, 2, 0)
+light_bake_mode = 1
+
+[node name="BedGreen" parent="." instance=ExtResource("3_vobej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1272, 0.332782, 10.242)
+
+[node name="BedBlue" parent="." instance=ExtResource("4_ydeqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9513, 0.57143, 9.17881)
+
+[node name="Bookshelf" parent="." instance=ExtResource("5_epj3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8472, 0.571431, 10.5527)
+
+[node name="Table" parent="." instance=ExtResource("6_ifuds")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.67849, 0.353209, 9.71081)
+
+[node name="WoodenChair" parent="." instance=ExtResource("7_iyymr")]
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -3.77312, 0.57143, 6.27555)
+
+[node name="WoodenChair2" parent="." instance=ExtResource("7_iyymr")]
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -1.77312, 0.57143, 6.27555)
+
+[node name="Ceiling" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+shape = SubResource("BoxShape3D_nyeqy")
+
+[node name="StarPowerupStr" parent="." instance=ExtResource("9_gbwti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.162878, 1.5, 4.62016)
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("10_0d10j")

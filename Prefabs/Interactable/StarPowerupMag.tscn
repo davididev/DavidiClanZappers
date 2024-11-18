@@ -57,6 +57,7 @@ particleRef = NodePath("CollisionShape3D/GPUParticles3D")
 shape = SubResource("SphereShape3D_ofhq4")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CollisionShape3D"]
+layers = 16
 amount = 20
 lifetime = 5.0
 visibility_aabb = AABB(-2.33075, -2.38192, -2.5912, 4.90885, 5.2207, 5.26732)

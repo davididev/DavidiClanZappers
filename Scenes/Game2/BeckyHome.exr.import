@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://mtd4cuy4irrd"
+path="res://.godot/imported/BeckyHome.exr-4fa301c7237854c7fbb9499bb509c11c.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Scenes/Game2/BeckyHome.exr"
+dest_files=["res://.godot/imported/BeckyHome.exr-4fa301c7237854c7fbb9499bb509c11c.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=1
