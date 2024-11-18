@@ -43,6 +43,8 @@ func InitDialogueVars():
 		SetVariable(varNames[i], GameDataHolder.Instance.data.IntVars[i]);
 	
 	SetVariable("%gold", GameDataHolder.Instance.data.Gold);
+	SetVariable("%mag", GameDataHolder.Instance.data.Mag);
+	SetVariable("%str", GameDataHolder.Instance.data.Str);
 
 func CloseDialogueVars():
 	var varNames = GameDataHolder.Instance.VarMeta.IntNames;
@@ -50,6 +52,8 @@ func CloseDialogueVars():
 		GameDataHolder.Instance.data.IntVars[i] = GetVariable(varNames[i]);
 	
 	GameDataHolder.Instance.data.Gold = GetVariable("%gold");	
+	GameDataHolder.Instance.data.Mag = GetVariable("%mag");
+	GameDataHolder.Instance.data.Str = GetVariable("%str");
 	PlayerUI.UpdateHUD = true;
 
 func StartDialogue(runThis : DialogueGrid):

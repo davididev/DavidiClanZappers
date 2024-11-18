@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c7isy82gcty00" path="res://Graphics/Interactable/Door/DoorModel.glb" id="1_3x4m1"]
 [ext_resource type="Script" path="res://Scripts/Global/Interactable/Door.gd" id="2_cldt6"]
 [ext_resource type="Material" uid="uid://bf6262otdc0ba" path="res://Graphics/Interactable/Door/DoorBrownMat.tres" id="2_u4ot6"]
-[ext_resource type="Resource" path="res://DialogueSystem/output/TeleportEvent.res" id="3_qg1tr"]
+[ext_resource type="Resource" uid="uid://btflq4ks27776" path="res://DialogueSystem/output/TeleportEvent.res" id="3_qg1tr"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="4_qltyw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wgh73"]
@@ -20,6 +20,7 @@ surface_material_override/0 = ExtResource("2_u4ot6")
 
 [node name="NPC" type="Node3D" parent="." index="1"]
 script = ExtResource("4_qltyw")
+actor_name = "Door1"
 character_controller_path = NodePath("..")
 usesCC = false
 

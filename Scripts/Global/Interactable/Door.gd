@@ -12,7 +12,7 @@ var startingY = 0.0;
 func _ready() -> void:
 	startingY = global_rotation_degrees.y;
 	targetY = startingY;
-	var newDiaInstance = DialogueBase.duplicate(true);
+	var newDiaInstance = DialogueBase.DuplicateEntry();
 	var args : Array[String] = ["", ""];
 	args[0] = SceneToGoTo;
 	args[1] = str(PositionToGoTo.x, ",", PositionToGoTo.y, ",", PositionToGoTo.z);

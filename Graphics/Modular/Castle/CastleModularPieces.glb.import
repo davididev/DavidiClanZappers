@@ -1,0 +1,275 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ba1srueojol00"
+path="res://.godot/imported/CastleModularPieces.glb-a5b401978fad7d587f1ea5036ae80c0e.scn"
+
+[deps]
+
+source_file="res://Graphics/Modular/Castle/CastleModularPieces.glb"
+dest_files=["res://.godot/imported/CastleModularPieces.glb-a5b401978fad7d587f1ea5036ae80c0e.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"M_VoxelCastle_png": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.003": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.004": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.005": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.006": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.007": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.008": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.009": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.010": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.011": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.013": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.014": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.015": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.016": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.018": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+},
+"M_VoxelCastle_png.019": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelCastle.tres"
+}
+},
+"meshes": {
+"CastleModularPieces_CASTLE-WALL-1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-1.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_002.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_004.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_005.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_006.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_007.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_008.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_010.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_011.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_012": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_012.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_013.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_015.res"
+},
+"CastleModularPieces_CASTLE-WALL-2_016": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CASTLE-WALL-2_016.res"
+},
+"CastleModularPieces_CUBE1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CUBE1.res"
+},
+"CastleModularPieces_CUBE1_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CUBE1_001.res"
+},
+"CastleModularPieces_CUBE1_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_CUBE1_002.res"
+},
+"CastleModularPieces_TOP_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_TOP_001.res"
+},
+"CastleModularPieces_TOP_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/Castle/CastleModularPieces_TOP_003.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

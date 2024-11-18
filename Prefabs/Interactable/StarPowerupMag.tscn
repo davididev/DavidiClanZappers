@@ -68,5 +68,6 @@ draw_pass_1 = SubResource("QuadMesh_e7c66")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42952, 0)
 layers = 3
 texture_albedo = ExtResource("3_54bck")
+cull_mask = 3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

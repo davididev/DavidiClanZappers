@@ -36,9 +36,9 @@ static func ConvertStringToVector3(s : String):
 static func FilterDialogueVariables(s : String):
 	if s.contains("%"):
 		for vkey in DialogueHandler.variables.keys():
-			if vkey == s:  #Only copy value if the key is equal to the variable we're putting in
-				var vvalue = DialogueHandler.variables[vkey];
-				s = s.replace(vkey, str(vvalue));
+			#if vkey == s:  #Only copy value if the key is equal to the variable we're putting in
+			var vvalue = DialogueHandler.variables[vkey];
+			s = s.replace(vkey, str(vvalue));
 	return s;
 
 static func ConvertStringToFloat(s : String):

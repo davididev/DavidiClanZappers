@@ -269,6 +269,7 @@ bones/280/rotation = Quaternion(-4.07453e-10, 1.42109e-14, 1, 2.91038e-11)
 bones/281/position = Vector3(-0.080859, 0.132228, 0.195013)
 
 [node name="DONOTCOPY_BeckySprite" parent="CharacterBody3D/CollisionShape3D/BeckyModel/godot_rig/GeneralSkeleton" index="0"]
+layers = 4
 surface_material_override/0 = ExtResource("4_b0cvk")
 
 [node name="ItemAttachment" type="BoneAttachment3D" parent="CharacterBody3D/CollisionShape3D/BeckyModel/godot_rig/GeneralSkeleton" index="1"]

@@ -5,6 +5,17 @@ const HEIGHT : int = 7;
 
 @export var grid = [];
 
+func DuplicateEntry():
+	var newResource = DialogueGrid.new();
+	newResource.Init();
+	for i in WIDTH:
+		for j in HEIGHT:
+			if grid[i][j] != null:
+				newResource.grid[i][j] = DialogueEntry.new();
+				newResource.grid[i][j].cmd = grid[i][j].cmd;
+				newResource.grid[i][j].args = grid[i][j].args;
+	return newResource;
+
 func Init() -> void:
 	for i in WIDTH:
 		grid.append([]);
