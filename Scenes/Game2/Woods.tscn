@@ -5,7 +5,7 @@
 
 [node name="Node3D" type="Node3D"]
 
-[node name="NateBoilerplate" parent="." instance=ExtResource("1_4w3el")]
+[node name="BeckyBoilerplate" parent="." instance=ExtResource("1_4w3el")]
 
 [node name="SceneVars" type="Node3D" parent="."]
 script = ExtResource("2_7lxq6")

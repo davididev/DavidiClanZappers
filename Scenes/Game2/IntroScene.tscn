@@ -3,11 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bsygillv7wel8" path="res://Prefabs/Player/becky_boilerplate.tscn" id="2_g3075"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_ry2ep"]
 [ext_resource type="Resource" path="res://DialogueSystem/output/Game2-Intro.res" id="2_w4n1l"]
+[ext_resource type="PackedScene" uid="uid://be8duqm3sfilh" path="res://Graphics/Decorations/SpaceBG/SkyBG.glb" id="4_xx7gg"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_chpsy"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rgwk4"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2cpy"]
+size = Vector3(42, 1, 22)
 
 [node name="IntroScene" type="Node3D"]
 
@@ -16,13 +15,15 @@ script = ExtResource("2_ry2ep")
 MusicForScene = "Dungeon 1.mp3"
 DialogueOnStart = ExtResource("2_w4n1l")
 
-[node name="NateBoilerplate" parent="." instance=ExtResource("2_g3075")]
+[node name="BeckyBoilerplate" parent="." instance=ExtResource("2_g3075")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, -1, 0)
-mesh = SubResource("BoxMesh_chpsy")
+[node name="SkyBG" parent="." instance=ExtResource("4_xx7gg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -2, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SkyBG"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_rgwk4")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SkyBG/StaticBody3D"]
+shape = SubResource("BoxShape3D_o2cpy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 4, 0)

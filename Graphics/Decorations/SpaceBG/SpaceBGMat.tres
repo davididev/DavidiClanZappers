@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cqvrlrf1k7drr"]
+
+[ext_resource type="Texture2D" uid="uid://71o0oqhn1qhy" path="res://Graphics/Decorations/SpaceBG/SkyBG.png" id="1_1pf7d"]
+
+[resource]
+albedo_texture = ExtResource("1_1pf7d")

@@ -31,7 +31,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 4, 0)
 
-[node name="NateBoilerplate" parent="." instance=ExtResource("2_mp30r")]
+[node name="BeckyBoilerplate" parent="." instance=ExtResource("2_mp30r")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.965926, 0.0669873, -0.25, 2.26267e-08, 0.965926, 0.258819, 0.258819, 0.25, -0.933013, 0, 2, 0)

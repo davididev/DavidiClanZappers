@@ -20,7 +20,7 @@ height = 2.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_ier6u"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="NateBoilerplate" type="Node3D" groups=["SerializedNode"]]
+[node name="BeckyBoilerplate" type="Node3D" groups=["SerializedNode"]]
 script = ExtResource("1_riwyj")
 playerRoot = NodePath("CharacterBody3D/CollisionShape3D/BeckyModel")
 characterController = NodePath("CharacterBody3D")
