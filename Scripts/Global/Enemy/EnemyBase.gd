@@ -10,6 +10,7 @@ var targetColor : Color = Color.BLACK;
 @export var renderers : Array[NodePath];
 @export var look_at_transform : NodePath;
 @export var TouchDamage = 2;
+@export var Defense = 0;
 @export var MaxHealth = 6.0;
 @export var tree : NodePath;
 @export var brains : Array[NodePath];
@@ -106,11 +107,26 @@ func MoveTowardsPosition(pos : Vector3):
 	if linear_velocity.length_squared() < MaxVelocity:
 		apply_force(force);
 	moveTimer = 0.1;
-	get_node(look_at_transform).look_at(pos, Vector3(0.0, 1.0, 0.0), true);
+	get_node(look_at_transform).look_at(to_local(pos), Vector3(0.0, 1.0, 0.0), true);
 	var targetAngle = get_node(look_at_transform).rotation_degrees.y;
 	var currentAngle = get_child(0).rotation_degrees;
-	currentAngle.y = move_toward(currentAngle.y, targetAngle, 360.0 * lastDelta);
-	#print(str("Target angle: ", targetAngle, "; currently at ", currentAngle.y));
+	#currentAngle.y = move_toward(currentAngle.y, targetAngle, 360.0 * lastDelta);
+	
+	var dif = angle_difference(deg_to_rad(currentAngle.y), deg_to_rad(targetAngle));
+	var difAngles = rad_to_deg(dif);
+	print("Current angle: ", currentAngle.y, " target angle: ", targetAngle, " Dif: ", difAngles)
+	
+	
+	if difAngles < 0:
+		var rel2 = -360.0 * lastDelta;
+		if rel2 < difAngles:
+			rel2 = difAngles;
+		currentAngle.y += rel2;
+	if difAngles > 0:
+		var rel2 = 360.0 * lastDelta;
+		if rel2 > difAngles:
+			rel2 = difAngles;
+		currentAngle.y += rel2;
 	
 	get_child(0).rotation_degrees = currentAngle;
 	return isClose;
@@ -177,6 +193,9 @@ func PlayAttackAnimation(time : float):
 
 
 func _on_on_damage(Amount: int) -> void:
+	Amount -= Defense;
+	if Amount < 0:
+		Amount = 0;
 	if emissionColor == Color.BLACK:
 		PopupText.PrintText(str("-", Amount, " HP"), get_tree(), Color.RED, position);
 		targetColor = Color.RED;
