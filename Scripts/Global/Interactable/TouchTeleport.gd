@@ -19,7 +19,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		if SoundOnOpen != "":
 			SoundFXPlayer.PlaySound(SoundOnOpen, get_tree(), global_position);
-		var newDiaInstance = DialogueBase.duplicate(true);
+		var newDiaInstance = DialogueBase.DuplicateEntry();
 		var args : Array[String] = ["", ""];
 		args[0] = SceneToGoTo;
 		args[1] = str(PositionToGoTo.x, ",", PositionToGoTo.y, ",", PositionToGoTo.z);

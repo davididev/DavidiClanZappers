@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dksgng6tjxoe3"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Interactable/TouchTeleport.gd" id="1_ga3gy"]
-[ext_resource type="Resource" path="res://DialogueSystem/output/TeleportEvent.res" id="2_5f3rj"]
+[ext_resource type="Resource" uid="uid://btflq4ks27776" path="res://DialogueSystem/output/TeleportEvent.res" id="2_5f3rj"]
 [ext_resource type="Texture2D" uid="uid://tuuuhcr1p2a" path="res://Graphics/Decals/CaveOpening2.png" id="2_xt0t1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2lq0j"]

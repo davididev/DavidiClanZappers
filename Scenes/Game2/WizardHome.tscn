@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://5rpog2ak1f5j"]
+[gd_scene load_steps=18 format=4 uid="uid://5rpog2ak1f5j"]
 
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="1_w068a"]
 [ext_resource type="PackedScene" uid="uid://bsygillv7wel8" path="res://Prefabs/Player/becky_boilerplate.tscn" id="2_csvkm"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ctm4dcpsof84c" path="res://Prefabs/NPC/WizardNPC.tscn" id="5_dbwd4"]
 [ext_resource type="Resource" uid="uid://chud6kp5bmwog" path="res://DialogueSystem/output/Game2-Wizard.res" id="6_7cf6f"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="7_daj67"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="9_wbu4m"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="10_2kp58"]
 
 [sub_resource type="Environment" id="Environment_8kxw3"]
 
@@ -61,6 +63,16 @@ shadow_mesh = SubResource("ArrayMesh_txecl")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6kfmu"]
 points = PackedVector3Array(-4.85832, 0.104113, 4, 0.0391543, 4.00794, 5.07143, 0.0391543, -0.0396824, 5.07143, -5.03871, 4.00794, 5.07143, -0.141241, 3.86414, 4, -5.03871, -0.0396824, 5.07143, -0.141241, 0.104113, 4, -4.85832, 3.86414, 4)
 
+[sub_resource type="Resource" id="Resource_uemkv"]
+script = ExtResource("9_wbu4m")
+cmd = "sce"
+args = "Game1/Scene_0,0,0"
+
+[sub_resource type="Resource" id="Resource_71n2q"]
+resource_local_to_scene = true
+script = ExtResource("10_2kp58")
+grid = [[SubResource("Resource_uemkv"), null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null]]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="SceneVars" type="Node3D" parent="."]
@@ -107,5 +119,6 @@ DialogueOnInteract = ExtResource("6_7cf6f")
 
 [node name="DoorModel" parent="." instance=ExtResource("7_daj67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.5, -6.21487)
+DialogueBase = SubResource("Resource_71n2q")
 SceneToGoTo = "Game2/Woods"
 PositionToGoTo = Vector3(23, 0.5, -5.5)
