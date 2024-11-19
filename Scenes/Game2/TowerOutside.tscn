@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cjswqqd6tqxc5"]
+[gd_scene load_steps=35 format=4 uid="uid://cjswqqd6tqxc5"]
 
 [ext_resource type="PackedScene" uid="uid://bsygillv7wel8" path="res://Prefabs/Player/becky_boilerplate.tscn" id="1_e5ans"]
 [ext_resource type="MeshLibrary" uid="uid://cq5vxikcb8olf" path="res://Graphics/Modular/Terrain/Grass/TerrainGrassMeshLibrary.tres" id="2_ho00q"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="10_ge6ii"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="11_d43a6"]
 [ext_resource type="PackedScene" uid="uid://g1lotomxqw2p" path="res://Prefabs/TeleportDecals/instant_teleport_invisible.tscn" id="12_3lyld"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="13_msp70"]
 
 [sub_resource type="Environment" id="Environment_6prdo"]
 
@@ -308,5 +309,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 
 DialogueBase = SubResource("Resource_sc0q3")
 SceneToGoTo = "Game2/TowerF1"
 PositionToGoTo = Vector3(-24.5, 0.5, -30)
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("13_msp70")
+MusicForScene = "Dungeon 2.mp3"
 
 [editable path="DarkTower"]

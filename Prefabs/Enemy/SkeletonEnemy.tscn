@@ -1,0 +1,143 @@
+[gd_scene load_steps=28 format=3 uid="uid://b5t4hlcyg78ht"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/EnemyBase.gd" id="1_l131n"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/BrainTransitionResource.gd" id="2_xs6p0"]
+[ext_resource type="PackedScene" uid="uid://0sskwcmcthhc" path="res://Graphics/Enemies/Skeleton/SksletonEnemy5.glb" id="3_klyup"]
+[ext_resource type="Animation" uid="uid://b4gpuwyexgcu0" path="res://Graphics/Enemies/Skeleton/Attack.res" id="4_44res"]
+[ext_resource type="Material" uid="uid://b07ygd4rqnvph" path="res://Graphics/Enemies/Skeleton/M_SkeletonEnemy.tres" id="4_lpfld"]
+[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="5_bv28i"]
+[ext_resource type="Animation" uid="uid://cspk11orgl8ie" path="res://Graphics/Enemies/Skeleton/Idle.res" id="5_swone"]
+[ext_resource type="Animation" uid="uid://djw7ycl1tlxsh" path="res://Graphics/Enemies/Skeleton/Walk.res" id="6_qi430"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/BrainWaitForPlayer.gd" id="6_rctoq"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/BrainFollowPlayer.gd" id="7_fyy0m"]
+[ext_resource type="Script" path="res://Scripts/Global/Enemy/BrainThrowAttack.gd" id="7_wgjlw"]
+[ext_resource type="PackedScene" uid="uid://dwpn3nvkjkw5s" path="res://Prefabs/Enemy/enemyFireball.tscn" id="8_g67o8"]
+
+[sub_resource type="Resource" id="Resource_6bxb3"]
+script = ExtResource("2_xs6p0")
+cond = Array[int]([0, 2])
+values = Array[float]([0.99, 8.0])
+operator = 1
+
+[sub_resource type="Resource" id="Resource_eu7n3"]
+script = ExtResource("2_xs6p0")
+cond = Array[int]([1])
+values = Array[float]([1.5])
+operator = 0
+
+[sub_resource type="Resource" id="Resource_qvu5b"]
+script = ExtResource("2_xs6p0")
+cond = Array[int]([1])
+values = Array[float]([0.5])
+operator = 0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h5276"]
+radius = 0.9
+height = 2.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6j7i3"]
+_data = {
+"Attack": ExtResource("4_44res"),
+"Idle": ExtResource("5_swone"),
+"Walk": ExtResource("6_qi430")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uddld"]
+animation = &"SkeletonAnim/Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bpy18"]
+animation = &"SkeletonAnim/Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4u0ws"]
+animation = &"SkeletonAnim/Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_53mq3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wbufd"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y0bgl"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ti3q4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8w3y3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x688o"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_w4ykw"]
+states/Attack/node = SubResource("AnimationNodeAnimation_uddld")
+states/Attack/position = Vector2(580, 133)
+states/Idle/node = SubResource("AnimationNodeAnimation_bpy18")
+states/Idle/position = Vector2(345, 115)
+states/Move/node = SubResource("AnimationNodeAnimation_4u0ws")
+states/Move/position = Vector2(469, 53)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_53mq3"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_wbufd"), "Move", "Attack", SubResource("AnimationNodeStateMachineTransition_y0bgl"), "Attack", "Move", SubResource("AnimationNodeStateMachineTransition_ti3q4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_8w3y3"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_x688o")]
+
+[node name="SkeletonEnemy" type="RigidBody3D" groups=["SerializedNode"]]
+top_level = true
+collision_layer = 16
+collision_mask = 7
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+contact_monitor = true
+max_contacts_reported = 2
+linear_damp_mode = 1
+linear_damp = 200.0
+angular_damp = 200.0
+script = ExtResource("1_l131n")
+renderers = Array[NodePath]([NodePath("CollisionShape3D/SksletonEnemy5/godot_rig/GeneralSkeleton/DONOTCOPY_Skeleton")])
+look_at_transform = NodePath("CollisionShape3D/LookAt")
+Defense = 10
+MaxHealth = 20.0
+tree = NodePath("CollisionShape3D/SksletonEnemy5/AnimationTree")
+brains = Array[NodePath]([NodePath("CollisionShape3D/Brain_WaitForPlayer"), NodePath("CollisionShape3D/Brain_FollowPlayer"), NodePath("CollisionShape3D/Brain_FireBullet")])
+brainTransitions = Array[ExtResource("2_xs6p0")]([SubResource("Resource_6bxb3"), SubResource("Resource_eu7n3"), SubResource("Resource_qvu5b")])
+IdleName = "Idle"
+MoveName = "Move"
+AttackName = "Attack"
+MoveSpeed = 35.0
+MaxVelocity = 6.0
+minCoinsOnDeath = 2
+maxCoinsOnDeath = 4
+chanceOfHeart = 50
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_h5276")
+
+[node name="SksletonEnemy5" parent="CollisionShape3D" instance=ExtResource("3_klyup")]
+
+[node name="GeneralSkeleton" parent="CollisionShape3D/SksletonEnemy5/godot_rig" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="DONOTCOPY_Skeleton" parent="CollisionShape3D/SksletonEnemy5/godot_rig/GeneralSkeleton" index="0"]
+surface_material_override/0 = ExtResource("4_lpfld")
+
+[node name="AnimationTree" type="AnimationTree" parent="CollisionShape3D/SksletonEnemy5"]
+libraries = {
+"SkeletonAnim": SubResource("AnimationLibrary_6j7i3")
+}
+tree_root = SubResource("AnimationNodeStateMachine_w4ykw")
+
+[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("5_bv28i")]
+
+[node name="LookAt" type="Node3D" parent="CollisionShape3D"]
+top_level = true
+
+[node name="Brain_WaitForPlayer" type="Node3D" parent="CollisionShape3D"]
+script = ExtResource("6_rctoq")
+root = NodePath("../..")
+
+[node name="Brain_FollowPlayer" type="Node3D" parent="CollisionShape3D"]
+script = ExtResource("7_fyy0m")
+root = NodePath("../..")
+nextBrainID = 2
+SpeedMultiplier = 2.0
+
+[node name="Brain_FireBullet" type="Node3D" parent="CollisionShape3D"]
+script = ExtResource("7_wgjlw")
+root = NodePath("../..")
+BulletPrefab = ExtResource("8_g67o8")
+
+[connection signal="OnDamage" from="." to="." method="_on_on_damage"]
+[connection signal="body_entered" from="." to="." method="OnTouchDamage"]
+
+[editable path="CollisionShape3D/SksletonEnemy5"]

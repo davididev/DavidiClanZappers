@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cawo332buhrsd"]
+[gd_scene load_steps=18 format=4 uid="uid://cawo332buhrsd"]
 
 [ext_resource type="PackedScene" uid="uid://bsygillv7wel8" path="res://Prefabs/Player/becky_boilerplate.tscn" id="1_22be8"]
 [ext_resource type="LightmapGIData" uid="uid://bi1s0i6327o16" path="res://Scenes/Game2/TowerF1.lmbake" id="2_cln30"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="5_y05cu"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="6_ven63"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="7_frtat"]
+[ext_resource type="PackedScene" uid="uid://b5t4hlcyg78ht" path="res://Prefabs/Enemy/SkeletonEnemy.tscn" id="10_fmdd1"]
+[ext_resource type="PackedScene" uid="uid://cjfo4varh13un" path="res://Prefabs/Enemy/OrangeSlime.tscn" id="11_n5dvs"]
 
 [sub_resource type="Environment" id="Environment_emfvt"]
 
@@ -99,3 +101,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.48, -0.5, 2.5)
 DialogueBase = SubResource("Resource_y6gcj")
 SceneToGoTo = "Game2/TowerOutside"
 PositionToGoTo = Vector3(-2, 4.5, -10.5)
+
+[node name="SkeletonEnemy" parent="." instance=ExtResource("10_fmdd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8454, -0.0337744, -19.1973)
+
+[node name="SkeletonEnemy2" parent="." instance=ExtResource("10_fmdd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8454, -0.0337744, -26.1973)
+
+[node name="SkeletonEnemy3" parent="." instance=ExtResource("10_fmdd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8454, -0.0337744, -32.1973)
+
+[node name="OrangeSlime" parent="." instance=ExtResource("11_n5dvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.70616, 0.57143, -12.0712)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://da6uagstt6f4"]
+[gd_scene load_steps=11 format=3 uid="uid://dwpn3nvkjkw5s"]
 
-[ext_resource type="Script" path="res://Scripts/Global/SpellScripts/bullet.gd" id="1_2wg0d"]
-[ext_resource type="Material" uid="uid://c0rh7vt3u1lwx" path="res://Graphics/Particles/Fireball Alpha Part.tres" id="1_l6bdd"]
-[ext_resource type="PackedScene" uid="uid://5oyb5udegmr0" path="res://Prefabs/ItemsSpells/fireballExplosion.tscn" id="2_fcng1"]
-[ext_resource type="Material" uid="uid://4iwpiixj00ei" path="res://Graphics/Particles/Particle Smoke Cloud.tres" id="4_ifkkv"]
-[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="5_owlx5"]
+[ext_resource type="Script" path="res://Scripts/Global/SpellScripts/bullet.gd" id="1_vvpj6"]
+[ext_resource type="PackedScene" uid="uid://5oyb5udegmr0" path="res://Prefabs/ItemsSpells/fireballExplosion.tscn" id="2_qmrnf"]
+[ext_resource type="Material" uid="uid://c0rh7vt3u1lwx" path="res://Graphics/Particles/Fireball Alpha Part.tres" id="3_6as2n"]
+[ext_resource type="Material" uid="uid://4iwpiixj00ei" path="res://Graphics/Particles/Particle Smoke Cloud.tres" id="4_k8bi5"]
+[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="5_0vjbk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e8lfg"]
 
@@ -18,7 +18,7 @@ anim_speed_min = 0.75
 anim_speed_max = 1.25
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_81n5b"]
-material = ExtResource("1_l6bdd")
+material = ExtResource("3_6as2n")
 size = Vector2(0.5, 0.5)
 orientation = 2
 
@@ -28,12 +28,12 @@ anim_speed_min = 1.0
 anim_speed_max = 2.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_ty245"]
-material = ExtResource("4_ifkkv")
+material = ExtResource("4_k8bi5")
 size = Vector2(0.4, 0.4)
 
 [node name="RigidBody3D" type="RigidBody3D"]
 collision_layer = 32
-collision_mask = 19
+collision_mask = 7
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -41,26 +41,27 @@ axis_lock_angular_z = true
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 5
-script = ExtResource("1_2wg0d")
+script = ExtResource("1_vvpj6")
 MOVE_SPEED = 7
-DeathParticle = ExtResource("2_fcng1")
+DeathParticle = ExtResource("2_qmrnf")
+TouchDamage = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_e8lfg")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CollisionShape3D"]
-layers = 32
+layers = 16
 amount = 24
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_1qics")
 draw_pass_1 = SubResource("PlaneMesh_81n5b")
 
 [node name="GPUParticles3DTrail" type="GPUParticles3D" parent="CollisionShape3D"]
-layers = 32
+layers = 16
 process_material = SubResource("ParticleProcessMaterial_28paa")
 draw_pass_1 = SubResource("QuadMesh_ty245")
 
-[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("5_owlx5")]
+[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("5_0vjbk")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
