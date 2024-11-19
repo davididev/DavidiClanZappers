@@ -10,13 +10,15 @@
 
 [sub_resource type="Resource" id="Resource_6bxb3"]
 script = ExtResource("2_dvrgs")
-cond = 2
-values = Array[float]([5.0])
+cond = Array[int]([0, 2])
+values = Array[float]([0.9, 3.0])
+operator = 1
 
 [sub_resource type="Resource" id="Resource_eu7n3"]
 script = ExtResource("2_dvrgs")
-cond = 3
-values = Array[float]([0.0])
+cond = Array[int]([3])
+values = Array[float]([1.0])
+operator = 0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h5276"]
 radius = 0.9
@@ -85,8 +87,8 @@ shape = SubResource("CapsuleShape3D_h5276")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5, 0)
 
 [node name="Skeleton3D" parent="CollisionShape3D/GreenSlime/Armature" index="0"]
-bones/0/scale = Vector3(1.02209, 1, 1)
-bones/1/scale = Vector3(0.982328, 1, 0.982328)
+bones/0/scale = Vector3(1.2103, 1, 1)
+bones/1/scale = Vector3(0.831764, 1, 0.831764)
 
 [node name="DONOTCOPY_SlimeSprite" parent="CollisionShape3D/GreenSlime/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rej0u")

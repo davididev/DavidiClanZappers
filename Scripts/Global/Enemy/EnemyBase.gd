@@ -155,24 +155,29 @@ func ProcessFlash(delta : float):
 func CheckBrainTransition(delta : float):
 	var cur : BrainTransition = brainTransitions[currentBrainID];
 	var moveNext = false;
-	if cur.cond == BrainTransition.Condition.HEALTH_PERCENTAGE:
-		var perc = MinHealth / MaxHealth;
-		var min1 = cur.values[0];
-		var max1 = cur.values[1];
-		if perc >= min1 && perc <= max1:
-			moveNext = true;
-	if cur.cond == BrainTransition.Condition.TIME_ELAPSED:
-		currentBrainTime += delta;
-		if currentBrainTime >= cur.values[0]:
-			moveNext = true;
+	var conditionsTrue = 0;
+	var maxConditions = cur.cond.size();
+	for i in range(0, maxConditions):
+		if cur.cond[i] == BrainTransition.Condition.HEALTH_PERCENTAGE_LESS:
+			var perc = MinHealth / MaxHealth;
+			var min1 = cur.values[i];
+			if perc <= min1:
+				conditionsTrue += 1;
+		if cur.cond[i] == BrainTransition.Condition.TIME_ELAPSED:
+			currentBrainTime += delta;
+			if currentBrainTime >= cur.values[i]:
+				conditionsTrue += 1;
+		if cur.cond[i] == BrainTransition.Condition.PLAYER_WITHIN_DISTANCE:
+			var distCheck = cur.values[i];
+			var dist = position.distance_to(Avatar.PlayerPos);
+			if dist <= distCheck:
+				conditionsTrue += 1;
 	
-	if cur.cond == BrainTransition.Condition.PLAYER_WITHIN_DISTANCE:
-		var distCheck = cur.values[0];
-		var dist = position.distance_to(Avatar.PlayerPos);
-		if dist <= distCheck:
-			moveNext = true;
-	
-	if moveNext:
+	if cur.operator == BrainTransition.Operator.ALL_TRUE && conditionsTrue >= maxConditions:
+		get_node(brains[currentBrainID]).call("NextBrain");
+	if cur.operator == BrainTransition.Operator.ONE_OR_MORE_TRUE && conditionsTrue >= 1:
+		get_node(brains[currentBrainID]).call("NextBrain");
+	if cur.operator == BrainTransition.Operator.NONE_TRUE && conditionsTrue == 0:
 		get_node(brains[currentBrainID]).call("NextBrain");
 	
 func PlayAnim(delta: float):
