@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://cswv7rnyfupvi"]
+
+[ext_resource type="Script" path="res://Scripts/Global/SpellScripts/bullet.gd" id="1_qwt7o"]
+[ext_resource type="PackedScene" uid="uid://5oyb5udegmr0" path="res://Prefabs/ItemsSpells/fireballExplosion.tscn" id="2_3s5i7"]
+[ext_resource type="Material" uid="uid://ccb21q1uhbb6o" path="res://Graphics/Particles/Sparkle Loop Mat.tres" id="3_aa3jy"]
+[ext_resource type="Material" uid="uid://qegps0qe50pt" path="res://Graphics/Particles/SparkleTrailMat.tres" id="4_l8xam"]
+[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="5_cmdat"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e8lfg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1qics"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 180.0
+initial_velocity_max = 0.2
+gravity = Vector3(0, 0, 0)
+color = Color(1, 1, 0.607843, 1)
+anim_speed_min = 2.0
+anim_speed_max = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_81n5b"]
+material = ExtResource("3_aa3jy")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_28paa"]
+gravity = Vector3(0, 0.5, 0)
+color = Color(1, 1, 0, 1)
+anim_speed_min = 0.2
+anim_speed_max = 2.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ty245"]
+material = ExtResource("4_l8xam")
+size = Vector2(0.4, 0.4)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 32
+collision_mask = 19
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_qwt7o")
+MOVE_SPEED = 7
+DeathParticle = ExtResource("2_3s5i7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_e8lfg")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CollisionShape3D"]
+amount = 24
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_1qics")
+draw_pass_1 = SubResource("PlaneMesh_81n5b")
+
+[node name="GPUParticles3DTrail" type="GPUParticles3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0622317, 0, 0)
+process_material = SubResource("ParticleProcessMaterial_28paa")
+draw_pass_1 = SubResource("QuadMesh_ty245")
+
+[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("5_cmdat")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/Global/Interactable/TouchTeleport.gd" id="1_roysd"]
 [ext_resource type="Texture2D" uid="uid://b3akplp4ge6x2" path="res://Graphics/Decals/CaveOpening1.png" id="2_88cw3"]
-[ext_resource type="Resource" path="res://DialogueSystem/output/TeleportEvent.res" id="2_d0mxo"]
+[ext_resource type="Resource" uid="uid://btflq4ks27776" path="res://DialogueSystem/output/TeleportEvent.res" id="2_d0mxo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2lq0j"]
 size = Vector3(2, 2, 1)
 
-[node name="InstantTeleport_Cave1" type="Area3D"]
+[node name="InstantTeleport_Cave2" type="Area3D"]
 collision_mask = 4
 script = ExtResource("1_roysd")
 DialogueBase = ExtResource("2_d0mxo")

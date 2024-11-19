@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpellMetaData" load_steps=3 format=3 uid="uid://ddgk8rarb3s6d"]
+
+[ext_resource type="PackedScene" uid="uid://cswv7rnyfupvi" path="res://Prefabs/ItemsSpells/lightspell.tscn" id="1_3dbgo"]
+[ext_resource type="Script" path="res://Scripts/Global/SpellScripts/SpellMetaData.gd" id="2_3hlha"]
+
+[resource]
+script = ExtResource("2_3hlha")
+ChargeTime = 25.0
+FirePrefab = ExtResource("1_3dbgo")

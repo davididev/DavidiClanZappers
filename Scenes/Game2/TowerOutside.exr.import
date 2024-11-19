@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://culmnxghbgfy2"
+path="res://.godot/imported/TowerOutside.exr-6e64f05d4933ddca5c93fe74d9c87b9c.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Scenes/Game2/TowerOutside.exr"
+dest_files=["res://.godot/imported/TowerOutside.exr-6e64f05d4933ddca5c93fe74d9c87b9c.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=3
