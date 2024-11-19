@@ -114,7 +114,7 @@ func MoveTowardsPosition(pos : Vector3):
 	
 	var dif = angle_difference(deg_to_rad(currentAngle.y), deg_to_rad(targetAngle));
 	var difAngles = rad_to_deg(dif);
-	print("Current angle: ", currentAngle.y, " target angle: ", targetAngle, " Dif: ", difAngles)
+	#print("Current angle: ", currentAngle.y, " target angle: ", targetAngle, " Dif: ", difAngles)
 	
 	
 	if difAngles < 0:
