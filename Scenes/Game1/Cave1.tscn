@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://b2iq8ttrqxxku"]
+[gd_scene load_steps=30 format=4 uid="uid://b2iq8ttrqxxku"]
 
 [ext_resource type="PackedScene" uid="uid://cq5e2at6m5qp" path="res://Prefabs/Player/nate_boilerplate.tscn" id="1_1s14y"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_8wxpv"]
@@ -6,7 +6,9 @@
 [ext_resource type="LightmapGIData" uid="uid://depdgvta4eihy" path="res://Scenes/Game1/Cave1Scene.tres" id="4_paoe5"]
 [ext_resource type="Material" uid="uid://d1uitn7lxm7u5" path="res://Graphics/Tilesets/MT_VoxelDungeon.tres" id="4_turg4"]
 [ext_resource type="PackedScene" uid="uid://dira3egndbn7" path="res://Prefabs/TeleportDecals/instant_teleport_cave_2.tscn" id="6_75exa"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="7_6l13r"]
 [ext_resource type="PackedScene" uid="uid://b2tquvbt1jgl" path="res://Prefabs/Enemy/GreenSlime.tscn" id="7_17ahb"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="8_qor54"]
 [ext_resource type="MeshLibrary" uid="uid://hgpkdbbqosg6" path="res://Graphics/Modular/Terrain Decorations/MeshLibrary Terrain Decorations.tres" id="8_uh4ak"]
 [ext_resource type="Material" uid="uid://cjy1pb071f3jl" path="res://Graphics/Tilesets/MT_insidetree.tres" id="9_2be6l"]
 [ext_resource type="PackedScene" uid="uid://ctm4dcpsof84c" path="res://Prefabs/NPC/WizardNPC.tscn" id="10_p4eda"]
@@ -49,6 +51,16 @@ _surfaces = [{
 }]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3dnlm"]
+
+[sub_resource type="Resource" id="Resource_caif0"]
+script = ExtResource("7_6l13r")
+cmd = "sce"
+args = "Game1/Scene_0,0,0"
+
+[sub_resource type="Resource" id="Resource_ow8po"]
+resource_local_to_scene = true
+script = ExtResource("8_qor54")
+grid = [[SubResource("Resource_caif0"), null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null]]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2i0ab"]
 lightmap_size_hint = Vector2i(118, 154)
@@ -148,6 +160,7 @@ light_data = ExtResource("4_paoe5")
 
 [node name="InstantTeleport_Cave1" parent="." instance=ExtResource("6_75exa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.831, 7.994)
+DialogueBase = SubResource("Resource_ow8po")
 SceneToGoTo = "Game1/TestScene"
 PositionToGoTo = Vector3(0, 0.5, -34)
 

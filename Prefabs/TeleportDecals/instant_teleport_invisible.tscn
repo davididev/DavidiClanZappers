@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://g1lotomxqw2p"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Interactable/TouchTeleport.gd" id="1_ckbiw"]
+[ext_resource type="Resource" uid="uid://btflq4ks27776" path="res://DialogueSystem/output/TeleportEvent.res" id="2_08whc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2lq0j"]
+size = Vector3(2, 2, 1)
+
+[node name="InstantTeleport_Invis" type="Area3D"]
+collision_mask = 4
+script = ExtResource("1_ckbiw")
+DialogueBase = ExtResource("2_08whc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2lq0j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
