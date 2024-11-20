@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://cjswqqd6tqxc5"]
+[gd_scene load_steps=33 format=4 uid="uid://cjswqqd6tqxc5"]
 
 [ext_resource type="PackedScene" uid="uid://bsygillv7wel8" path="res://Prefabs/Player/becky_boilerplate.tscn" id="1_e5ans"]
 [ext_resource type="MeshLibrary" uid="uid://cq5vxikcb8olf" path="res://Graphics/Modular/Terrain/Grass/TerrainGrassMeshLibrary.tres" id="2_ho00q"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="9_glnt0"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="10_ge6ii"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="11_d43a6"]
-[ext_resource type="PackedScene" uid="uid://g1lotomxqw2p" path="res://Prefabs/TeleportDecals/instant_teleport_invisible.tscn" id="12_3lyld"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="13_msp70"]
 
 [sub_resource type="Environment" id="Environment_6prdo"]
@@ -214,11 +213,6 @@ resource_local_to_scene = true
 script = ExtResource("10_ge6ii")
 grid = [[SubResource("Resource_caif0"), null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null]]
 
-[sub_resource type="Resource" id="Resource_sc0q3"]
-resource_local_to_scene = true
-script = ExtResource("10_ge6ii")
-grid = [[SubResource("Resource_caif0"), null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null]]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="BeckyBoilerplate" parent="." instance=ExtResource("1_e5ans")]
@@ -299,16 +293,16 @@ DialogueBase = SubResource("Resource_11fq1")
 SceneToGoTo = "Game2/TowerF1"
 PositionToGoTo = Vector3(-6.5, 0.5, -2.5)
 
+[node name="DoorModel3" parent="." instance=ExtResource("11_d43a6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06549, 7.85603, -20.0255)
+DialogueBase = SubResource("Resource_11fq1")
+SceneToGoTo = "Game2/TowerF1"
+PositionToGoTo = Vector3(-24.5, 0.5, -30)
+
 [node name="DoorModel2" parent="." instance=ExtResource("11_d43a6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14439, 8.04966, -26)
 DialogueBase = SubResource("Resource_0bfxc")
 SceneToGoTo = "Game2/TowerF2"
-
-[node name="InstantTeleport_Invis" parent="." instance=ExtResource("12_3lyld")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 9.5, -19)
-DialogueBase = SubResource("Resource_sc0q3")
-SceneToGoTo = "Game2/TowerF1"
-PositionToGoTo = Vector3(-24.5, 0.5, -30)
 
 [node name="SceneVars" type="Node3D" parent="."]
 script = ExtResource("13_msp70")
