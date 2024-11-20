@@ -44,6 +44,7 @@ shape = SubResource("SphereShape3D_cj4vv")
 [node name="NPC" type="Node3D" parent="CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 script = ExtResource("3_ajlvk")
+actor_name = "Hannah"
 character_controller_path = NodePath("../..")
 DialogueOnInteract = ExtResource("5_0csed")
 

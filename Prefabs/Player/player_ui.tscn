@@ -64,6 +64,23 @@ size_flags_vertical = 0
 script = ExtResource("1_0xfu1")
 pausePanels = Array[NodePath]([NodePath("InventoryMenu"), NodePath("SettingsMenu"), NodePath("ConfirmQuit Menu")])
 
+[node name="GameOverTeture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -325.0
+offset_right = 750.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1e-05)
+pivot_offset = Vector2(260, 325)
+texture = ExtResource("31_bii71")
+
 [node name="SpellBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 755.0
@@ -1011,23 +1028,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
-
-[node name="GameOverTeture" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = -325.0
-offset_right = 260.0
-offset_bottom = 325.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 1e-05)
-pivot_offset = Vector2(260, 325)
-texture = ExtResource("31_bii71")
 
 [connection signal="pressed" from="InventoryMenu/Spell Button 0" to="InventoryMenu/Spell Button 0" method="_on_pressed"]
 [connection signal="pressed" from="InventoryMenu/Spell Button 2" to="InventoryMenu/Spell Button 2" method="_on_pressed"]

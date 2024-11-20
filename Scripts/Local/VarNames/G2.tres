@@ -7,6 +7,6 @@ script = ExtResource("1_770o1")
 IntNames = Array[String](["%story"])
 BoolNames = Array[String](["%treasure1", "%treasure2", "%treasure3"])
 StartingHealth = 160
-StartingStr = 4
+StartingStr = 3
 StartingMag = 1
 StartingScene = "Game2/IntroScene"

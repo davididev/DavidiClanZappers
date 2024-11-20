@@ -194,7 +194,7 @@ func SteamTeleport(args : Array[String]):
 	LoadingUI.SceneToLoad = args[0];
 	BoilerPlate.StartingPosition = DialogueArgsUtility.ConvertStringToVector3(args[1]);
 	get_tree().change_scene_to_file("res://Scenes/Global/Loading.tscn");
-	DialogueHandler.IsRunning = false;
+	EndDialogue();
 	
 func StreamWait(args : Array[String]):
 	var waitTime = args[0].to_float();

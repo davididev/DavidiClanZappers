@@ -1,6 +1,8 @@
 class_name EnemyBase extends RigidBody3D
 
 signal OnDamage(Amount : int);  #Enemies will need to use this
+signal OnDeath();
+signal KillRemotely();
 
 static var powPart = preload("res://Prefabs/preload/enemy_pow_particle.tscn");
 
@@ -26,6 +28,7 @@ var currentBrainID = 0;
 @export var minCoinsOnDeath = 1;
 @export var maxCoinsOnDeath = 1;
 @export var chanceOfHeart = 100;
+@export var dialogueOnDeath : DialogueGrid;
 var MinHealth = 6.0;
 
 var SpeedMultiplier = 1.0;
@@ -56,6 +59,10 @@ func LoadNode(load2 : SerializedNode) -> void:
 		visible = false;
 		process_mode = ProcessMode.PROCESS_MODE_DISABLED;
 		
+func KillWithoutSpoils():
+	visible = false;
+	#process_mode = ProcessMode.PROCESS_MODE_DISABLED;
+	
 func Die():
 	visible = false;
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED;
@@ -71,6 +78,10 @@ func Die():
 		var entry = Node3DPool.GetInstance("small_heart");
 		if entry != null:
 			entry.position = position;
+	
+	OnDeath.emit();
+	if dialogueOnDeath != null:
+		DialogueHandler.Instance.StartDialogue(dialogueOnDeath);
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	jumpTimer = 0.0;
@@ -203,16 +214,16 @@ func _on_on_damage(Amount: int) -> void:
 		Amount = 0;
 	if emissionColor == Color.BLACK:
 		PopupText.PrintText(str("-", Amount, " HP"), get_tree(), Color.RED, position);
-		targetColor = Color.RED;
-		var inst = powPart.instantiate();
-		get_tree().root.add_child(inst);
-		inst.position = position;
+		if Amount > 0:
+			targetColor = Color.RED;
+			var inst = powPart.instantiate();
+			get_tree().root.add_child(inst);
+			inst.position = position;
 		
-		MinHealth -= Amount;
-		if MinHealth < 0.0:
-			Die();
-		
-		
+			MinHealth -= Amount;
+			if MinHealth < 0.0:
+				Die();
+			
 
 
 func OnTouchDamage(body: Node) -> void:

@@ -35,5 +35,5 @@ func _process(delta: float) -> void:
 			get_node(root).PlayAttackAnimation(1.0);
 			var inst = Node3DPool.GetInstance(BulletPrefabName);
 			inst.global_position = global_position;
-			inst.global_rotation_degrees = get_node(root).global_rotation_degrees;
+			inst.global_rotation_degrees = get_node(root).get_child(0).global_rotation_degrees;
 			delay = -100.0;  #Don't run it twice, this is meant to be run once.
