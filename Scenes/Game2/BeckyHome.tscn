@@ -49,6 +49,7 @@ grid = [[SubResource("Resource_uemkv"), null, null, null, null, null, null], [nu
 [node name="Node3D" type="Node3D"]
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 0
 environment_mode = 3
 environment_custom_color = Color(0.352941, 0.352941, 0.352941, 1)
 environment_custom_energy = 1.0

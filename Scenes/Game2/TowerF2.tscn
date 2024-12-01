@@ -58,6 +58,7 @@ transform = Transform3D(0.841549, 0.35367, -0.408305, -0.129402, 0.865848, 0.483
 light_bake_mode = 1
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 0
 environment_mode = 3
 environment_custom_color = Color(0.374139, 0.374139, 0.374139, 1)
 environment_custom_energy = 1.0

@@ -6,7 +6,7 @@
 [ext_resource type="MeshLibrary" uid="uid://bslfwcg78uoxh" path="res://Graphics/Modular/Shop/ShopMeshLibrary.tres" id="3_myxnh"]
 [ext_resource type="Material" uid="uid://djse7ur78mlf6" path="res://Graphics/Tilesets/MT_BuildingInner.tres" id="4_imedu"]
 [ext_resource type="PackedScene" uid="uid://ctm4dcpsof84c" path="res://Prefabs/NPC/WizardNPC.tscn" id="5_dbwd4"]
-[ext_resource type="Resource" uid="uid://chud6kp5bmwog" path="res://DialogueSystem/output/Game2-Wizard.res" id="6_7cf6f"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Game2-Wizard.res" id="6_7cf6f"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="7_daj67"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="9_wbu4m"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="10_2kp58"]
@@ -86,6 +86,7 @@ transform = Transform3D(-0.965926, 0, -0.258819, -0.0669873, 0.965926, 0.25, 0.2
 light_bake_mode = 1
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 0
 environment_mode = 3
 environment_custom_color = Color(0.493545, 0.493546, 0.493546, 1)
 environment_custom_energy = 1.0
