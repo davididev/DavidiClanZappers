@@ -31,6 +31,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"M_InsideTree_png": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_insidetree.tres"
+},
+"M_VoxelDungeon_png": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_VoxelDungeon.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
