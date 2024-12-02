@@ -95,6 +95,7 @@ AttackName = "Attack"
 MoveSpeed = 40.0
 minCoinsOnDeath = 0
 maxCoinsOnDeath = 0
+chanceOfHeart = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_h5276")
