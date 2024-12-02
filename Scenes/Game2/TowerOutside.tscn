@@ -744,6 +744,7 @@ shape = SubResource("ConvexPolygonShape3D_c55wd")
 mesh = SubResource("ArrayMesh_gp2jq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-1" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mnb2y")
@@ -752,6 +753,7 @@ shape = SubResource("ConvexPolygonShape3D_mnb2y")
 mesh = SubResource("ArrayMesh_iud4n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-2" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_jn2mq")
@@ -760,6 +762,7 @@ shape = SubResource("ConvexPolygonShape3D_jn2mq")
 mesh = SubResource("ArrayMesh_yrbpu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-CORNER-1" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-CORNER-1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_4okao")
@@ -768,6 +771,7 @@ shape = SubResource("ConvexPolygonShape3D_4okao")
 mesh = SubResource("ArrayMesh_4uute")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-3" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_amdto")
@@ -776,6 +780,7 @@ shape = SubResource("ConvexPolygonShape3D_amdto")
 mesh = SubResource("ArrayMesh_3b1rt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-4" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_5u8vo")
@@ -784,6 +789,7 @@ shape = SubResource("ConvexPolygonShape3D_5u8vo")
 mesh = SubResource("ArrayMesh_yof67")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-CORNER-2" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-CORNER-2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_nrmra")
@@ -792,6 +798,7 @@ shape = SubResource("ConvexPolygonShape3D_nrmra")
 mesh = SubResource("ArrayMesh_v3p5k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-CORNER-3" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-CORNER-3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_57qca")
@@ -800,6 +807,7 @@ shape = SubResource("ConvexPolygonShape3D_57qca")
 mesh = SubResource("ArrayMesh_bl3t5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DarkTower/temp/BARRIER-CORNER-4" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkTower/temp/BARRIER-CORNER-4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_4u0vb")

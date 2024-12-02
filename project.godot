@@ -27,6 +27,7 @@ Music="*res://Prefabs/preload/play_music.tscn"
 
 [display]
 
+window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
