@@ -22,3 +22,6 @@ static func PlaySong(s : String):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	global_position = Avatar.PlayerPos;
+	var aud = get_node("AudioStreamPlayer3D");
+	if aud.playing == false:  #It ended, repeat it
+		aud.play(); 

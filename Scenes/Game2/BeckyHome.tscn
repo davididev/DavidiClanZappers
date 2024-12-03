@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d37vecvpa3ixm" path="res://Prefabs/Interactable/StarPowerupStr.tscn" id="9_gbwti"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="10_0d10j"]
 [ext_resource type="PackedScene" uid="uid://bjlxlir8cfekg" path="res://Prefabs/BrownDoor/BrownDoor.tscn" id="11_xnofb"]
-[ext_resource type="Resource" uid="uid://bh73phk0im8q2" path="res://DialogueSystem/output/Game2-FirstRoom.res" id="12_hgscp"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Game2-FirstRoom.res" id="12_hgscp"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="13_tkfhh"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="14_3nrec"]
 [ext_resource type="PackedScene" uid="uid://dcb18u2e38mf" path="res://Prefabs/Enemy/heart_pickup.tscn" id="15_el22i"]
