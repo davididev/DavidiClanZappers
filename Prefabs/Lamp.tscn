@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://gsadnxafatda"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Player/player_lamp.gd" id="1_1ce63"]
+
+[node name="Lamp" type="Node3D"]
+top_level = true
+script = ExtResource("1_1ce63")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dawc18gpmbsh3"
+path="res://.godot/imported/Blood_Drip_06.mp3-86b73b712d31e7bc5cab66302356172a.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound/horror/Bloop Drip/Blood_Drip_06.mp3"
+dest_files=["res://.godot/imported/Blood_Drip_06.mp3-86b73b712d31e7bc5cab66302356172a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

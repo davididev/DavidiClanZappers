@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbs6eg1hgpk4o"
+path="res://.godot/imported/Breath_Scared_09.mp3-55a84180738a1272a1a22cf27f29f19e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound/horror/Breath Scared/Breath_Scared_09.mp3"
+dest_files=["res://.godot/imported/Breath_Scared_09.mp3-55a84180738a1272a1a22cf27f29f19e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
