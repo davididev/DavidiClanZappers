@@ -4,7 +4,7 @@ extends Control
 const VOLUME_STEP = 0.05;
 const VOLUME_MAX = 2.0;
 
-const MAX_GAMES = 3;
+const MAX_GAMES = 2;
 var GameID = 1;
 @onready var _bus1 := AudioServer.get_bus_index(&"Master")
 @onready var _bus2 := AudioServer.get_bus_index(&"Sound")

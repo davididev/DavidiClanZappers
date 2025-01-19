@@ -1,7 +1,7 @@
 class_name GameDataHolder extends Node
 
 static var Instance : GameDataHolder = GameDataHolder.new();
-static var GameID : int = 3;
+static var GameID : int = 2;
 static var VarMeta : GameVarNames;
 
 var data : GameData = null;
