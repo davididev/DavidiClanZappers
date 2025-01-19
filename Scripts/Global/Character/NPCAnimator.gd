@@ -17,13 +17,13 @@ func _process(delta: float) -> void:
 
 func PlayAttackAnim():
 	lastAnimation = &"HumanoidAnim/Attack";
-	get_node(animationPlayer).play(lastAnimation);
-	attackAnimationTime = 0.8;
+	get_node(animationPlayer).play(lastAnimation, -1, 2.0);  #Set speed to 2x, blend to default value
+	attackAnimationTime = 0.4;
 
 func PlaySpellAnim():
 	lastAnimation = &"HumanoidAnim/CastSpell";
-	get_node(animationPlayer).play(lastAnimation);
-	attackAnimationTime = 0.8;
+	get_node(animationPlayer).play(lastAnimation, -1, 2.0);  #Set speed to 2x, blend to default value
+	attackAnimationTime = 0.4;
 
 func single_play_animatuons(delta : float):
 	if attackAnimationTime < 0.0:  #Playing attack or jump animation, don't play movement animations

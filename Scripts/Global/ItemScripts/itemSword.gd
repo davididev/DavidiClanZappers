@@ -18,7 +18,7 @@ func UseItem():
 		SoundFXPlayer.PlaySound(swingSoundFX, get_tree(), global_position);
 	swingTimer = 0.6;
 	pass;
-
+ 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if swingTimer > 0.0:

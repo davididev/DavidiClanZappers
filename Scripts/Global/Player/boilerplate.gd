@@ -10,6 +10,7 @@ class_name BoilerPlate extends Node3D
 static var StartingPosition : Vector3 = Vector3(0.0, 0.0, 0.0);
 var moveSpeed = Vector3(0.0, 0.0, 0.0);
 const MOVE_PER_SECOND = 10.0;
+const DECELERATION_PER_SECOND = 25.0;
 const MAX_SPEED = 6.0;
 const ROTATE_PER_SECOND = 4.0;
 
@@ -67,11 +68,11 @@ func _process(delta: float) -> void:
 		moveVec = Vector3.ZERO;
 	
 	if moveVec.x == 0.0:
-		moveSpeed.x = move_toward(moveSpeed.x, 0.0, MOVE_PER_SECOND * delta);
+		moveSpeed.x = move_toward(moveSpeed.x, 0.0, DECELERATION_PER_SECOND * delta);
 	else:
 		moveSpeed.x = move_toward(moveSpeed.x, MAX_SPEED * moveVec.x, MOVE_PER_SECOND * delta);
 	if moveVec.z == 0.0:
-		moveSpeed.z = move_toward(moveSpeed.z, 0.0, MOVE_PER_SECOND * delta);
+		moveSpeed.z = move_toward(moveSpeed.z, 0.0, DECELERATION_PER_SECOND * delta);
 	else:
 		moveSpeed.z = move_toward(moveSpeed.z, MAX_SPEED * moveVec.z, MOVE_PER_SECOND * delta);
 	
