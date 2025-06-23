@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GameVarNames" load_steps=2 format=3 uid="uid://djdabeephgtlh"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Data/GameVarNames.gd" id="1_lrphg"]
+
+[resource]
+script = ExtResource("1_lrphg")
+IntNames = Array[String]([])
+BoolNames = Array[String]([])
+StartingHealth = 100
+StartingStr = 3
+StartingMag = 3
+StartingScene = "Game3/IntroScene"

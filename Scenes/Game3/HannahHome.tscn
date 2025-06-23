@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv8togwu4jpkq"]
+
+[ext_resource type="PackedScene" uid="uid://b2eecf7c22str" path="res://Prefabs/Player/hannah_boilerplate.tscn" id="1_leb0b"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HannahBoilerplate" parent="." instance=ExtResource("1_leb0b")]

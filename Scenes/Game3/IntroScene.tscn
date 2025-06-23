@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0dvi05r0t0km"]
+
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="1_v1y37"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Game3_Intro.res" id="2_ag730"]
+[ext_resource type="PackedScene" uid="uid://be8duqm3sfilh" path="res://Graphics/Decorations/SpaceBG/SkyBG.glb" id="4_6k82a"]
+[ext_resource type="PackedScene" uid="uid://b2eecf7c22str" path="res://Prefabs/Player/hannah_boilerplate.tscn" id="4_e8pbr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2cpy"]
+size = Vector3(42, 1, 22)
+
+[node name="IntroScene" type="Node3D"]
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("1_v1y37")
+MusicForScene = "Dungeon 1.mp3"
+DialogueOnStart = ExtResource("2_ag730")
+
+[node name="SkyBG" parent="." instance=ExtResource("4_6k82a")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 0, -2, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SkyBG"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SkyBG/StaticBody3D"]
+shape = SubResource("BoxShape3D_o2cpy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 4, 0)
+
+[node name="HannahBoilerplate" parent="." instance=ExtResource("4_e8pbr")]
