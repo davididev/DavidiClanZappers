@@ -7,3 +7,6 @@ script = ExtResource("1_wbst8")
 command_name = "cis"
 arguments = Array[String](["Item / Spell ID", "Is Item", "Variable output", "Next  Node"])
 defaultValues = Array[String](["1", "true", "%count", "1,0"])
+StartingHealth = 100
+StartingStr = 3
+StartingMag = 1

@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://syi00vr1a2vf"]
+[gd_scene load_steps=9 format=3 uid="uid://syi00vr1a2vf"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Character/talking_npc.gd" id="1_bjsjn"]
 [ext_resource type="PackedScene" uid="uid://6tvnyhru6xe2" path="res://Graphics/Characters/Johnny/JohnnyModel.glb" id="2_iosvo"]
 [ext_resource type="AnimationLibrary" uid="uid://b6duaeanku1a2" path="res://Graphics/Characters/HumanoidAnim.res" id="3_fxs2t"]
 [ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="4_ih21q"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="5_kntvr"]
-[ext_resource type="Resource" uid="uid://d15q2nn1upgcj" path="res://DialogueSystem/output/Hannah1.res" id="6_25i08"]
 [ext_resource type="Script" path="res://Scripts/Global/Character/NPCAnimator.gd" id="7_gjumm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3yap0"]
@@ -46,7 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 script = ExtResource("5_kntvr")
 actor_name = "Johnny"
 character_controller_path = NodePath("../..")
-DialogueOnInteract = ExtResource("6_25i08")
 
 [node name="NPCAnimator" type="Node3D" parent="CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

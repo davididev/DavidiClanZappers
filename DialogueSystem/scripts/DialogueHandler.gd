@@ -109,6 +109,7 @@ func StreamIfThen(args : Array[String]):
 	var valueLeft = DialogueArgsUtility.FilterDialogueVariables(variableName).to_float();
 	var valueRight = DialogueArgsUtility.FilterDialogueVariables(valueStr).to_float();
 	
+	#print("Comparing ", valueLeft, operatorStr, valueRight);
 	
 	var isTrue = false;
 	if operatorStr == "==":

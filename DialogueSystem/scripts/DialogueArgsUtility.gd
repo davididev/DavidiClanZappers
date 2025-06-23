@@ -5,6 +5,7 @@ static func GetItemCount(id : int):
 	for i in range(0, 12):
 		if GameDataHolder.Instance.data.Items[i] == id:
 			count += 1;
+			
 	return float(count);
 	
 static func GetSpellCount(id : int):

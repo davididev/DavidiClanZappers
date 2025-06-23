@@ -7,3 +7,6 @@ script = ExtResource("1_jddg1")
 command_name = "ais"
 arguments = Array[String](["Item / Spell ID", "Is Item", "Next Node (On Success)", "Next Node (On failure)"])
 defaultValues = Array[String](["1", "true", "1,0", "1,1"])
+StartingHealth = 100
+StartingStr = 3
+StartingMag = 1
