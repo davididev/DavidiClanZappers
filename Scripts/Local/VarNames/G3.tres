@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_lrphg")
-IntNames = Array[String]([])
-BoolNames = Array[String]([])
+IntNames = Array[String](["%story"])
+BoolNames = Array[String](["%treasure"])
 StartingHealth = 100
 StartingStr = 3
 StartingMag = 3
