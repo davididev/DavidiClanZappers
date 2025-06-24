@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://byo0xu3rx16t8"]
+
+[ext_resource type="Script" path="res://Scripts/Global/Character/talking_npc.gd" id="1_xihp2"]
+[ext_resource type="PackedScene" uid="uid://dn2uw1knyaxu5" path="res://Graphics/Characters/Chad/ChadModel.glb" id="2_5e2yh"]
+[ext_resource type="AnimationLibrary" uid="uid://b6duaeanku1a2" path="res://Graphics/Characters/HumanoidAnim.res" id="3_ufe3i"]
+[ext_resource type="PackedScene" uid="uid://bj86i4actyt73" path="res://Prefabs/Player/drop_shadow.tscn" id="4_ixb20"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="5_78dao"]
+[ext_resource type="Script" path="res://Scripts/Global/Character/NPCAnimator.gd" id="6_uigvo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3yap0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cj4vv"]
+radius = 3.0
+
+[node name="TalkingNPC" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_xihp2")
+NPCPath = NodePath("CollisionShape3D/NPC")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_3yap0")
+
+[node name="ChadModel" parent="CollisionShape3D" instance=ExtResource("2_5e2yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D/ChadModel"]
+libraries = {
+"HumanoidAnim": ExtResource("3_ufe3i")
+}
+
+[node name="Area3D" type="Area3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D/Area3D"]
+shape = SubResource("SphereShape3D_cj4vv")
+
+[node name="DropShadow" parent="CollisionShape3D" instance=ExtResource("4_ixb20")]
+
+[node name="NPC" type="Node3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("5_78dao")
+actor_name = "Chad"
+character_controller_path = NodePath("../..")
+
+[node name="NPCAnimator" type="Node3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("6_uigvo")
+characterController = NodePath("../..")
+animationPlayer = NodePath("../ChadModel/AnimationPlayer")
+
+[connection signal="body_entered" from="CollisionShape3D/Area3D" to="CollisionShape3D/NPC" method="PlayerEnteredField"]
+[connection signal="body_exited" from="CollisionShape3D/Area3D" to="CollisionShape3D/NPC" method="PlayerExitedField"]

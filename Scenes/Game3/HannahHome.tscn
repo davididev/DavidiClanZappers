@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cv8togwu4jpkq"]
+[gd_scene load_steps=17 format=4 uid="uid://cv8togwu4jpkq"]
 
 [ext_resource type="PackedScene" uid="uid://b2eecf7c22str" path="res://Prefabs/Player/hannah_boilerplate.tscn" id="1_leb0b"]
 [ext_resource type="MeshLibrary" uid="uid://cgnvnd6ph36ti" path="res://Graphics/Modular/Inside/BuildingInner.tres" id="2_kqu3p"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dhayx6sc4xhgb" path="res://Graphics/Decorations/BuildingInner/BedRed.gltf" id="7_ytm56"]
 [ext_resource type="PackedScene" uid="uid://bi1sngihgc1ro" path="res://Prefabs/Decorations/Building Inner/table.tscn" id="8_y6xod"]
 [ext_resource type="PackedScene" uid="uid://ch2a8yc7dfbyv" path="res://Prefabs/Decorations/Building Inner/wooden_chair.tscn" id="9_2vvmp"]
+[ext_resource type="PackedScene" uid="uid://byo0xu3rx16t8" path="res://Prefabs/NPC/ChadNPC.tscn" id="11_4en4g"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Game3-Chad.res" id="12_s2vju"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="13_rrqq4"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ve2ag"]
 lightmap_size_hint = Vector2i(1266, 1262)
@@ -81,3 +84,10 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -8.46297, -0.428571,
 
 [node name="WoodenChair3" parent="." instance=ExtResource("9_2vvmp")]
 transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -9.46297, -0.428571, -2.56583)
+
+[node name="TalkingNPC" parent="." instance=ExtResource("11_4en4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99703, -0.230401, -11.0955)
+DialogueOnInteract = ExtResource("12_s2vju")
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("13_rrqq4")
