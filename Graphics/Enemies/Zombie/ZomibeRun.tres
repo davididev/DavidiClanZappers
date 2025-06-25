@@ -1,0 +1,20 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=5 format=3 uid="uid://7r0722bkb4r"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_om28s"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sqb3f"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lfk0e"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_prbkq"]
+advance_mode = 2
+
+[resource]
+states/Idle/node = SubResource("AnimationNodeAnimation_om28s")
+states/Idle/position = Vector2(315, 109)
+states/Run/node = SubResource("AnimationNodeAnimation_sqb3f")
+states/Run/position = Vector2(457, 99)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lfk0e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_prbkq")]

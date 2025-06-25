@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://de752qimi48l3" path="res://DialogueSystem/ui/ThemeButton_MultiFork.tres" id="4_gwdfu"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(4, 0)
 script = ExtResource("1_08vol")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d0xqxu0rjsjhg"]
+
+[ext_resource type="Texture2D" uid="uid://dsg5lpqrre2op" path="res://Graphics/Enemies/Zombie/ZombiePalette.png" id="1_hln1q"]
+
+[resource]
+albedo_texture = ExtResource("1_hln1q")
+emission_enabled = true

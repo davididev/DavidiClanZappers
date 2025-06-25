@@ -1,0 +1,171 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cuv4kxc01evok"
+path="res://.godot/imported/StreetModular.glb-2668bde1cf6aefe6bb017074df482c70.scn"
+
+[deps]
+
+source_file="res://Graphics/Modular/CityRoad2/StreetModular.glb"
+dest_files=["res://.godot/imported/StreetModular.glb-2668bde1cf6aefe6bb017074df482c70.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"M_City_Road_Voxel_png": {
+"use_external/enabled": true,
+"use_external/path": "res://Graphics/Tilesets/MT_City_road.tres"
+}
+},
+"meshes": {
+"StreetModular_CUBE1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1.res"
+},
+"StreetModular_CUBE1_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_001.res"
+},
+"StreetModular_CUBE1_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_002.res"
+},
+"StreetModular_CUBE1_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_003.res"
+},
+"StreetModular_CUBE1_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_004.res"
+},
+"StreetModular_CUBE1_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_005.res"
+},
+"StreetModular_CUBE1_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_006.res"
+},
+"StreetModular_CUBE1_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_007.res"
+},
+"StreetModular_CUBE1_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_008.res"
+},
+"StreetModular_CUBE1_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_009.res"
+},
+"StreetModular_CUBE1_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_010.res"
+},
+"StreetModular_CUBE1_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_011.res"
+},
+"StreetModular_CUBE1_012": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_012.res"
+},
+"StreetModular_CUBE1_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Graphics/Modular/CityRoad2/StreetModular_CUBE1_013.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
