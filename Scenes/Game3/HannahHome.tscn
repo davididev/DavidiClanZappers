@@ -83,7 +83,7 @@ transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-0
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -8.46297, -0.428571, 1.43417)
 
 [node name="WoodenChair3" parent="." instance=ExtResource("9_2vvmp")]
-transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -9.46297, -0.428571, -2.56583)
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -9.46297, -0.428571, -3.56583)
 
 [node name="TalkingNPC" parent="." instance=ExtResource("11_4en4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99703, -0.230401, -11.0955)
