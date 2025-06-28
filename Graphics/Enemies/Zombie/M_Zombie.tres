@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dsg5lpqrre2op" path="res://Graphics/Enemies/Zombie/ZombiePalette.png" id="1_hln1q"]
 
 [resource]
+resource_local_to_scene = true
 albedo_texture = ExtResource("1_hln1q")
 emission_enabled = true
