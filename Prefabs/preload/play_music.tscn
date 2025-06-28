@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Prefabs/preload/play_music.gd" id="1_av013"]
 
 [node name="PlayMusic" type="Node3D"]
+process_mode = 3
 script = ExtResource("1_av013")
 AudioSource = NodePath("AudioStreamPlayer3D")
 

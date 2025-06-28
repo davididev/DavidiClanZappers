@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dvirhrprjhmnw"]
+[gd_scene load_steps=40 format=3 uid="uid://dvirhrprjhmnw"]
 
 [ext_resource type="Script" path="res://Scripts/Global/Player/PlayerUI.gd" id="1_0xfu1"]
 [ext_resource type="Texture2D" uid="uid://tj280ma1hlmv" path="res://Graphics/UI/InventoryMenu.png" id="2_xwljy"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://buofjvql6iasu" path="res://Graphics/UI/Inventory/ItemButton1.png" id="12_eocy7"]
 [ext_resource type="Texture2D" uid="uid://dmlm6155g80ue" path="res://Graphics/UI/Inventory/ItemButton3.png" id="13_dhkf8"]
 [ext_resource type="Texture2D" uid="uid://bxmwn4b6koknd" path="res://Graphics/UI/Inventory/ItemButton2.png" id="14_fux63"]
+[ext_resource type="PackedScene" uid="uid://cacdpkfay88j0" path="res://Prefabs/Player/armed_label.tscn" id="15_8nwqc"]
 [ext_resource type="Theme" uid="uid://lit8d35pdhgt" path="res://Graphics/UI/SlicedButtonTheme.tres" id="15_nurjf"]
 [ext_resource type="Texture2D" uid="uid://defu7vymxg2xv" path="res://Graphics/UI/Settings/ConfirmMenu.png" id="17_w7kuc"]
 [ext_resource type="Texture2D" uid="uid://bgh1ijb5q68nt" path="res://Graphics/UI/SpellBack.png" id="28_ysaby"]
@@ -53,6 +54,7 @@ radius = 64.0
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_rj4xf"]
 
 [node name="PlayerUI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,6 +65,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_0xfu1")
 pausePanels = Array[NodePath]([NodePath("InventoryMenu"), NodePath("SettingsMenu"), NodePath("ConfirmQuit Menu")])
+armedLabels = Array[NodePath]([NodePath("InventoryMenu/Armed_Label"), NodePath("InventoryMenu/Armed_Label2"), NodePath("InventoryMenu/Armed_Label3"), NodePath("InventoryMenu/Armed_Label4"), NodePath("InventoryMenu/Armed_Label5")])
 
 [node name="GameOverTeture" type="TextureRect" parent="."]
 layout_mode = 1
@@ -618,6 +621,21 @@ texture_normal = ExtResource("8_cgro7")
 texture_pressed = ExtResource("9_k3od0")
 texture_hover = ExtResource("10_b08b3")
 texture_focused = ExtResource("10_b08b3")
+
+[node name="Armed_Label" parent="InventoryMenu" instance=ExtResource("15_8nwqc")]
+layout_mode = 0
+
+[node name="Armed_Label2" parent="InventoryMenu" instance=ExtResource("15_8nwqc")]
+layout_mode = 0
+
+[node name="Armed_Label3" parent="InventoryMenu" instance=ExtResource("15_8nwqc")]
+layout_mode = 0
+
+[node name="Armed_Label4" parent="InventoryMenu" instance=ExtResource("15_8nwqc")]
+layout_mode = 0
+
+[node name="Armed_Label5" parent="InventoryMenu" instance=ExtResource("15_8nwqc")]
+layout_mode = 0
 
 [node name="SettingsMenu" type="TextureRect" parent="."]
 visible = false

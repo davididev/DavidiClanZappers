@@ -10,6 +10,7 @@ static var fadeTarget : Color;
 const FADE_PER_SECOND = 2.0;
 
 @export var pausePanels : Array[NodePath];
+@export var armedLabels  : Array[NodePath];
 static var LastPausePanel = 0;
 var paused = false;
 
@@ -27,6 +28,7 @@ func _ready() -> void:
 	UpdateHUD = true;
 	paused = false;
 	fadeTarget = Color(0.0, 0.0, 0.0, 0.0);
+	
 	SetPausePanel(-1);
 	UpdateSoundBus();
 	InitSpellPool();
@@ -63,7 +65,7 @@ func _process(delta: float) -> void:
 	if NPC.NPCsOverlapped.size() > 0:
 		currentJumpStr = false;
 	
-	if Avatar.AttachedSpell > 0:
+	if Avatar.AttachedSpell > 0 and paused == false:
 		minTimerMagic += delta * GameDataHolder.Instance.data.Mag;
 		if minTimerMagic > maxTimerMagic:
 			SpellReady = true;
@@ -84,10 +86,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") && DialogueHandler.IsRunning == false:
 		if paused:
 			SetPausePanel(-1);
-			Engine.time_scale = 1.0;
+			#Engine.time_scale = 1.0;
+			get_tree().paused = false;
 		else:
 			SetPausePanel(0);
-			Engine.time_scale = 1.0 / 360.0;
+			#Engine.time_scale = 1.0 / 360.0;
+			get_tree().paused = true;
 	
 	if currentJumpStr != lastJumpStr:  #UI Changed
 		lastJumpStr = currentJumpStr;
@@ -160,6 +164,7 @@ func _on_save_button_pressed() -> void:
 
 
 func _on_confirm_quit_button_pressed() -> void:
+	get_tree().paused = false;
 	get_tree().change_scene_to_file("res://Scenes/Global/TitleScreen.tscn");	
 
 
@@ -232,3 +237,10 @@ func _on_volume_music_up_pressed() -> void:
 		v = VOLUME_MAX;
 	GameDataHolder.Instance.data.VolumeMusic = v;
 	RefreshVolumeText();
+
+
+func RunArmed(vec : Vector2):
+	for i in range(0, armedLabels.size()):
+		var success = get_node(armedLabels[i]).AttemptRun(vec);
+		if success == true:
+			return;

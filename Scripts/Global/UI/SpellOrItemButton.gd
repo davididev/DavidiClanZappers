@@ -27,3 +27,5 @@ func _on_pressed() -> void:
 		get_tree().get_first_node_in_group("Player").call("AttachSpell");
 		SoundFXPlayer.PlaySound("interface/confirmation_001.ogg", get_tree(), Avatar.PlayerPos);
 		PlayerUI.UpdateHUD = true;
+
+	get_parent().get_parent_control().RunArmed(self.global_position);
