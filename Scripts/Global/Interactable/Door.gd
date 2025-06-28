@@ -2,7 +2,7 @@ extends Node3D
 
 @export var DialogueBase : DialogueGrid;
 @export var SoundOnOpen : String;
-@export var SceneToGoTo : String;
+@export var SceneToGoTo : String = "Game1/HannahYard";
 @export var PositionToGoTo : Vector3;
 @export var NPCRef : NodePath;
 var targetY = 0.0;

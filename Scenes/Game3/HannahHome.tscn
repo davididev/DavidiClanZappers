@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cv8togwu4jpkq"]
+[gd_scene load_steps=18 format=4 uid="uid://cv8togwu4jpkq"]
 
 [ext_resource type="PackedScene" uid="uid://b2eecf7c22str" path="res://Prefabs/Player/hannah_boilerplate.tscn" id="1_leb0b"]
 [ext_resource type="MeshLibrary" uid="uid://cgnvnd6ph36ti" path="res://Graphics/Modular/Inside/BuildingInner.tres" id="2_kqu3p"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://byo0xu3rx16t8" path="res://Prefabs/NPC/ChadNPC.tscn" id="11_4en4g"]
 [ext_resource type="Resource" path="res://DialogueSystem/output/Game3-Chad.res" id="12_s2vju"]
 [ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="13_rrqq4"]
+[ext_resource type="PackedScene" uid="uid://dcb18u2e38mf" path="res://Prefabs/Enemy/heart_pickup.tscn" id="14_qd3j5"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ve2ag"]
 lightmap_size_hint = Vector2i(1266, 1262)
@@ -92,3 +93,12 @@ DialogueOnInteract = ExtResource("12_s2vju")
 
 [node name="SceneVars" type="Node3D" parent="."]
 script = ExtResource("13_rrqq4")
+
+[node name="HeartPickup" parent="." instance=ExtResource("14_qd3j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.704662, 0.18147, -12.1159)
+
+[node name="HeartPickup2" parent="." instance=ExtResource("14_qd3j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70466, 0.18147, -12.1159)
+
+[node name="HeartPickup3" parent="." instance=ExtResource("14_qd3j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70466, 0.18147, -12.1159)
