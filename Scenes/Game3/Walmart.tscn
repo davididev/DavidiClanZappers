@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c05p7jlcwusvg"]
+
+[ext_resource type="PackedScene" uid="uid://b2eecf7c22str" path="res://Prefabs/Player/hannah_boilerplate.tscn" id="1_4r5ku"]
+[ext_resource type="MeshLibrary" uid="uid://cgnvnd6ph36ti" path="res://Graphics/Modular/Inside/BuildingInner.tres" id="2_3dhns"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HannahBoilerplate" parent="." instance=ExtResource("1_4r5ku")]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_3dhns")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+environment_mode = 3
+environment_custom_color = Color(0.564962, 0.564962, 0.564962, 1)
+environment_custom_energy = 1.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.353553, -0.612372, 0.707107, 0.353553, 0.612372, 0, -0.866025, 0.5, 0, 0, 0)
+light_bake_mode = 1

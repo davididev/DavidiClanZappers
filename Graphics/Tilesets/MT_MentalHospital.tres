@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cra3xpk08c0ht"]
+
+[ext_resource type="Texture2D" uid="uid://beyb64o1de28a" path="res://Graphics/Tilesets/Mental Hospital Tileset.png" id="1_hpcka"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_hpcka")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 0

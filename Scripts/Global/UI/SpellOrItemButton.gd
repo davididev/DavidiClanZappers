@@ -28,4 +28,5 @@ func _on_pressed() -> void:
 		SoundFXPlayer.PlaySound("interface/confirmation_001.ogg", get_tree(), Avatar.PlayerPos);
 		PlayerUI.UpdateHUD = true;
 
-	get_parent().get_parent_control().RunArmed(self.global_position);
+	var offset = Vector2(24.0, 24.0)
+	get_parent().get_parent_control().RunArmed(self.global_position + offset);

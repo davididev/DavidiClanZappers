@@ -21,6 +21,6 @@ func AttemptRun(vec : Vector2) -> bool:
 		return false;
 	else:
 		get_node("AnimationPlayer").play("ArmedLabelLibrary/Burst");
-		isPlayingTime = 2.0;
+		isPlayingTime = 1.2;
 		self.global_position = vec;
 		return true;
