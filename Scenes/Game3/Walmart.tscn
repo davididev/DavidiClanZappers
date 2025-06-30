@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c05p7jlcwusvg"]
+[gd_scene load_steps=13 format=3 uid="uid://c05p7jlcwusvg"]
 
 [ext_resource type="PackedScene" uid="uid://b2eecf7c22str" path="res://Prefabs/Player/hannah_boilerplate.tscn" id="1_4r5ku"]
 [ext_resource type="MeshLibrary" uid="uid://cgnvnd6ph36ti" path="res://Graphics/Modular/Inside/BuildingInner.tres" id="2_3dhns"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="7_cte2c"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="8_l4ahm"]
 [ext_resource type="PackedScene" uid="uid://5vukp4ra2ooy" path="res://Prefabs/Interactable/StarPowerupHealth.tscn" id="9_dv4yx"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="10_8gdmw"]
 
 [sub_resource type="Resource" id="Resource_ka75y"]
 script = ExtResource("7_cte2c")
@@ -142,3 +143,7 @@ PositionToGoTo = Vector3(-22.5, 0, -25.5)
 
 [node name="StarPowerupHealth" parent="." instance=ExtResource("9_dv4yx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4027, -0.225791, -0.60635)
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("10_8gdmw")
+MusicForScene = "Crypt.mp3"

@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj86i4actyt73"]
+[gd_scene load_steps=4 format=3 uid="uid://bj86i4actyt73"]
 
 [ext_resource type="Script" path="res://Prefabs/Player/drop_shadow.gd" id="1_oojeg"]
-[ext_resource type="Texture2D" uid="uid://dy1x5nhv8d6js" path="res://Graphics/Characters/DropShadow.png" id="2_lssh4"]
+[ext_resource type="Material" uid="uid://cj4kfde1pwm0f" path="res://Graphics/Characters/M_DropShadow.tres" id="2_7mrwk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_471e5"]
 
 [node name="DropShadow" type="Node3D"]
 script = ExtResource("1_oojeg")
 
-[node name="Decal" type="Decal" parent="."]
-layers = 3
-size = Vector3(1.5, 1, 1.5)
-texture_albedo = ExtResource("2_lssh4")
-distance_fade_enabled = true
-cull_mask = 1047555
+[node name="Decal" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_471e5")
+surface_material_override/0 = ExtResource("2_7mrwk")

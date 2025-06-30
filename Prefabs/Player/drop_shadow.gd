@@ -17,4 +17,5 @@ func _process(delta: float) -> void:
 	var result = space_state.intersect_ray(query);
 	var end_pos = result.get("position");
 	if end_pos != null:
-		get_node("Decal").global_position = end_pos;
+		get_node("Decal").global_position = end_pos + Vector3(0.0, 0.1, 0.0);
+		global_basis.y = result.get("normal");
