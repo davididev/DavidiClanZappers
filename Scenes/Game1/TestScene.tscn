@@ -257,7 +257,7 @@ PositionToGoTo = Vector3(-6.5, 0.5, -4.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
 [node name="InstantTeleport_Cave1" parent="." instance=ExtResource("13_wc1md")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.647, -35.741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.647, -35.5633)
 DialogueBase = SubResource("Resource_y2ian")
 SceneToGoTo = "Game1/Cave1"
 

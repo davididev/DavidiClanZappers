@@ -160,7 +160,7 @@ camera_attributes = SubResource("CameraAttributesPractical_3dnlm")
 light_data = ExtResource("4_paoe5")
 
 [node name="InstantTeleport_Cave1" parent="." instance=ExtResource("6_75exa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.831, 7.994)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.831, 6.65049)
 DialogueBase = SubResource("Resource_ow8po")
 SceneToGoTo = "Game1/TestScene"
 PositionToGoTo = Vector3(0, 0.5, -34)

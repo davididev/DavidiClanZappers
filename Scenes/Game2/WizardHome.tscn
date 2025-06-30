@@ -119,7 +119,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.745
 DialogueOnInteract = ExtResource("6_7cf6f")
 
 [node name="DoorModel" parent="." instance=ExtResource("7_daj67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.5, -6.21487)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.5, -6.39939)
 DialogueBase = SubResource("Resource_71n2q")
 SceneToGoTo = "Game2/Woods"
 PositionToGoTo = Vector3(23, 0.5, -5.5)

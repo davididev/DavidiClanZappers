@@ -260,7 +260,7 @@ transform = Transform3D(-0.954068, 0.212725, -0.210953, 0.126861, 0.924761, 0.35
 light_bake_mode = 1
 
 [node name="InstantTeleport_Cave1" parent="." instance=ExtResource("9_ijaok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76477, 0.57143, -5.89526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76477, 0.57143, -5.54424)
 DialogueBase = SubResource("Resource_oe3h3")
 SceneToGoTo = "Game2/Woods"
 PositionToGoTo = Vector3(-25.5, 0.5, 22.5)

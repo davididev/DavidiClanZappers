@@ -92,7 +92,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="InstantTeleport_BlueStaircase" parent="." instance=ExtResource("4_wrj8t")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -24.6228, 1.03345, -28.0904)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -24.6228, 0.564737, -28.3137)
 DialogueBase = SubResource("Resource_n2lmh")
 SceneToGoTo = "Game2/TowerOutside"
 PositionToGoTo = Vector3(-1.5, 9.5, -18)
