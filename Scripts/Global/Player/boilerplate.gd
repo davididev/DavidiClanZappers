@@ -43,6 +43,7 @@ func _ready() -> void:
 		var compare = str("res://Scenes/", GameDataHolder.Instance.data.ScenePath, ".tscn")
 		if current == compare:
 			GameDataHolder.Instance.data.Load(get_tree());
+		
 		First = false;
 	else:
 		get_child(0).global_position = StartingPosition;

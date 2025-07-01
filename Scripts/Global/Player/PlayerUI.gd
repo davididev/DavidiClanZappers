@@ -102,15 +102,19 @@ func _process(delta: float) -> void:
 	if is_equal_approx(gameOverScale, 0.0) && GameDataHolder.Instance.data.MinHealth <= 0:
 		gameOverScale = 0.01;
 
-	if gameOverScale > 0.0 && gameOverScale < 1.0:
-		gameOverScale = move_toward(gameOverScale, 1.0, 2.0 * delta);
-		get_node("GameOverTeture").scale = Vector2(1.0, gameOverScale);
-		if is_equal_approx(gameOverScale, 1.0):
-			await get_tree().create_timer(2.0, true, true, true).timeout;
-			get_tree().change_scene_to_file("res://Scenes/Global/TitleScreen.tscn");	
+	if game_over_start == false:
+		if gameOverScale > 0.0 && gameOverScale < 1.0:
+			gameOverScale = move_toward(gameOverScale, 1.0, 2.0 * delta);
+			get_node("GameOverTeture").scale = Vector2(1.0, gameOverScale);
+			if is_equal_approx(gameOverScale, 1.0):
+				game_over_start = true;
+				await get_tree().create_timer(2.0).timeout;
+				get_tree().change_scene_to_file("res://Scenes/Global/TitleScreen.tscn");
 
 	if UpdateHUD:
 		UpdatePlayerHUD();
+
+var game_over_start = false;
 
 static var maxTimerMagic = 0.0;
 static var minTimerMagic = 0.0;

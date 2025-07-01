@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://co4rauonek6c"
+path="res://.godot/imported/TowerF1.exr-094eec0cd944c5ee06f3a2744a96ef31.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Scenes/Game3/TowerF1.exr"
+dest_files=["res://.godot/imported/TowerF1.exr-094eec0cd944c5ee06f3a2744a96ef31.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=3

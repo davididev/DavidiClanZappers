@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckbu2rx0eosol"]
+
+[ext_resource type="PackedScene" uid="uid://b2eecf7c22str" path="res://Prefabs/Player/hannah_boilerplate.tscn" id="1_3x7lc"]
+[ext_resource type="Script" path="res://Scripts/Local/scene_vars.gd" id="2_p088f"]
+[ext_resource type="MeshLibrary" uid="uid://p1g2h7p6an4d" path="res://Graphics/Modular/Dungeon/DungeonMeshLibrary.tres" id="3_uvaep"]
+[ext_resource type="PackedScene" uid="uid://c6d05t5kl0axk" path="res://Prefabs/Local/Game3/3x3x1 Gate.tscn" id="4_hlo32"]
+[ext_resource type="PackedScene" uid="uid://ctm4dcpsof84c" path="res://Prefabs/NPC/WizardNPC.tscn" id="5_cy505"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Game3-Wizard2.res" id="6_4jsal"]
+[ext_resource type="PackedScene" uid="uid://cf3ivenfqxoyl" path="res://Prefabs/Enemy/ZombieEnemyWalk_Final.tscn" id="7_qkk5f"]
+[ext_resource type="PackedScene" uid="uid://ctf8ijafthblp" path="res://Prefabs/BrownDoor/CyanDoor.tscn" id="8_pmbao"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueEntry.gd" id="9_fc7lo"]
+[ext_resource type="Script" path="res://DialogueSystem/scripts/DialogueGrid.gd" id="10_qy46q"]
+
+[sub_resource type="Resource" id="Resource_ei6jm"]
+script = ExtResource("9_fc7lo")
+cmd = "sce"
+args = "Game1/Scene_0,0,0"
+
+[sub_resource type="Resource" id="Resource_8yc81"]
+resource_local_to_scene = true
+script = ExtResource("10_qy46q")
+grid = [[SubResource("Resource_ei6jm"), null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null]]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HannahBoilerplate" parent="." instance=ExtResource("1_3x7lc")]
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("2_p088f")
+MusicForScene = "Dungeon 5.mp3"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.685755, -0.318893, 0.654253, -0.339329, 0.655157, 0.675001, -0.643891, -0.684892, 0.341067, 0, 0, -3)
+light_bake_mode = 1
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+environment_mode = 3
+environment_custom_color = Color(0.359069, 0.359069, 0.359069, 1)
+environment_custom_energy = 1.0
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh_library = ExtResource("3_uvaep")
+cell_size = Vector3(5, 1, 5)
+data = {
+"cells": PackedInt32Array(0, 0, 6, 65535, 65535, 9, 0, 65535, 9, 1, 65535, 9, 1, 65534, 9, 0, 65534, 9, 65535, 65534, 9, 65535, 65533, 9, 0, 65533, 9, 1, 65533, 9, 65538, 65535, 5, 65538, 65534, 5, 65537, 0, 5, 65538, 0, 5, 65539, 65535, 5, 65539, 0, 5, 65539, 65534, 5, 65540, 65534, 5, 65540, 65535, 5, 65540, 0, 5, 65540, 1, 5, 65539, 1, 5, 65538, 1, 5, 65537, 1, 5, 131070, 1, 5, 131070, 0, 5, 131069, 0, 5, 131069, 1, 5, 131069, 2, 5, 131069, 3, 5, 131070, 2, 5, 131071, 2, 5, 65538, 2, 5, 65539, 2, 5, 65540, 2, 5, 65540, 3, 5, 65539, 3, 5, 65538, 3, 5, 65538, 4, 5, 65537, 4, 5, 65536, 4, 5, 131071, 4, 5, 131071, 3, 5, 131070, 3, 5, 65536, 3, 5, 65537, 3, 5, 65539, 4, 5, 65540, 4, 5, 131070, 4, 5, 131070, 5, 5, 131069, 5, 5, 131069, 4, 5, 131069, 65535, 5, 131069, 65534, 5, 131069, 65533, 5, 131070, 65533, 5, 65538, 65533, 5, 65539, 65533, 5, 65540, 65533, 5, 131069, 65532, 5, 131070, 65532, 5, 131071, 65532, 5, 65536, 65532, 5, 65536, 65531, 5, 65537, 65531, 5, 65538, 65531, 5, 65538, 65532, 5, 65539, 65532, 5, 65537, 65532, 5, 65540, 65532, 5, 65541, 65532, 5, 65541, 65531, 5, 65540, 65531, 5, 65539, 65531, 5, 131071, 65531, 5, 131070, 65531, 5, 131069, 65531, 5, 131069, 65530, 5, 131068, 65530, 5, 131070, 65530, 5, 131071, 65530, 5, 65536, 65530, 5, 65537, 65530, 5, 65538, 65530, 5, 65539, 65530, 5, 65540, 65530, 5, 65541, 65530, 5, 65540, 65529, 5, 65539, 65529, 5, 65538, 65529, 5, 65537, 65529, 5, 65536, 65529, 5, 131071, 65529, 5, 131070, 65529, 5, 131070, 65528, 5, 131069, 65528, 5, 131069, 65529, 5, 131068, 65529, 5, 131068, 65531, 5, 131067, 65531, 5, 131068, 65532, 5, 131070, 65534, 5, 131070, 65535, 5, 131071, 0, 5, 131071, 1, 12, 65536, 1, 10, 65537, 2, 5, 65536, 2, 5)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="DisableGate" parent="." instance=ExtResource("4_hlo32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -0.5, -5)
+
+[node name="TalkingNPC" parent="." instance=ExtResource("5_cy505")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126086, -0.42857, -4.46498)
+DialogueOnInteract = ExtResource("6_4jsal")
+
+[node name="ZombieWalk" parent="." instance=ExtResource("7_qkk5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0657082, 0.654642, -15.6794)
+
+[node name="DoorModel" parent="." instance=ExtResource("8_pmbao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59701, -0.5, 2.4)
+DialogueBase = SubResource("Resource_8yc81")
+SceneToGoTo = "Game3/HannahYard3"
+PositionToGoTo = Vector3(49, 4, -7.5)

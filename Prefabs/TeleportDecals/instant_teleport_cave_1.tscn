@@ -13,7 +13,7 @@ size = Vector3(2, 2, 1)
 collision_mask = 4
 script = ExtResource("1_ga3gy")
 DialogueBase = ExtResource("2_5f3rj")
-SceneToGoTo = "Game1_Scene2"
+SceneToGoTo = "Game1/Scene2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_2lq0j")

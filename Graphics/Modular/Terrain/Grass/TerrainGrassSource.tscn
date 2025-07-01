@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=4 uid="uid://5e3smls38iwf"]
+[gd_scene load_steps=158 format=4 uid="uid://5e3smls38iwf"]
 
 [ext_resource type="Material" uid="uid://bns5clvnpxm5p" path="res://Graphics/Tilesets/MT_Terrain.tres" id="1_lxnk7"]
 [ext_resource type="Material" uid="uid://nwxjbbpgdv7p" path="res://Graphics/Tilesets/MT_City_road.tres" id="2_uc4v7"]
@@ -1820,9 +1820,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dc81y")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xke5l"]
-points = PackedVector3Array(0.0396824, 1.07143, 0.0396824, -4.85828, 0, -4.85828, -4.85828, 0, -0.141723, -5.03968, 1.07143, -5.03968, -0.141723, 0, -4.85828, -5.03968, 1.07143, 0.0396824, 0.0396824, 1.07143, -5.03968, -0.141723, 0, -0.141723)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="GrassModular1Cliff1" type="MeshInstance3D" parent="."]
@@ -2287,8 +2284,3 @@ shape = SubResource("ConvexPolygonShape3D_4op1s")
 [node name="StreetModularCube1013" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1235, 9.53674e-07, -16.2452)
 mesh = SubResource("ArrayMesh_n8454")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="StreetModularCube1013"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StreetModularCube1013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_xke5l")
