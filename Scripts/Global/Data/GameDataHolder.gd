@@ -22,7 +22,7 @@ func NewFile():
 func LoadFile(isNew : bool = false):
 	var path = str("user://savegame", GameID, ".res");
 	if ResourceLoader.exists(path) && isNew == false:
-		data = ResourceLoader.load(path);
+		data = ResourceLoader.load(path).duplicate();
 	else:
 		data = GameData.new();
 	var path2 = str("res://Scripts/Local/VarNames/G", GameID, ".tres");
